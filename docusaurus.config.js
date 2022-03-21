@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'ModuOps',
   tagline: 'Model Railroad Operations Software',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://eloquent-biscochitos-5a2794.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
