@@ -10,11 +10,11 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Modular and Home Layouts',
+    title: 'Modular, Club and Home Layouts',
     Svg: require('@site/static/img/moduops-mac.svg').default,
     description: (
       <>
-        Designed for operations on modular layouts such as Free-mo and home layouts of all sizes.
+        Designed for operations on modular layouts such as Free-mo, club and home layouts of all sizes.
       </>
     ),
   },
