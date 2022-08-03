@@ -18,7 +18,7 @@ function HomepageDownload() {
             className="button button--secondary button--lg"
             download="ModuOps_Mac_2018.1.1.zip"
           >
-            Download Macos
+            Download macOS
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a
