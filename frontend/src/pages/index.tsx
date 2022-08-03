@@ -10,26 +10,37 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 function HomepageDownload() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-    <div className="container">
-      <h1 className="hero__subtitle">Download for FREE!</h1>
-      <div className={styles.buttons}>
-        <Link
-          className="button button--secondary button--lg"
-          to="/">
-          Download ModuOps
-        </Link>
+      <div className="container">
+        <h1 className="hero__subtitle">Download for FREE!</h1>
+        <div className={styles.buttons}>
+          <a
+            href={require('/docs/ModuOps_Mac_2018.1.1.zip').default}
+            className="button button--secondary button--lg"
+            download="ModuOps_Mac_2018.1.1.zip"
+          >
+            Download Macos
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a
+            href={require('/docs/ModuOps_Windows_2018.1.1.zip').default}
+            className="button button--secondary button--lg"
+            download="ModuOps_Windows_2018.1.1.zip"
+          >
+            Download Windows
+          </a>
+        </div>
       </div>
-    </div>
-  </header>
-  )
+    </header>
+  );
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />"
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
