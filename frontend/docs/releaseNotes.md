@@ -15,11 +15,15 @@ All notable changes to ModuOps
 
 The file format is changed. This allows for faster access to the data in the files. Overall the performance has increased with the new file format. New files are saved with the `.mop2` extension.
 
-Old files are not compatible with this version. There is a conversion option in the File menu. First create a new file saving it in a location where you will be able to find it again.
+Old files are not compatible with this version. Conversion process:
 
-Next select `Convert...` in the File menu. Locate the old .mop data file and select it. The data in the file is converted to the new format and saved in the `.mop2` file.
+1. Launch ModuOps v2022.1.1 or later.
+1. Select `New File` in th File menu of ModuOps v2022.1.1 or later.
+1. Name the file and save it where you will be able to find it again.
+1. Next select `Convert...` in the File menu.
+1. Locate the old .mop data file and select it.
 
-Going forward you will always use the `.mop2` file.
+The data in the file is converted to the new format and saved in the `.mop2` file. Going forward you will always use the `.mop2` file.
 
 #### Import/Export Module file
 
