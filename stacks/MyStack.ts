@@ -5,8 +5,8 @@ export function MyStack({ stack, app }: StackContext) {
     path: 'frontend',
     customDomain: {
       domainName:
-        app.stage === 'prod' ? 'moduops.com' : `${app.stage}.moduops.com`,
-      domainAlias: app.stage === 'prod' ? 'www.moduops.com' : undefined,
+        app.stage === 'production' ? 'moduops.com' : `${app.stage}.moduops.com`,
+      domainAlias: app.stage === 'production' ? 'www.moduops.com' : undefined,
       hostedZone: 'moduops.com',
     },
   });
