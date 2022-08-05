@@ -6,7 +6,7 @@
     "start": "sst start",
     "build": "sst build",
     "deploy": "sst deploy --stage=dev",
-    "deploy:production": "sst deploy --stage=production",
+    "deploy:prod": "sst deploy --stage=prod",
     "remove": "sst remove",
     "console": "sst console",
     "typecheck": "tsc --noEmit",
