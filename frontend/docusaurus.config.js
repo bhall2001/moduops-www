@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'ModuOps',
-  tagline: 'Model Railroad Operations Software',
-  url: 'https://eloquent-biscochitos-5a2794.netlify.app',
+  tagline: 'Simple and Robust Model Railroad Operations',
+  url: 'https://moduops.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
