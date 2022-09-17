@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageHeader from '../components/HomepageHeader';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageHilites from '@site/src/components/HomepageHilites';
 
 function HomepageDownload() {
   return (
@@ -44,6 +45,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <HomepageHilites />
         <HomepageDownload />
       </main>
     </Layout>
