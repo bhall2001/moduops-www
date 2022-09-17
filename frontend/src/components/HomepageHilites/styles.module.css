@@ -1,0 +1,7 @@
+.features {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: rgb(244, 243, 240);
+}
