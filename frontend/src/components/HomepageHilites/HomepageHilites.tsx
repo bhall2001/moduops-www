@@ -36,7 +36,7 @@ const HiliteList: HiliteItem[] = [
   {
     title: 'Yards',
     description:
-      'All trains originate and terminate at a Yard. View the storage capacity and expected car types needed to run the layout based on the capacity of the yard.',
+      'All trains originate and terminate at a Yard. View the storage capacity and expected car types needed to run the layout based on the capacity of the yards.',
   },
   {
     title: 'Trains',
