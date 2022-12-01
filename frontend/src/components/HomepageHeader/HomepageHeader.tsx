@@ -18,6 +18,14 @@ function HomepageHeader() {
               Moduops Tutorial - 5min ⏱️
             </Link>
           </div> */}
+        <div className={styles.buttons}>
+          <Link
+            className="button button--secondary button--lg"
+            to="/blog/v5_1_1"
+          >
+            Moduops Version 5 Released!
+          </Link>
+        </div>
       </div>
     </header>
   );
