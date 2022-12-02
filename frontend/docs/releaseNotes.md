@@ -17,11 +17,11 @@ The file format is changed. This allows for faster access to the data in the fil
 
 Old files are not compatible with this version. Conversion process:
 
-1. Launch ModuOps v5.1.1 or later.
-1. Select `New File` in th File menu of ModuOps v5.1.1 or later.
-1. Name the file and save it where you will be able to find it again.
-1. Next select `Convert...` in the File menu.
-1. Locate the old .mop data file and select it.
+1. Launch ModuOps v5.1.1 or later
+1. Select `Convert...` in the File menu
+1. Step 1 is to create a new, blank data file, name the file and save it where you will be able to find it again
+1. Click `Save`
+1. Step 2 locate the old .mop data file and select it
 
 The data in the file is converted to the new format and saved in the `.mop2` file. Going forward you will always use the `.mop2` file.
 
