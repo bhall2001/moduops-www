@@ -7,7 +7,7 @@ title: Release Notes
 
 All notable changes to ModuOps
 
-## Moduops 2022.1.1 (coming soon...)
+## Moduops 5.1.1
 
 ### Breaking Changes
 
@@ -17,13 +17,24 @@ The file format is changed. This allows for faster access to the data in the fil
 
 Old files are not compatible with this version. Conversion process:
 
-1. Launch ModuOps v2022.1.1 or later.
-1. Select `New File` in th File menu of ModuOps v2022.1.1 or later.
-1. Name the file and save it where you will be able to find it again.
-1. Next select `Convert...` in the File menu.
-1. Locate the old .mop data file and select it.
+1. Launch ModuOps v5.1.1 or later
+1. Select `Convert...` in the File menu
+1. Step 1 is to create a new, blank data file, name the file and save it where you will be able to find it again
+1. Click `Save`
+1. Step 2 locate the old .mop data file and select it
 
 The data in the file is converted to the new format and saved in the `.mop2` file. Going forward you will always use the `.mop2` file.
+
+### Changes
+
+- version numbers now follow Semantic Versioning standard (aka. MAJOR.MINOR.PATCH)
+- data layer completely re-written
+- renamed scheduling engines to what they do, "random" and "use cars/week"
+- drop zone favoring slider to vary probability of drop zone being re-used
+- supports native Apple Silicon hardware
+- save menu removed, no longer needed
+- close menu removed, no longer needed
+- Mac versions now code signed
 
 #### Import/Export Module file
 
@@ -110,7 +121,7 @@ Trains must specify an origin and destination that is a Yard/Interchange/Staging
 - About ModuOps menu now works
 - Fixed Limit Modules in Train Edit screen not updating.
 - Decided to leave Windows disabled buttons alone. I don't like the way Windows shows disabled buttons but this it is what it is. I'll wait and see if any comments come in about not being able to tell what is enabled/disabled...
-  
+
 ## ModuOps 1.0.0d58
 
 - Train Orders and Crew Instructions working
@@ -126,7 +137,7 @@ Trains must specify an origin and destination that is a Yard/Interchange/Staging
 - Re-ordered Equipment Needs field columns
 - fixed color on scrolling fields
 - fixed some UI issues that I came across
- 
+
 ## What's Not Working...
 
 Drop Zones in a Module/Town have a "Direction" which is the direction the zone faces to be a trailing drop (A or B). Zones that are accessible by both sides of a module are not supported (faces A & B). For now, designate these zones as either an A or B.

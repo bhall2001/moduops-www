@@ -1,8 +1,10 @@
-import { StackContext, ReactStaticSite } from '@serverless-stack/resources';
+import { StackContext, StaticSite } from '@serverless-stack/resources';
 
 export function MyStack({ stack, app }: StackContext) {
-  const site = new ReactStaticSite(stack, 'ModuopsSite', {
+  const site = new StaticSite(stack, 'ModuopsSite', {
     path: 'frontend',
+    buildCommand: 'npm run build',
+    buildOutput: 'build',
     customDomain: {
       domainName:
         app.stage === 'prod' ? 'moduops.com' : `${app.stage}.moduops.com`,
