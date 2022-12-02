@@ -10,7 +10,7 @@ SST sets up as a mono repo. There are the backend services/stacks and the fronte
 
 ## Frontend
 
-The frontend for this project is [Docusaurus](https://docusaurus.io/. Docusaurus is super easy to figure out and I think the websites created look great. Docusaurus creates a static web site from md and React files.
+The frontend for this project is [Docusaurus](https://docusaurus.io/). Docusaurus is super easy to figure out and I think the websites created look great. Docusaurus creates a static web site from md and React files.
 
 When doing development, navigate to the frontend directory where you can do the usual `npm install` and `npm run start` for local dev.
 
