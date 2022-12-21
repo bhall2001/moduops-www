@@ -19,7 +19,7 @@ Here's the order you'll want to follow to get going.
 6. Create a couple of Drop Zones - Enter the Name and length of track associated with a Consignee where cars are set out
 7. Return to the Consignee details screen and add Car Requests – Select a Consignee and click on `Edit` to get to car requests
 8. Repeat steps 2 – 5 for the remaining Modules, Drop Zones and Consignees on your layout
-9.  Create a Train
+9. Create a Train
 10. Give the Train a Route. Set the origin/destination to the yard created above
 11. Generate a Trainlist for your new Train
 12. Take the Trainlist to your layout and get to work ;-)
