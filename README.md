@@ -1,6 +1,6 @@
 # ModuOps web site
 
-All the dirt you need to know about for moduops web site.
+All the techy dirt you need to know for moduops web site.
 
 ## SST Framework
 
