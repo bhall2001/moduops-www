@@ -11,6 +11,10 @@ slug: /faq
 
 This can happen when the yard is not included as an origination point for any train in the current layout file. Once the yard is added as an origin for a train, car types should be displayed.
 
+## Norton is telling me that some files are unsafe and removes them.
+
+This is a side effect of the app not being code signed and trusted. You will need to disable Norton in order to run the application. Head to the [Norton Support forums](https://support.norton.com/sp/en/us/norton-360/current/solutions/v15457075) to learn how to temporarily disable Norton. Follow instructions in the section labeled "Exclude disks, folders, and files from scans"
+
 ## You need to add a Save option in the File menu.
 
 ModuOps automatically saves your work while using the application. Because of this there is no Save option in the File menu.

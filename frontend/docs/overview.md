@@ -11,12 +11,12 @@ The original use cases for ModuOps comes from Free-mo Operators. ModuOps takes i
 
 A Free-mo layout has many unique characteristics not found with other Model Railroad setups:
 
-*  Layout is unique at each setup
-*  Layout will never exist again
-*  Layout exists for only a day or 2.
-*  Starting state of the layout is unknown
-*  Crew errors occur but should be self-correcting
-*  Rolling stock administration is cumbersome and error-prone
+- Layout is unique at each setup
+- Layout will never exist again
+- Layout exists for only a day or 2.
+- Starting state of the layout is unknown
+- Crew errors occur but should be self-correcting
+- Rolling stock administration is cumbersome and error-prone
 
 ModuOps is based on the original Mad River and Big Timber (MRBT) software. With this in mind and the constraints listed above, this Chapter helps new users understand some design decisions of the Application. ModuOps' features directly stem from the prior experience with MRBT and New England Free-mo.
 
@@ -38,7 +38,7 @@ ModuOps currently offers 2 scheduling engines, the original MRBT random car type
 
 The weighted selection uses a cars per week number given to the car type. In addition to the weighted selection, it is possible to skews selections to facilitate car blocking.
 
- The Application as it stands today is based on MRBT's original flow. That means that all traffic originates at a yard and travels to a consignee. It is important to remember this sequence when creating operating plans.
+The Application as it stands today is based on MRBT's original flow. That means that all traffic originates at a yard and travels to a consignee. It is important to remember this sequence when creating operating plans.
 
 ## Home Layouts
 
@@ -50,8 +50,14 @@ In fact, a home layout is the perfect place to start before diving in to be a Fr
 
 We even have clubs using ModuOps. A great benefit of ModuOps is there is no setup required for an ops session. This gives clubs the flexibility to have host formal operating sessions as well as open "free running" sessions. ModuOps does not care what state the layout is left in. An operating session can start at any time no matter where cars are on the layout.
 
+## Contacts
+
+ModuOps has an email list hosted on [groups.io](https://groups.io/g/moduops/topics).
+
+There is also a group on [Facebook](https://www.facebook.com/groups/1029861033780522).
+
+If you need to reach me directly best way is bhall underscore 2001 at yahoo dot com. Hopefully you can figure that out ;-)
+
 ## How Much?
 
-Good question. Developing a software such as this does incur costs. We've invested time in training, development tools, the website and our time in creating this system. For now the software is going to remain a Donation-ware application. But the donation is a little different.
-
-If you feel compelled to donate please contact me for details on how to make a donation. Thank you!
+Good question. Developing a software such as this does incur costs. I've invested time in training, development tools, the website and time in creating this system. The app is Donation-ware. If you feel compelled to donate please contact me for details on how to make a donation. Thank you!
