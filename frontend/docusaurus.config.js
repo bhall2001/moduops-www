@@ -57,6 +57,13 @@ const config = {
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          // {
+          //   type: 'doc',
+          //   docId: 'tutorial/intro',
+          //   position: 'left',
+          //   label: 'Tutorial',
+          //   to: '/docs/tutorial',
+          // },
           {
             href: 'https://github.com/bhall2001/moduops-www',
             label: 'GitHub',

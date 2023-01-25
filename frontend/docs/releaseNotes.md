@@ -7,7 +7,11 @@ title: Release Notes
 
 All notable changes to ModuOps
 
-## Moduops 5.1.1
+## ModuOps 5.1.2
+
+- Disable navigation when first launched until a file is opened.
+
+## ModuOps 5.1.1
 
 ### Breaking Changes
 
