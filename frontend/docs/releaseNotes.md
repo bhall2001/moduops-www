@@ -7,6 +7,11 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.1.3
+
+- fix issue where a blank line can be inserted into train routes
+- add notification when new version is released
+
 ## ModuOps 5.1.2
 
 - Disable navigation when first launched until a file is opened.
