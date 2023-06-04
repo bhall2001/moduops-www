@@ -1,5 +1,5 @@
 import { MyStack } from './MyStack';
-import { App } from 'sst/constructs';
+import { App } from '@serverless-stack/resources';
 
 export default function (app: App) {
   app.setDefaultFunctionProps({
