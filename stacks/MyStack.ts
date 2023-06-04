@@ -1,4 +1,4 @@
-import { StackContext, StaticSite } from '@serverless-stack/resources';
+import { StackContext, StaticSite } from 'sst/constructs';
 
 export function MyStack({ stack, app }: StackContext) {
   const site = new StaticSite(stack, 'ModuopsSite', {

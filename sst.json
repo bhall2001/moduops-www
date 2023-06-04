@@ -1,5 +1,0 @@
-{
-  "name": "moduops-www",
-  "region": "us-east-2",
-  "main": "stacks/index.ts"
-}
