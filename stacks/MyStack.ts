@@ -13,6 +13,6 @@ export function MyStack({ stack, app }: StackContext) {
     },
   });
   stack.addOutputs({
-    SiteUrl: site.url,
+    SiteUrl: site.url ? site.url : '',
   });
 }
