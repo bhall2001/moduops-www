@@ -17,5 +17,4 @@ MRBT was a product of the late 90s and appears to have seen its last update in t
 
 ModuOps essentially replicates the MRBT software package with some changes. The application has a modern graphical user interface \(GUI\). Routing logic is more sophisticated than the original MRBT. The hooks are in place to take ModuOps online and integrate today's modern smartphone and tablet technologies.
 
-For those who care, ModuOps is written in Livecode. Livecode is a modern, rapid development tool incorporating a number of advanced capabilities. ModuOps uses a SQLite database and is available on Windows and Macintosh systems.
-
+For those who care, ModuOps is written in [Livecode](https://livecode.com). Livecode is a modern, rapid development tool incorporating a number of advanced capabilities. ModuOps uses a SQLite database and is available on Windows and Macintosh systems.
