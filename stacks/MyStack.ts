@@ -1,14 +1,14 @@
-import { StackContext, StaticSite } from '@serverless-stack/resources';
+import { StackContext, StaticSite } from 'sst/constructs';
 
-export function MyStack({ stack, app }: StackContext) {
+export function MyStack({ stack }: StackContext) {
   const site = new StaticSite(stack, 'ModuopsSite', {
-    path: 'frontend',
+    path: 'packages/frontend',
     buildCommand: 'npm run build',
     buildOutput: 'build',
     customDomain: {
       domainName:
-        app.stage === 'prod' ? 'moduops.com' : `${app.stage}.moduops.com`,
-      domainAlias: app.stage === 'prod' ? 'www.moduops.com' : undefined,
+        stack.stage === 'prod' ? 'moduops.com' : `${stack.stage}.moduops.com`,
+      domainAlias: stack.stage === 'prod' ? 'www.moduops.com' : undefined,
       hostedZone: 'moduops.com',
     },
   });
