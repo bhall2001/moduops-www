@@ -2,7 +2,7 @@ import { StackContext, StaticSite } from 'sst/constructs';
 
 export function MyStack({ stack }: StackContext) {
   const site = new StaticSite(stack, 'ModuopsSite', {
-    path: 'packages/frontend',
+    path: 'frontend',
     buildCommand: 'npm run build',
     buildOutput: 'build',
     customDomain: {
