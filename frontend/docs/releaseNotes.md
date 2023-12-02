@@ -7,6 +7,14 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.2.0
+
+- finally, all versions are code signed
+- adds minimum length to trains
+- bug fixes
+- Native Apple Silicon binary
+- legacy version 2018.1.1 no longer available for download
+
 ## ModuOps 5.1.3
 
 - fix issue where a blank line can be inserted into train routes

@@ -7,38 +7,27 @@ export default function HomepageDownload() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__subtitle">Download for FREE!</h1>
-        <h4>**NEW** version 5.1.3</h4>
-        <div className={styles.buttons} style={{ paddingBottom: '4rem' }}>
+        <h4>version 5.2.0</h4>
+        <div className={styles.buttons} style={{ paddingBottom: '2rem' }}>
           <a
-            href="https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops/ModuOps-5_1_3-Mac.dmg"
+            href="https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops/ModuOps_Setup.exe"
             className="button button--secondary button--lg"
           >
-            Download macOS
+            Windows
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a
-            href="https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops/ModuOps-5_1_3-Win-setup.exe"
+            href="https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops/ModuOps-Apple.dmg"
             className="button button--secondary button--lg"
           >
-            Download Windows
-          </a>
-        </div>
-        <h6>Legacy version 2018.1.1</h6>
-        <div className={styles.buttons}>
-          <a
-            href={require('/docs/ModuOps_Mac_2018.1.1.zip').default}
-            className="button button--secondary button--lg"
-            download="ModuOps_Mac_2018.1.1.zip"
-          >
-            Download macOS
+            macOS Apple Silicon
           </a>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a
-            href={require('/docs/ModuOps_Windows_2018.1.1.zip').default}
+            href="https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops/ModuOps-Intel.dmg"
             className="button button--secondary button--lg"
-            download="ModuOps_Windows_2018.1.1.zip"
           >
-            Download Windows
+            macOS Intel
           </a>
         </div>
       </div>
