@@ -11,6 +11,7 @@ All notable changes to ModuOps
 
 - finally, all versions are code signed
 - adds minimum length to trains
+- fixes issue where ModuOps would not work on macOS Sonoma 14.1 or later
 - bug fixes
 - Native Apple Silicon binary
 - legacy version 2018.1.1 no longer available for download

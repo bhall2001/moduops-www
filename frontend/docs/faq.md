@@ -11,6 +11,20 @@ slug: /faq
 
 This can happen when the yard is not included as an origination point for any train in the current layout file. Once the yard is added as an origin for a train, car types should be displayed.
 
+## I've heard that ModuOps helps correct mistakes. How exactly does it accomplish that?
+
+Mistakes are inevitable, especially when you're busy engaging with attendees at a show and promoting the hobby. While ModuOps doesn't directly fix errors, there's a straightforward procedure that, when included in all your Trainlists, effectively addresses mistakes.
+
+The recommended approach is to add the following comment to the Crew Instructions, accessible on the train edit screen:
+
+`<b>PICK UP ALL WHEN DROPPING</b>`
+
+:::note
+You can use basic html syntax when creating comments. the `<b></b>` in the example above will make the text appear bold.
+:::
+
+This instructs the crew that, before dropping a set of cars, they should pick up all the cars in the drop zone. An added benefit of this practice is that any equipment placed in the drop zone by mistake will be collected and returned to the yard.
+
 ## How do I define the length of a drop zone? Do I start at the fouling point of the turnout?
 
 Drop zones are designated segments of track where equipment can be placed. They are not meant to establish the length of a siding.
@@ -18,6 +32,20 @@ Drop zones are designated segments of track where equipment can be placed. They 
 These zones delineate specific areas along the track where rolling stock can be set out. Each siding may feature one or more drop zones. It's important to note that the combined length of drop zones is not required to match the overall length of the siding.
 
 In practice, it is advisable for the total length of drop zones associated with a siding to be less than the siding's actual length. This ensures ample space between cuts of cars and helps prevent fouling turnouts.
+
+## How can I incorporate scheduling cars to an off spot track?
+
+That's a great question! There are a couple of ways that you could do this. But my preferred way is to replicate real-world scenarios when handling off spot tracks.
+
+An off spot track essentially functions as an overflow area. If a cut of cars cannot fit into the designated drop zone, the excess rolling stock is placed on the off spot track.
+
+In ModuOps, you can simulate this is by overloading the drop zone. To overload the drop zone simply increase the length of the drop zone to be longer than it actually is.
+
+Furthermore, you can include a comment in either the module, consignee or equipment request, specifying the sequence of actions desired when working with an off spot.
+
+First transfer cars from the off spot track to the drop zone. Next, set out cars from the train to the drop zone. Additional cars that can not fit in the drop zone should be set out to the off spot track.
+
+This ensures an organized and efficient process for managing off spot tracks in ModuOps.
 
 ## Why are train lengths shorter then the length I set for the minimum length?
 
