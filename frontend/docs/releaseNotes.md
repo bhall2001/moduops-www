@@ -7,6 +7,12 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.3.0
+
+- can select multiple car types when creating work orders. Each car type selected creates a work order for that car type.
+- double clicking a ModuOps data file will open the file in ModuOps once you tell your system to open .mop2 files with ModuOps.
+- add a recently opened files menu showing, well, recently opened files :-)
+
 ## ModuOps 5.2.0
 
 - finally, all versions are code signed
