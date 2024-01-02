@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Tutorial Intro
 
-Let's discover ModuOps in less than 15 minutes. The tutorial is for a very basic layout but the concepts learned will apply to larger layouts. The hope is that you will learn the basic recipe to using the application and can then apply that learning to your own layout.
+Let's discover ModuOps in about 15 minutes. The tutorial is for a very basic layout but the concepts learned will apply to larger layouts. The hope is that you will learn the basic recipe for using the application and can then apply that learning to your own layout.
 
 The tutorial is split up into separate sections. On the left you'll find each of the sections in a menu. You should go through each of the steps in order. Going out of order will result in the tutorial not working as expected.
 
