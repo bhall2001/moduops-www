@@ -25,7 +25,19 @@ const sidebars = {
     'faq',
     'releaseNotes',
   ],
-  tutorialSidebar: ['tutorial/intro'],
+  tutorialSidebar: [
+    'tutorial/intro',
+    'tutorial/create_equipment',
+    'tutorial/create_module',
+    'tutorial/create_consignee',
+    'tutorial/create_drop_zone',
+    'tutorial/equipment_requests',
+    'tutorial/yard',
+    'tutorial/create_train',
+    'tutorial/train_route',
+    'tutorial/generate_trainlist',
+    'tutorial/add_interest',
+  ],
   // But you can create a sidebar manually
   /*
   tutorialSidebar: [

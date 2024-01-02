@@ -7,6 +7,11 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.3.1
+
+- clean up default UI when no layout file is opened
+- by default open previously worked on layout file when application opens
+
 ## ModuOps 5.3.0
 
 - can select multiple car types when creating work orders. Each car type selected creates a work order for that car type.
