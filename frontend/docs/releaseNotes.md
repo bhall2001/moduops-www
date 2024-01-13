@@ -10,7 +10,8 @@ All notable changes to ModuOps
 ## ModuOps 5.3.1
 
 - clean up default UI when no layout file is opened
-- by default open previously worked on layout file when application opens
+- adds an option on preference screen to open last layout file when app opens
+- fix issues related to the new recently opened menu
 
 ## ModuOps 5.3.0
 

@@ -1,13 +1,17 @@
 # 9. Generate Trainlist
 
-Now the final step is to generate a trainlist for crews to use while operating the layout. In the left sidebar click `Trainlists` to navigate to the trainlists screen. The screen will show all the trains that have been created.
+Now, for the final step, let's generate a trainlist for crews to use while operating the layout. Trainlists are the crew instructions needed to operate a train on the layout.
 
-Now click `TRAIN1` to highlight it. This is how we tell ModuOps which train we would like to generate a trainlist for.
+1. In the left sidebar, click `Trainlists` to navigate to the trainlists screen. The screen will show all the trains that have been created.
 
-We will leave all the default settings as they are for our tutorial. Once a train is selected, click the "Generate Trainlist" button. A small preview of the created trainlist is displayed.
+2. Now, click `TRAIN1` to highlight it. This is how we tell ModuOps which train we would like to generate a trainlist for.
+
+3. Leave all the default settings as they are for our tutorial. Once a train is selected, click the "Generate Trainlist" button. A small preview of the created trainlist is displayed on the right side of the screen.
 
 :::note
-The preview is intended to show you in general that a trainlist was created and what it will look like once printed. The preview is not intended to be readable.
+The preview is intended to give you a general idea that a trainlist was created and what it will look like once printed. The preview is not intended to be readable.
 :::
 
-Now that we have created a trainlist, the next step is to print the trainlist. On the Trainlist screen click the `Print` button to print the trainlist.
+4. Now that we have created a trainlist, the next step is to print it. On the Trainlist screen, click the `Print` button to print the trainlist.
+
+5. With the trainlist printed, the crew is ready to grab a throttle, some power, and get to work!

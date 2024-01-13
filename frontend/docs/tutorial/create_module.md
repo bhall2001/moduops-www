@@ -1,17 +1,31 @@
 # 2. Create Module
 
-Next up we need to create a Module for our layout. Click `Modules/Towns` in the left sidebar. Now click the `New` button over the column marked `Modules/Towns`. A new module is created.
+Moving forward, let's create a Module for our layout in ModuOps. Modules are standard nomenclature typically used with modular layouts. If you are setting up your home or a club layout with ModuOps, you can use Towns synonymously with modules.
 
-We need to add some basic information for the module. Let's name our module by typing `Somewhere in the world` in the `Name` field and `Somewhere` in the short field. There are other fields you can fill in but they are all optional. Click `Done`.
+## Define a module
 
-Our new module "Somewhere in the world" is listed as a Module/Town in our layout.
+1. Click `Modules/Towns` in the left sidebar.
+2. Click the `New` button located in the column marked `Modules/Towns` to create a new module.
 
-## Module key concepts
+Now, let's add some basic information for the module:
 
-ModuOps modules/towns have 2 very important concepts -- they contain consignees and drop zones.
+- In the `Name` field, type `Somewhere in the world`.
+- In the `Short` field, type `Somewhere`.
 
-A consignee is a business that either produces or consumes commodities. Consignees generate equipment requests resulting in specific equipment being delivered on a train.
+There are additional optional fields you can fill in, but for now, let's keep it simple. Click `Done`.
 
-Drop zones are sections of track where equipment can be dropped. A drop zone can be defined as the full length of a siding, there may be multiple drop zones per siding, or a drop zone could even be longer than the physical siding.
+Your new module, "Somewhere in the world," is now listed as a Module/Town in our layout.
 
-With these ideas in mind, we will create our first Consignee and drop zone for our layout.
+## Module Key Concepts
+
+ModuOps modules/towns revolve around two crucial concepts: consignees and drop zones.
+
+### Consignees
+
+A consignee is a business that either produces or consumes commodities. Consignees generate equipment requests, leading to specific equipment being delivered on a train.
+
+### Drop Zones
+
+Drop zones are sections of track where equipment can be dropped. Drop zones can be defined as the full length of a siding or as having multiple drop zones per siding. In fact, a drop zone could even be longer than the physical siding.
+
+With these concepts in mind, let's proceed to create our first Consignee and drop zone for our layout.

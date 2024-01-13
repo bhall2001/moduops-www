@@ -1,17 +1,24 @@
 # 1. Create Equipment
 
-The first step when starting out is to create equipment that can haul goods for our layout. In ModuOps, equipment is referenced by type not by reporting marks. This is a key feature of the application.
+When getting started with ModuOps, the initial step is to create equipment capable of hauling goods for your layout. In ModuOps, equipment is referenced by type rather than reporting marks, a distinctive feature of the application.
 
-To get things started, we will create a 50 foot box car.
+## Creating a 50-Foot Box Car
 
-Click `Equipment Register` in the left sidebar menu. This takes you to the Equipment Register screen. Now click the `New` button. A new piece of equipment is created.
+1. Navigate to the `Equipment Register` in the left sidebar menu.
+2. Click on the `New` button to create a new piece of equipment.
+3. In the `Classification` popup menu, select `X - Box`.
+4. Provide the following details:
 
-Next we need to add the details of the equipment. In the `Classification` popup menu select `X - Box`. In the `Car Description:` field enter `Boxcar`. In the field labeled `Short Description:` enter `Box`. In the length field enter `50` indicating the length is 50 feet.
+   - `Car Description:` Enter `Boxcar`.
+   - `Short Description:` Enter `Box`.
+   - `Length:` Enter `50` to indicate the length as 50 feet.
 
 :::note
 Fields with a red label are required in ModuOps.
 :::
 
-Click `Done` in the left sidebar menu to return to the Equipment Register screen. The 50 foot boxcar is now displayed in the equipment registry.
+5. Click the `Done` button to return to the Equipment Register screen.
 
-We now have a single piece of equipment that we can schedule on a train.
+The 50-foot boxcar is now displayed in the equipment registry.
+
+Now you have a single piece of equipment ready to be scheduled on a train. This process lays the foundation for efficiently managing equipment in ModuOps.
