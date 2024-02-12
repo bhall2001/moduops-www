@@ -21,6 +21,7 @@ const sidebars = {
     'terminology',
     'dashboard',
     'layout',
+    'xchange',
     'equipment',
     'train',
     'comments',
