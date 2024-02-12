@@ -20,7 +20,7 @@ Add a short description of your equipment (12 characters max).
 
 In many situations, ModuOps uses the short description of your equipment. There are a lot of options for how to use the short description. This could be a shortened version of the longer description, or possibly a code such as the standard AAR code for the equipment. For more information on AAR codes as they pertain to model railroads, we recommend the efforts of the Ops Sig group at [https://www.opsig.org/files/resources/AARFreightCarCodes.pdf](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf).
 
-The length of the equipment you define should be in scale feet. Make sure you stay consistent with the unit of measurement when defining other options requiring a length.
+The length of the equipment you define is intended to be in scale feet. However technically the unit is arbitrary and technically can represent any unit desired. Make sure you stay consistent with the unit of measurement when defining other options requiring a length.
 
 Remarks are optional when defining the equipment. The remarks are typically displayed on the output form when the car type is selected for use on a train. The remarks are intended for the crew handling the equipment and may contain information such as &quot;Hazardous&quot; or &quot;Flammable&quot;.
 

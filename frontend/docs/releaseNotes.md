@@ -7,6 +7,18 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.4.0
+
+- updated UI on Modules/Towns screen
+- modules can now be added and removed from layout on Modules/Towns screen
+- adds Layout screen where information about the layout can be added
+- Preferences moved to Preferences menu (Windows Edit menu) or Settings menu (Mac OS X Application menu)
+- relabeled "Random" scheduling to "Mad River and Big Timber" on Trainlist screen
+- adds notice on train route screen when Mad River and Big Timber is selected on Trainlist screen
+- fixed train module limit so it now correctly limits modules (does not apply to Mad River and Big Timber scheduler)
+- fixed car length of 0 results in odd trainlists
+- misc other bug fixes
+
 ## ModuOps 5.3.1
 
 - clean up default UI when no layout file is opened
