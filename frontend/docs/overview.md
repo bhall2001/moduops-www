@@ -32,7 +32,7 @@ ModuOps requires a sourcing yard sending cars to Consignees. Large layouts can b
 
 ModuOps is Stateless. That means that the system does not store any information about the past, present or future state of the layout. Another advantage in a layout where "Free-running" occurs between formal operations sessions. ModuOps does not need the layout to be setup in any particular manner prior to an operating session beginning.
 
-ModuOps does not have the ability to schedule a "Pick Up". This is the direct result of the software being Stateless. Future stateful scheduling engines are planned and will include this feature.
+ModuOps does not have the ability to schedule a "Pick Up". This is the direct result of the software being Stateless. Future stateful scheduling engines are planned and will be included this feature.
 
 ModuOps currently offers 2 scheduling engines, the original MRBT random car type engine (each request has a 1/n chance of selection) and a weighted selection engine.
 

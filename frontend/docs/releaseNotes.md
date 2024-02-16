@@ -16,6 +16,7 @@ All notable changes to ModuOps
 - relabeled "Random" scheduling to "Mad River and Big Timber" on Trainlist screen
 - adds notice on train route screen when Mad River and Big Timber is selected on Trainlist screen
 - fixed train module limit so it now correctly limits modules (does not apply to Mad River and Big Timber scheduler)
+- drop zone ref field now supports 11 character input. field was formally zone id.
 - fixed car length of 0 results in odd trainlists
 - misc other bug fixes
 

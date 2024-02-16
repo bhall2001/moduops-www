@@ -26,7 +26,7 @@ const HiliteList: HiliteItem[] = [
   {
     title: 'Drop zones',
     description:
-      'Define track segments where rolling stock can be loaded or unloaded. Able to define large sidings holding large cuts of cars all the way down to a specific door at a warehouse, and everything in between!',
+      'Define track segments where equipment can be loaded or unloaded. Able to define large sidings holding large cuts of cars all the way down to a specific door at a warehouse, and everything in between!',
   },
   {
     title: 'Equipment needs',
