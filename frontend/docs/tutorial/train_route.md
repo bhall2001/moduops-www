@@ -20,4 +20,4 @@ This action will add `Somewhere in the world` to the train's route. The default 
 
 6. Click `Done` to return to the train screen.
 
-This step ensures that `TRAIN1` has a designated route to follow, including servicing the consignee at `Somewhere in the world`.
+This step ensures that `TRAIN1` has a designated route to follow, which right now is servicing the consignee on our module `Somewhere in the world`.

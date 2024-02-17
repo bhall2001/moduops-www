@@ -1,15 +1,13 @@
 # 2. Create Module
 
-Moving forward, let's create a Module for our layout in ModuOps. Modules are standard nomenclature typically used with modular layouts. If you are setting up your home or a club layout with ModuOps, you can use Towns synonymously with modules.
+Moving forward, let's create a Module for our layout in ModuOps. Modules are standard nomenclature typically used with modular layouts. If you are setting up your home or a club layout with ModuOps, you can use towns synonymously with modules.
 
 ## Define a module
 
 1. Click `Modules/Towns` in the left sidebar.
-2. Click the `New` button located in the column marked `Modules/Towns` to create a new module.
+2. Click the `New` button located above the column marked `Modules/Towns` to create a new module. The module Edit screen opens
+3. In the `Name` field, type `Somewhere in the world`.
 
-Now, let's add some basic information for the module:
-
-- In the `Name` field, type `Somewhere in the world`.
 - In the `Short` field, type `Somewhere`.
 
 There are additional optional fields you can fill in, but for now, let's keep it simple. Click `Done`.

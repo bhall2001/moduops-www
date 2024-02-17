@@ -2,10 +2,11 @@
 
 Now, let's create a Consignee for our module in ModuOps.
 
-1. On the `Modules/Towns` screen, navigate to the `Consignee` tab on the right half of the screen.
-2. Under the column marked `Consignees`, click `New` to create a new consignee.
-3. Name the consignee `Warehouse`. The name is the only required item when creating a Consignee.
-4. Click `Create`.
+1. On the `Modules/Towns` screen, click to select our module `Somewhere in the world`.
+2. Click the `Consignee` tab on the right half of the screen to display the list of consignees for our module.
+3. Under the column marked `Consignees`, click `New` to create a new consignee.
+4. Name the consignee `Warehouse`. The name is the only required item when creating a Consignee.
+5. Click `Create`.
 
 Congratulations! Your new Consignee, "Warehouse," is now created.
 

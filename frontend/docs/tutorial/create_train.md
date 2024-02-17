@@ -3,8 +3,7 @@
 Now that we have a Consignee requesting equipment and a yard to originate from, it's time to create a train.
 
 1. In the left sidebar menu, click `Trains`. This navigates us to the trains screen.
-
-2. Now, click `New` to create a train. For the symbol, enter `TRAIN1`. The train will depart from and terminate at our Rail Yard. Select `Rail Yard` in the popup menu for both departure and terminates.
+2. Click `New` to create a train. For the symbol, enter `TRAIN1`. The train will depart from and terminate at our Rail Yard. Select `Rail Yard` in the popup menu for both departure and terminates.
 
 3. The last required piece of information we need for the train is to set the desired length of the train. This number is the maximum potential length of equipment that could be added to a train.
 
