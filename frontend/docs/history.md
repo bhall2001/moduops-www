@@ -9,12 +9,12 @@ slug: /
 
 Welcome to ModuOps!
 
-ModuOps came into being from a desire by the New England Free-mo group to create a car routing system. The primary goal was to reduce the amount of administration needed to get a Modular layout up and operating.
+ModuOps was born out of the New England Free-mo group's need to streamline car routing for model railroad operations. The primary aim was to simplify the administrative tasks required to set up and manage a Modular layout effectively.
 
-ModuOps finds it's roots in a package called "Mad River and Big Timber" \(MRBT for short\). MRBT came from a Modular group in California in the 90s. Their goal was also to get a Modular layout up and running with minimal administrative overhead.
+Rooted in the legacy of the "Mad River and Big Timber" (MRBT) system developed by a California-based Modular group in the 1990s, ModuOps builds upon this foundation with modern enhancements. While MRBT served its purpose well, its last update was in 2000, and using outdated laptops to run the software became increasingly impractical as time progressed.
 
-MRBT was a product of the late 90s and appears to have seen its last update in the year 2000. The New England Free-mo group used old laptops up until about 2015 to run the MRBT software. However, there are just too many challenges in doing that in today's modern world.
+ModuOps preserves the core functionalities of MRBT while introducing significant improvements. It features a modern graphical user interface (GUI) for enhanced user experience and incorporates more sophisticated routing logic.
 
-ModuOps essentially replicates the MRBT software package with some changes. The application has a modern graphical user interface \(GUI\). Routing logic is more sophisticated than the original MRBT. The hooks are in place to take ModuOps online and integrate today's modern smartphone and tablet technologies.
+ModuOps isn't limited to Free-mo layouts; it's utilized by various modular clubs, static club layouts, and home setups alike. With its versatility, ModuOps offers a convenient solution to introduce operational dynamics to any model railroad layout effortlessly!
 
-For those who care, ModuOps is written in [Livecode](https://livecode.com). Livecode is a modern, rapid development tool incorporating a number of advanced capabilities. ModuOps uses a SQLite database and is available on Windows and Macintosh systems.
+For those interested, ModuOps is developed using [Livecode](https://livecode.com), a cross platform, rapid development tool. ModuOps is compatible with both Windows and Macintosh systems, ensuring accessibility for a wide range of users.

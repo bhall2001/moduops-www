@@ -48,7 +48,7 @@ Once you've added the ModuOps Xchange to your Google Drive, you can access it to
 
 The module is now added to your current layout.
 
-:::note
+:::info
 You can select multiple modules using your operating system's standard key combinations to add multiple files simultaneously.
 :::
 

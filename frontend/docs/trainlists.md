@@ -1,24 +1,18 @@
 # Trainlists
 
-Trainlist are the output used by train crews to operate a layout. Trainlists consist of randomly generated instructions for crew based on information from the modules' consignees, drop zones and equipment requests.
-
-Trainlists are intended to give instructions to crew in situations where the layout has never existed before in environments where there are a number of distractions. ModuOps was originally written to balance switching operations on Free-mo layouts during train shows. Trainlists tend to provide more instructions than you would find when operating with car cards or a standard switchlist.
-
-## Trainlist screen
-
-Navigate to the trainlist screen by clicking `Trainlists` in the sidebar menu. The trainlist screen lists all trains setup in the layout. On the right side is a preview of the last generated trainlist. This preview is intended to visually represent the trainlist but may not be readable.
-
-## What is a trainlist?
-
 Trainlists documents guide crew members operating trains on the layout. Acting as a script, their purpose is to facilitate successful completion of tasks by providing a structured workflow.
 
 Designed with the operational challenges of modular layouts in mind, trainlists aim to streamline operations, especially in dynamic environments like train shows. They offer a clear overview of tasks to be performed, accommodating crew members of varying skill levels. The comprehensive nature of trainlists may seem verbose to some, but this intentional detail enhances crew performance.
 
 Each trainlist begins with the layout header, followed by train name, symbol, departure yard details, and crew instructions. As the train progresses, scheduled work at specific modules or towns is indicated, guiding crew members to their next destination. Instructions for set out work are provided, including equipment details and drop zone locations. Crew members mark tasks as completed, ensuring efficient workflow.
 
-Trainlists may also include train orders interspersed with other tasks, providing additional instructions such as specific turn locations. Upon completion of assigned tasks, the trainlist concludes with terminating yard details and space for crew comments.
+Trainlists may also include train orders interspersed with other tasks, providing additional instructions such as specific turn locations or details on how an industry should be worked. Upon completion of assigned tasks, the trainlist concludes with terminating yard details and space for crew comments.
 
-Trainlists serve as invaluable tools for train operations, offering clarity, organization, and guidance throughout the layout.
+Trainlists serve as invaluable tools for train operations, offering clarity, organization, and guidance.
+
+## Trainlist screen
+
+Navigate to the trainlist screen by clicking `Trainlists` in the sidebar menu. The trainlist screen lists all trains setup in the layout. On the right side is a preview of the last generated trainlist. This preview is intended to visually represent the trainlist but may not be readable.
 
 ## Trainlist options
 

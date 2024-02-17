@@ -7,7 +7,7 @@ Now that we have a Consignee requesting equipment and a yard to originate from, 
 
 3. The last required piece of information we need for the train is to set the desired length of the train. This number is the maximum potential length of equipment that could be added to a train.
 
-:::note
+:::info
 Train length does not include the length of motive power or caboose. The value is the length of equipment that could be added to a train.
 :::
 

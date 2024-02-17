@@ -1,6 +1,17 @@
+---
+title: Introducing the ModuOps Xchange
+description: a central repository for ModuOps modules used in model railroad operations
+slug: moduops-xchange
+date: 2024-02-17
+draft: true
+authors: bhall
+---
+
 # Introducing the ModuOps Xchange
 
 ModuOps simplifies operations on modular layouts, making it an invaluable tool for those creating operating plans. However, finding the necessary modules for a specific layout has proven challenging. To address this, I've developed the ModuOps Xchange – a central repository for modules, easily accessible on the Internet, and organized for efficient navigation.
+
+<!-- truncate -->
 
 ## Worldwide Module Repository
 

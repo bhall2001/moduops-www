@@ -8,7 +8,7 @@ Now, we need to create an equipment requests for our Consignee This will bring o
 
 3. Click `Edit` under the column marked for `Consignees`.
 
-:::note
+:::info
 In ModuOps, most lists allow you to double-click a line. In most cases, this will open the edit screen for the item that was clicked.
 :::
 

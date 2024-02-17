@@ -13,7 +13,7 @@ When getting started with ModuOps, the initial step is to create equipment capab
    - `Short Description:` Enter `Box`.
    - `Length:` Enter `50` to indicate the length as 50 feet.
 
-:::note
+:::info
 Fields with a red label are required in ModuOps.
 :::
 

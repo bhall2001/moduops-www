@@ -15,18 +15,38 @@
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   docsSidebar: [
-    'history',
-    'overview',
-    'quickstart',
+    {
+      type: 'category',
+      label: 'Start Here',
+      items: ['history', 'overview', 'quickstart'],
+    },
     'xchange',
-    'dashboard',
-    'layout',
-    'equipment',
-    'module',
-    'trainlists',
-    'train',
-    'terminology',
-    'comments',
+    {
+      type: 'category',
+      label: 'Guides',
+      items: [
+        'dashboard',
+        'layout',
+        'equipment',
+        {
+          type: 'category',
+          label: 'Modules/Towns',
+          items: ['module', 'drop-zones', 'consignees', 'equipment-requests'],
+        },
+        'trainlists',
+        {
+          type: 'category',
+          label: 'Trains',
+          items: ['train', 'train-route', 'train-orders'],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Appendix',
+      items: ['terminology', 'comments'],
+    },
+
     'faq',
     'releaseNotes',
   ],

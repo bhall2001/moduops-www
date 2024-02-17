@@ -4,7 +4,7 @@ In ModuOps, all trains must originate from and return to a yard. Yards are a spe
 
 1. In the `Modules/Towns` column, click `New` to create a new module/town. Set the name to `Rail Yard` and the short name to `Yard`.
 
-:::note
+:::info
 You can name modules/towns whatever you want. For the purpose of this tutorial, we are using generic names, but feel free to use any name you prefer.
 :::
 
@@ -20,7 +20,7 @@ We will create our yard drop zone in the "Rail Yard" module/town we just created
 
 5. Click the `New` button under the `Drop Zones` column to create a new drop zone. Type "Rail Yard" for the name and give it a length of 500.
 
-:::note
+:::info
 When determining the length for yard drop zones, set the value to the total capacity of **ALL** tracks in the yard.
 :::
 

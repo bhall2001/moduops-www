@@ -10,7 +10,7 @@ Now, for the final step, let's generate a trainlist for crews to use while opera
 
 4. Click the "Generate Trainlist" button. A small preview of the created trainlist is displayed on the right side of the screen.
 
-:::note
+:::info
 The preview is intended to give you a general idea that a trainlist was created and what it will look like once printed. The preview is not intended to be readable.
 :::
 

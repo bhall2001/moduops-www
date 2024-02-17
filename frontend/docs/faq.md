@@ -19,7 +19,7 @@ The recommended approach is to add the following comment to the Crew Instruction
 
 `<b>PICK UP ALL WHEN DROPPING</b>`
 
-:::note
+:::tip
 You can use basic html syntax when creating comments. the `<b></b>` in the example above will make the text appear bold.
 :::
 

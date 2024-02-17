@@ -6,7 +6,7 @@ Now that we have a train, let's create a route for it to follow.
 
 2. Now, click the `Route` button. This action opens the train route screen.
 
-:::note
+:::info
 Double-clicking a train will also open the train route screen.
 :::
 
