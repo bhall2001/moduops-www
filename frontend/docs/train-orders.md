@@ -25,11 +25,11 @@ If a train is a turn with the intention that a turn take place at a specific loc
 
 By adding `<b>TURN at Eugene</b>` to a train order, this line can be added to the train's route at the position in the sequence where the turn should take place.
 
-![route-train-order](route-train-order.png)
+![route-train-order](/img/route-train-order.png)
 
 This train route is rendered on the trainlist as follows:
 
-![turn-example](turn-example.png)
+![turn-example](/img/turn-example.png)
 
 The trainlist will display the train order text each time a trainlist is generated.
 
@@ -49,11 +49,11 @@ These instructions can be added to a train route at the point in the sequence wh
 
 The above train orders on a train's route may look like this:
 
-![transfer train order](transfer-train-order.png)
+![transfer train order](/img/transfer-train-order.png)
 
 When a trainlist is generated, the trains route will appear as follows:
 
-![transfer trainlist example](transfer-trainlist.png)
+![transfer trainlist example](/img/transfer-trainlist.png)
 
 Notice how the train order lines instructing to "Set out Lackawanna Local transfer cut to Transfer Track 1" are formatted similarly to other instructions on the trainlist. This formatting consistency occurs because when the train orders were entered on the train edit screen, they were formatted to match the output of a ModuOps trainlist.
 
