@@ -23,4 +23,4 @@ As an example, if a consignee has 2 drop zones, Track 1 and Track 2, and needs t
 
 The scheduling algorithm may schedule multiple pieces of equipment to the same drop zone if the length of the drop zone allows.
 
-ModuOps currently does not schedule pickups. It is common practice to pick up all equipment in a drop zone when dropping. I personally add a note to the train lists for the crew stating "PICKUP ALL WHEN DROPPING". Note: there may be special instructions in the train order that supersede picking up all when dropping.
+ModuOps currently does not schedule pickups. It is common practice to pick up all equipment in a drop zone when dropping. I personally add a note to the train lists for the crew stating `<b>PICKUP ALL WHEN DROPPING</b>`. Note: there may be special instructions in the train order that supersede picking up all when dropping.

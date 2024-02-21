@@ -29,6 +29,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          sidebarCollapsed: true,
           // Please change this to your repo.
           editUrl:
             'https://github.com/bhall2001/moduops-www/tree/main/packages/create-docusaurus/templates/shared/',
@@ -83,6 +84,11 @@ const config = {
             position: 'right',
           },
         ],
+      },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
       },
       footer: {
         style: 'dark',

@@ -32,11 +32,11 @@ ModuOps requires a sourcing yard sending cars to Consignees. Large layouts can b
 
 ModuOps is Stateless. That means that the system does not store any information about the past, present or future state of the layout. Another advantage in a layout where "Free-running" occurs between formal operations sessions. ModuOps does not need the layout to be setup in any particular manner prior to an operating session beginning.
 
-ModuOps does not have the ability to schedule a "Pick Up". This is the direct result of the software being Stateless. Future stateful scheduling engines are planned and will include this feature.
+ModuOps does not have the ability to schedule a "Pick Up". This is the direct result of the software being Stateless. Future stateful scheduling engines are planned and will be included in the future.
 
-ModuOps currently offers 2 scheduling engines, the original MRBT random car type engine (each request has a 1/n chance of selection) and a weighted selection engine.
+ModuOps currently offers 2 scheduling engines, the original MRBT random engine (each request has a 1/n chance of selection) and a weighted selection engine.
 
-The weighted selection uses a cars per week number given to the car type. In addition to the weighted selection, it is possible to skews selections to facilitate car blocking.
+The weighted selection uses a cars per week number given to requests. In addition to the weighted selection, it is possible to skews selections to facilitate car blocking.
 
 The Application as it stands today is based on MRBT's original flow. That means that all traffic originates at a yard and travels to a consignee. It is important to remember this sequence when creating operating plans.
 
@@ -44,11 +44,11 @@ The Application as it stands today is based on MRBT's original flow. That means 
 
 ModuOps works GREAT with home layouts. In fact, there are quite a few home layouts switching from car cards to ModuOps for formal Operating Sessions. Many of the concerns that Free-mo Ops Chiefs have transfer directly to operations on a home layout.
 
-In fact, a home layout is the perfect place to start before diving in to be a Free-mo layout Ops Chief. Most home layouts are smaller than Modular Layouts. Starting with a small layout allows you to learn how ModuOps works.
+In fact, a home layout is the perfect place to start before diving in as a Free-mo layout Ops Chief. Most home layouts are smaller than Modular Layouts. Starting with a small layout allows you to learn how ModuOps works.
 
 ## Club Layouts
 
-We even have clubs using ModuOps. A great benefit of ModuOps is there is no setup required for an ops session. This gives clubs the flexibility to have host formal operating sessions as well as open "free running" sessions. ModuOps does not care what state the layout is left in. An operating session can start at any time no matter where cars are on the layout.
+ModuOps is an excellent choice for static club layouts. A great benefit of ModuOps is there is no setup required for an ops session. This gives clubs the flexibility to have host formal operating sessions as well as open "free running" sessions intermixed. ModuOps does not care what state the layout starts at or is left in. An operating session can start at any time no matter where cars are on the layout.
 
 ## Contacts
 
@@ -60,4 +60,6 @@ If you need to reach me directly best way is bhall underscore 2001 at yahoo dot 
 
 ## How Much?
 
-Good question. Developing a software such as this does incur costs. I've invested time in training, development tools, the website and time in creating this system. The app is Donation-ware. If you feel compelled to donate please contact me for details on how to make a donation. Thank you!
+Good question. Developing a software such as this does incur costs. I've invested time in training, development tools, the website and time in writing and maintaining the application.
+
+ModuOps is Donation-ware. If you feel compelled to donate, please contact Bob Hall for details on how to make a donation. Thank you!

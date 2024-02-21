@@ -1,6 +1,6 @@
 # Equipment Register
 
-Every Railroad must have rolling stock to ship commodities. The Equipment Register creates the types of equipment available for use on the layout.
+Every Railroad must have equipment to ship commodities. The Equipment Register creates the types of equipment available for use on the layout.
 
 ![Equipment Register](/img/equipment-register.svg)
 
@@ -12,17 +12,31 @@ To create new equipment, click the &quot;New&quot; button. This takes you to the
 
 Items in **red** are required elements when defining your equipment.
 
-Select the equipment's classification from the drop down list. The list contains standard classification for Equipment.
+**Classification** - Select the equipment's classification from the drop down list. The list contains standard classification for Equipment.
 
-Select the era of the equipment from the Era drop down list. The options allow yard crews to select a car to best fit the era requested.
+:::tip
+Selecting a class for equipment helps to organize equipment on various screens in ModuOps.
+:::
 
-Add a short description of your equipment (12 characters max).
+**Era** - Select the era of the equipment from the Era drop down list. The options allow yard crews to select a car to best fit the era requested.
 
-In many situations, ModuOps uses the short description of your equipment. There are a lot of options for how to use the short description. This could be a shortened version of the longer description, or possibly a code such as the standard AAR code for the equipment. For more information on AAR codes as they pertain to model railroads, we recommend the efforts of the Ops Sig group at [https://www.opsig.org/files/resources/AARFreightCarCodes.pdf](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf).
+**Car description (required)** - The description of the equipment
 
-The length of the equipment you define should be in scale feet. Make sure you stay consistent with the unit of measurement when defining other options requiring a length.
+**Short description (required)** - Add a short description of your equipment (12 characters max).
 
-Remarks are optional when defining the equipment. The remarks are typically displayed on the output form when the car type is selected for use on a train. The remarks are intended for the crew handling the equipment and may contain information such as &quot;Hazardous&quot; or &quot;Flammable&quot;.
+**Code** - Abbreviation of the equipment class and type. This is intended to be used for AAR codes.
+
+In many situations, ModuOps uses the short description of your equipment. There are a lot of options for how to use the short description. This could be a shortened version of the longer description, or possibly a code such as the standard AAR code for the equipment.
+
+:::tip
+Right click links to open in a new browser tab
+:::
+
+For more information on AAR codes as they pertain to model railroads, we recommend the efforts of the Ops Sig group at [https://www.opsig.org/files/resources/AARFreightCarCodes.pdf](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf).
+
+**Length (required)** - The length of the equipment you define is intended to be in scale feet. However technically the unit is arbitrary and technically can represent any unit desired. Make sure you stay consistent with the unit of measurement when defining other options requiring a length.
+
+**Remarks** Remarks are optional when defining the equipment. The remarks are typically displayed on the output form when the car type is selected for use on a train. The remarks are intended for the crew handling the equipment and may contain information such as &quot;Hazardous&quot; or &quot;Flammable&quot;.
 
 When you have finished entering all the equipment information on the form, click &quot;Done&quot;.
 

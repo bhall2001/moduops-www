@@ -19,7 +19,7 @@ The recommended approach is to add the following comment to the Crew Instruction
 
 `<b>PICK UP ALL WHEN DROPPING</b>`
 
-:::note
+:::tip
 You can use basic html syntax when creating comments. the `<b></b>` in the example above will make the text appear bold.
 :::
 
@@ -29,7 +29,7 @@ This instructs the crew that, before dropping a set of cars, they should pick up
 
 Drop zones are designated segments of track where equipment can be placed. They are not meant to establish the length of a siding.
 
-These zones delineate specific areas along the track where rolling stock can be set out. Each siding may feature one or more drop zones. It's important to note that the combined length of drop zones is not required to match the overall length of the siding.
+These zones delineate specific areas along the track where equipment can be set out. Each siding may feature one or more drop zones. It's important to note that the combined length of drop zones is not required to match the overall length of the siding.
 
 In practice, it is advisable for the total length of drop zones associated with a siding to be less than the siding's actual length. This ensures ample space between cuts of cars and helps prevent fouling turnouts.
 
@@ -37,7 +37,7 @@ In practice, it is advisable for the total length of drop zones associated with 
 
 That's a great question! There are a couple of ways that you could do this. But my preferred way is to replicate real-world scenarios when handling off spot tracks.
 
-An off spot track essentially functions as an overflow area. If a cut of cars cannot fit into the designated drop zone, the excess rolling stock is placed on the off spot track.
+An off spot track essentially functions as an overflow area. If a cut of cars cannot fit into the designated drop zone, the excess equipment is placed on the off spot track.
 
 In ModuOps, you can simulate this is by overloading the drop zone. To overload the drop zone simply increase the length of the drop zone to be longer than it actually is.
 
@@ -57,13 +57,11 @@ It's unlikely you will have a 15-foot-long piece of equipment, therefore the fin
 
 ## Does train length include locomotive and caboose lengths?
 
-No, the train length specified only includes the rolling stock. Please adjust the entered train length to account for locomotive and caboose lengths.
+No, the train length specified only includes the equipment. Please adjust the entered train length to account for locomotive and caboose lengths.
 
 ## Norton is telling me that some files are unsafe and removes them.
 
-~~This is a side effect of the app not being code signed and trusted. You will need to disable Norton in order to run the application. Head to the [Norton Support forums](https://support.norton.com/sp/en/us/norton-360/current/solutions/v15457075) to learn how to temporarily disable Norton. Follow instructions in the section labeled "Exclude disks, folders, and files from scans"~~
-
-ModuOps is now code signed and trusted. You should not have issues with Norton or any other virus protection software.
+This is a side effect of the app not being trusted by Norton. You will need to disable Norton in order to run the application. Head to the [Norton Support forums](https://support.norton.com/sp/en/us/norton-360/current/solutions/v15457075) to learn how to temporarily disable Norton. Follow instructions in the section labeled "Exclude disks, folders, and files from scans"
 
 ## You need to add a Save option in the File menu.
 

@@ -1,6 +1,6 @@
 # 1. Create Equipment
 
-When getting started with ModuOps, the initial step is to create equipment capable of hauling goods for your layout. In ModuOps, equipment is referenced by type rather than reporting marks, a distinctive feature of the application.
+When getting started with ModuOps, the initial step is to create equipment capable of hauling goods for your layout. Equipment is referenced by type rather than reporting marks, a distinctive feature of ModuOps.
 
 ## Creating a 50-Foot Box Car
 
@@ -13,7 +13,7 @@ When getting started with ModuOps, the initial step is to create equipment capab
    - `Short Description:` Enter `Box`.
    - `Length:` Enter `50` to indicate the length as 50 feet.
 
-:::note
+:::info
 Fields with a red label are required in ModuOps.
 :::
 
