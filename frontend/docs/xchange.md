@@ -13,7 +13,7 @@ With the ModuOps Xchange mounted directly to your local file system, accessing a
 The initial release of the ModuOps Xchange is hosted on Google Drive, ensuring accessibility to users around the world. By installing Google Drive on your system, you can easily access the Xchange using the shared link provided. Additionally, integrating the ModuOps Xchange with your local file system is straightforward, enhancing convenience and usability.
 
 :::tip
-To open links in a new browser tab, simply right-click on the link and select "Open link in new tab" from the context menu.
+To open links in a new browser tab, simply right-click on the link and select "Open link in New Tab" from the context menu.
 :::
 
 Ensure you have Google Drive installed on your local system. [Download Drive for desktop here](https://www.google.com/drive/download/).
@@ -24,9 +24,9 @@ Once Drive is installed, access the ModuOps Xchange with the following shared li
 
 ## Local access
 
-Adding the ModuOps Xchange to your local Google Drive is straightforward:
+Adding a shortcut to the ModuOps Xchange on your local Google Drive is straightforward:
 
-1. Click the [ModuOps Xchange link](http://tinyurl.com/moduops-xchange).
+1. Right click the [ModuOps Xchange link](http://tinyurl.com/moduops-xchange) and select `Open link in New Tab`.
 2. At the top of the screen, open the menu next to the moduops-xchange text (click the down-arrow).
 3. From the menu, select `Organize`.
 
