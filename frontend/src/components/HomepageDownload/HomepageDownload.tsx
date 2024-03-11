@@ -7,7 +7,7 @@ export default function HomepageDownload() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__subtitle">Download for FREE!</h1>
-        <h4>version 5.4.0</h4>
+        <h4>version 5.4.1</h4>
         <div className={styles.buttons} style={{ paddingBottom: '2rem' }}>
           <a
             href="https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops/ModuOps_Setup.exe"
