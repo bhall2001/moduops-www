@@ -7,6 +7,11 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.4.1
+
+- fix issue where Courier font name changed over the years
+- re-enable 1/2 page MRBT trainlist
+
 ## ModuOps 5.4.0
 
 - updated UI on Modules/Towns screen
