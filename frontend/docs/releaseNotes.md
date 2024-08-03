@@ -7,6 +7,15 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.5.1
+
+- changes to switchlist format to provide more room for reporting marks
+
+## ModuOps 5.5.0
+
+- adds switch list option to trainlists
+- change field labeled `Code` to `AAR code` on Equipment edit screen
+
 ## ModuOps 5.4.1
 
 - fix issue where Courier font name changed over the years
