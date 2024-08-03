@@ -28,7 +28,7 @@ You can double click a drop zone to open the edit screen.
 
 On the drop zone edit screen there are numerous fields and flags that can be set.
 
-**Zone Ref** - abbreviated text string to reference the drop zone by. Maximum 11 characters, all caps. At this time this value is not used in the application.
+**Zone Ref** - abbreviated text string to reference the drop zone by. Maximum 10 characters, all caps. This field is required when using switch lists.
 
 **Name (required)** - The name of the drop zone
 

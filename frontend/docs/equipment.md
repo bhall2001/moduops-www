@@ -24,15 +24,13 @@ Selecting a class for equipment helps to organize equipment on various screens i
 
 **Short description (required)** - Add a short description of your equipment (12 characters max).
 
-**Code** - Abbreviation of the equipment class and type. This is intended to be used for AAR codes.
-
-In many situations, ModuOps uses the short description of your equipment. There are a lot of options for how to use the short description. This could be a shortened version of the longer description, or possibly a code such as the standard AAR code for the equipment.
+**AAR Code** - Indicate the AAR code for the equipment. AAR codes are required when using the switch list output option.
 
 :::tip
 Right click links to open in a new browser tab
 :::
 
-For more information on AAR codes as they pertain to model railroads, we recommend the efforts of the Ops Sig group at [https://www.opsig.org/files/resources/AARFreightCarCodes.pdf](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf).
+For more information on AAR codes, we recommend the efforts of the Ops Sig group at [https://www.opsig.org/files/resources/AARFreightCarCodes.pdf](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf).
 
 **Length (required)** - The length of the equipment you define is intended to be in scale feet. However technically the unit is arbitrary and technically can represent any unit desired. Make sure you stay consistent with the unit of measurement when defining other options requiring a length.
 
