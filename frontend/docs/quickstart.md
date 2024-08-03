@@ -19,7 +19,7 @@ Here's the order you'll want to follow to get going.
 6. Name the Module/Town to represent you yard and click `Done`
 7. Click the `Drop Zones` tab and click `New` to create a Drop Zone for the yard. Name the drop zone to as you would your yard, assign a length that is the total storage capacity of all tracks in the yard and select `Yard/Interchange/Staging` checkbox to indicate this drop zone is a yard. Click `Done`
 8. Click "New" over the Modules/Towns list to create a Module/Town. Name it for a module/town on your layout. Click `Done`
-9. Click the Consignee tab and `New` to create a Consignee – Enter the name in the Consignee fieldand click `Done`
+9. Click the Consignee tab and `New` to create a Consignee – Enter the name in the Consignee field and click `Done`
 10. Click the Drop Zones tab and `New` to create a Drop Zones - Enter the Name and length of track associated with a Consignee where cars are set out
 11. Click the Consignee tab and double click the consignee you created.
 12. Click `New Request` to add a new equipment request the consignee will make.

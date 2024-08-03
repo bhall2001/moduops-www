@@ -24,7 +24,7 @@ Navigate to the trainlist screen by clicking `Trainlists` in the sidebar menu. T
 
 `Drop Zone Favoring` - a slider that allows you to select the probability of the scheduling engine selecting a drop zone again when it is selected for work. This allows for customization of the probability of filling drop zones before randomly selecting a different drop zone. The knob all the way to the left is 0% probability. All the way to the right is 100% probability. There are 3 other steps each adding 25% probability.
 
-## Scheduling Engines
+## Scheduling engines
 
 ### Mad River and Big Timber
 
@@ -53,3 +53,79 @@ To address such situations, several strategies can be employed:
 - Utilize the MRBT scheduler, offering equal chances for all equipment requests.
 
 The Cars Per Week (CPW) scheduling engine introduces a sophisticated approach to managing equipment requests, aligning with real-world dynamics. By leveraging weighted random selection based on the cars/week field, it accurately reflects the varying demand levels among Consignees.
+
+## Output formats
+
+ModuOps has a number of output formats to choose from.
+
+### Mad River and Big Timber full page
+
+Output a page that mimics the original MRBT full page format. Use this when you would like to use the original formatting of Mad River and Big Timber.
+
+### Mad River and Big Timber half page
+
+Based on the full page MRBT format, this output prints out a 1/2 page intended to be folded down the middle. The format mimics the original MRBT full page format.
+
+### Modern full page
+
+A new format introduced with ModuOps adding more verbose instructions for crew to follow. The modern format's goal is to add crew in successfully completing their jobs with the lowest number of mistakes.
+
+### Modern half page
+
+A new format introduced with ModuOps adding more verbose instructions for crew to follow on a half-page. The page can be folded in half making it easier to carry while performing work. The modern format is more verbose than the original MRBT format with the goal of make crew as successful as possible with additional instructions.
+
+### Switch list NEW!
+
+ModuOps spin on a prototypical switch list. The form is printed on half a page, folded lengthwise. The back page has helpful information for the crew related to the job they need to perform.
+
+The ModuOps switch list requires equipment have an AAR code defined. In addition to this, drop zones are required to have a zone reference defined. If either of these are not defined, the switch list will have no information displayed when work is scheduled with a piece of equipment or a drop zone where the information is missing.
+
+![alt text](/img/switchlist.svg)
+
+The switch list displays the layout name in the header. This is defined on the layout screen. The train symbol is added to the switch list when printing.
+
+The switch list displays the AAR code followed buy the length for each car that needs to be switched in the format of `<AAR CODE>-<equipment length>`. As an example, `XM-50` in the type field indicates a box car of 50 feet is required to be switched.
+
+The `From` column currently displays the source yard of the train.
+
+The `Dest` column displays the drop zone reference where the car is to be placed.
+
+Yard crew are required to add reporting marks for cars in the first column of the switch list. Reporting marks are added to the switch list after a train is assembled but before the crew takes the train from the yard.
+
+The reporting marks field is divided into 2 sections on a diagonal. The upper left triangle is where the crew writes the road name of the equipment being used for the line of the switch list. The lower right triangle is where the crew writes the number of the equipment being used for the line of the switch list.
+
+![reporting marks](/img/reporting_marks.svg)
+
+#### Crew instructions and reference
+
+The 2nd column of the switch list provides crew with information about the work they need to perform. The header details the train information including the name and symbol as well as the number of cars and length.
+
+Any special crew instructions are added to assist the crew in performing their job. This is information taken from the train's crew instructions as well as remarks for the module/towns and consignees they are working.
+
+A handy reference is provided for the equipment on the train. This is a cross reference of the AAR Code to the equipment's description.
+
+Crew will also find a reference for the drop zones they will be working to assist in setting out equipment to the correct zone.
+
+#### Crew convenience
+
+To make it easier to carry a switch list around a layout, fold the switch list in half vertically. We find that the narrow sheet of paper is easier to manage when operating a train than having a full sheet.
+
+## Switch list FAQ
+
+### When I print a switch list there are no equipment or drop zones listed
+
+Switch list uses 2 fields that previously have not been used. If a switch list prints and there is no information displayed then you must enter in the required data for the switch list to render properly.
+
+If the Kind column is blank, return to the Equipment edit screen and add AAR codes to equipment.
+
+If the From or Dest column is blank, return to the Drop Zone edit screen and enter a drop zone abbreviation in the Zone reference field.
+
+### Where can I find AAR codes?
+
+The Opsig group has a handy reference for AAR codes. You can find the reference by [clicking here](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf)
+
+Another option that we find works quite well is to use an online AI tool such as [ChatGPT](https://chatgpt.com) or [Microsoft Bing Copilot](https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx). Simply type in something to the effect of "I have a model railroad that I need AAR codes for operations. What is the AAR code for an insulated box car?"
+
+### Is it possible to print more than 1 page of a switch list?
+
+Currently switch lists will print only 1 page. You will need to modify either the length of the train or limit the number of modules/towns a train services until the work fits on a single page.
