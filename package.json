@@ -14,15 +14,15 @@
   },
   "devDependencies": {
     "@tsconfig/node18": "18.2.4",
-    "aws-cdk-lib": "2.147.3",
+    "aws-cdk-lib": "2.154.1",
     "constructs": "10.3.0",
-    "sst": "2.43.3",
-    "typescript": "5.5.3"
+    "sst": "^2.43.4",
+    "typescript": "5.5.4"
   },
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-    "aws-sdk": "2.1654.0"
+    "aws-sdk": "2.1682.0"
   }
 }
