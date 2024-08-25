@@ -7,9 +7,9 @@ tags: [ModuOps, 'Switch Lists']
 
 Version 5.5.0 of ModuOps introduces switch lists to the application. Switch lists are essential documents used by crews during switching operations. The ModuOps switch list is based on prototypical forms and follows the ModuOps philosophy of encouraging operations on temporary layouts. Switch lists are also perfect for static setups like home or club layouts.
 
-![switch list](/img/switchlist-full-page.svg)
-
 <!-- truncate -->
+
+![switch list](/img/switchlist-full-page.svg)
 
 Gaining access to the switch list output format is from the trainlist screen. Switch lists are added to the output format menu as an option. Once selected, click the `Generate Trainlist` button. A thumbnail of the generated switch is displayed. Click the `Print` button to print the switch list.
 
