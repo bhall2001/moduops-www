@@ -7,7 +7,7 @@ tags: [ModuOps, 'Switch Lists']
 
 Version 5.5.0 of ModuOps introduces switch lists to the application. Switch lists are essential documents used by crews during switching operations. The ModuOps switch list is based on prototypical forms and follows the ModuOps philosophy of encouraging operations on temporary layouts. Switch lists are also perfect for static setups like home or club layouts.
 
-![alt text](/img/switchlist.svg)
+![switch list](/img/switchlist-full-page.svg)
 
 <!-- truncate -->
 
@@ -19,13 +19,21 @@ ModuOps switch lists use 2 fields that typically have not been used in the past.
 
 ### Equipment AAR code
 
-On the equipment screen, be sure that all equipment has a value for the `AAR code` field. This is the field that is displayed on the switch list when printing. If there is not a value for the AAR code field, the switch list will not display any information for the car kind when printed.
+On the equipment screen, be sure that all equipment has a value for the `AAR code` field. This is the field that is displayed on the switch list when printing.
 
 If you are not sure how to determine the AAR code for a piece of equipment, the Opsig group has a handy reference for AAR codes that you can see by [clicking here](https://www.opsig.org/files/resources/AARFreightCarCodes.pdf).
 
+:::caution
+If the AAR code field is empty, the switch lists won't show car kind information when printed.
+:::
+
 ### Drop zone reference
 
-On the drop zone screen, be sure that all drop zones have a value in the `Zone reference` field. This field is displayed on the switch list when printing. If there is not a value for the zone reference field, the switch list will not display any information when printed.
+On the drop zone screen, be sure that all drop zones have a value in the `Zone reference` field. This field is displayed on the switch list when printing.
+
+:::caution
+If the drop zone reference field is empty, switch lists won't show destinations when printed.
+:::
 
 ## Switch list form details
 
@@ -41,13 +49,13 @@ The header has a blank space to enter the date of the train's operation. Below t
 
 Each row of a switch list contains fields needed for the crew to perform the job. When a new module/town is on the train's route, the module/town name is displayed in the middle of the row. All the entries below this are intended for the module/town specified.
 
-When a car is to be switched, the yard crew will have written in the reporting marks in the first column. The reporting marks should be entered such that the road name is entered in the upper left triangle with the equipment number entered in the lower right triangle of the column.
+When a car is to be switched, the yard crew will have written in the reporting marks in the first column. The reporting marks should be entered such that the road name initials is entered in the left section of the column with the equipment number entered in the right of the column.
 
 ![reporting marks](/img/reporting_marks.svg)
 
 The column labeled `Kind` details the equipment needed. The equipment is specified as the AAR code followed by the length (ie. XM-50 for a 50' Box car).
 
-The `From` column indicates where the equipment originates from. Currently this will only be the originating yard of the train.
+The `From` column indicates where the equipment originates from. Currently this will only be the originating yard of the train. The Switchlist indicates a repeated previous value in this column with the text `''` indicating that the previous value remains unchanged.
 
 The `Dest` column indicates the drop zone the equipment is to be set out at.
 
