@@ -14,7 +14,7 @@ The Modules/Town Summary Listing report provides a high level overview of the Mo
 
 The Equipment Request report lists all equipment requests for Modules in the current layout. The report can be filtered by module name or module owner. The report is always filtered by module name alphabetically as well as additional columns in the table. It is not possible to change the filter order.
 
-The report has an option to show or hide 2 fields -- the equipment AAR code and the short description for the equipment. The columns menu located to the upper right of the data table offers the ability to select the field(s) to hide or show in the report.
+The report has an option to show or hide 2 fields -- the equipment AAR code and the equipment short description fields. The columns menu located to the upper right of the data table offers the ability to select the field(s) to hide or show in the report.
 
 The report can be exported to either a comma separated value (csv) file, a tab separated value (tsv) file, or printed. Exporting the report to a csv or tsv file allows the report to be opened in a spreadsheet application for additional manipulation.
 

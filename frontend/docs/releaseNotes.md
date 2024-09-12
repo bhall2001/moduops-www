@@ -10,7 +10,8 @@ All notable changes to ModuOps
 ## ModuOps 5.6.0
 
 - adds report for Module/Town equipment requests
-  - ability to filter report by Module/Town or owner
+  - filter report by Module/Town or owner
+  - add/remove AAR code and Equipment short description fields
   - ability to export report in csv, tsv or print
 - navigate to Layout screen after creating a new layout
 - adds open source license to comply with Livecode license
