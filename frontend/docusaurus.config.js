@@ -133,7 +133,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © 2015 - ${new Date().getFullYear()} Robert D. Hall`,
+        copyright: `Copyright © 2014 - ${new Date().getFullYear()} Robert D. Hall`,
       },
       prism: {
         theme: prismThemes.github,

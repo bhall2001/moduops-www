@@ -39,6 +39,7 @@ const sidebars = {
           label: 'Trains',
           items: ['train', 'train-route', 'train-orders'],
         },
+        'reports',
       ],
     },
     {
