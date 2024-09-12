@@ -7,6 +7,16 @@ title: Release Notes
 
 All notable changes to ModuOps
 
+## ModuOps 5.6.0
+
+- adds report for Module/Town equipment requests
+  - ability to filter report by Module/Town or owner
+  - ability to export report in csv, tsv or print
+- navigate to Layout screen after creating a new layout
+- adds open source license to comply with Livecode license
+- clean up about box to comply with Livecode license
+- upgrade to Livecode v9.6.13
+
 ## ModuOps 5.5.1
 
 - changes to switchlist format to provide more room for reporting marks
