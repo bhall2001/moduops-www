@@ -7,18 +7,17 @@ slug: /overview
 
 # Getting to Know ModuOps
 
-The original use cases for ModuOps comes from Free-mo Operators. ModuOps takes into account the nuances of operating plans for Modular layouts. Club and home layouts also had a hand in steering ModuOps development.
+ModuOps (pronounced 'mod-you-ops') was initially developed with Free-mo Operators in mind, but it’s evolved to meet the needs of all types of modular layouts. It’s been shaped by feedback from clubs and home layout enthusiasts alike, making it a versatile tool for anyone interested in adding operations to their model railroad.
 
-A Free-mo layout has many unique characteristics not found with other Model Railroad setups:
+A modular Free-mo layout stands out in several ways:
 
-- Layout is unique at each setup
-- Layout will never exist again
-- Layout exists for only a day or 2.
-- Starting state of the layout is unknown
-- Crew errors occur but should be self-correcting
-- Rolling stock administration is cumbersome and error-prone
-
-ModuOps is based on the original Mad River and Big Timber (MRBT) software. With this in mind and the constraints listed above, this Chapter helps new users understand some design decisions of the Application. ModuOps' features directly stem from the prior experience with MRBT and New England Free-mo.
+- Each setup is completely unique.
+- The layout only exists for a day or two.
+- It will never be recreated in the exact same way.
+- The starting state of the layout is unknown.
+- Crew mistakes happen but should fix themselves as operations progress.
+- Managing rolling stock can be tricky and prone to errors.
+- ModuOps is built based on the characteristics of the Mad River and Big Timber (MRBT) software, and this guide explains some of the design choices behind the app. Many of its features stem from experience with MRBT and New England Free-mo, shaped by the challenges these setups face.
 
 ## The ModuOps Difference
 
