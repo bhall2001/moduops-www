@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
+import PronunciationWidget from '../PronunciationWidget';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -19,14 +20,9 @@ function HomepageHeader() {
             Moduops Tutorial - 15 min ⏱️
           </Link>
         </div>
-        {/* <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/blog/v5_1_1"
-          >
-            Moduops Version 5 Released!
-          </Link>
-        </div> */}
+        <p>
+          <PronunciationWidget />
+        </p>
       </div>
     </header>
   );
