@@ -18,7 +18,6 @@ export default $config({
             ? 'moduops.com'
             : $app.stage + '.moduops.com',
         redirects: $app.stage === 'production' ? ['www.moduops.com'] : [],
-        dns: sst.aws.dns({ override: true }),
       },
       path: 'frontend',
       build: {
