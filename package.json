@@ -17,9 +17,6 @@
     "@types/node": "^20",
     "typescript": "^5"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "dependencies": {
     "sst": "3.4.30"
   }

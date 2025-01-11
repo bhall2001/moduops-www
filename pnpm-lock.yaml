@@ -17,18 +17,18 @@ importers:
         version: 8.10.146
       '@types/node':
         specifier: ^20
-        version: 20.17.10
+        version: 20.17.12
       typescript:
         specifier: ^5
-        version: 5.7.2
+        version: 5.7.3
 
 packages:
 
   '@types/aws-lambda@8.10.146':
     resolution: {integrity: sha512-3BaDXYTh0e6UCJYL/jwV/3+GRslSc08toAiZSmleYtkAUyV5rtvdPYxrG/88uqvTuT6sb27WE9OS90ZNTIuQ0g==}
 
-  '@types/node@20.17.10':
-    resolution: {integrity: sha512-/jrvh5h6NXhEauFFexRin69nA0uHJ5gwk4iDivp/DeoEua3uwCUto6PC86IpRITBOs4+6i2I56K5x5b6WYGXHA==}
+  '@types/node@20.17.12':
+    resolution: {integrity: sha512-vo/wmBgMIiEA23A/knMfn/cf37VnuF52nZh5ZoW0GWt4e4sxNquibrMRJ7UQsA06+MBx9r/H1jsI9grYjQCQlw==}
 
   aws4fetch@1.0.20:
     resolution: {integrity: sha512-/djoAN709iY65ETD6LKCtyyEI04XIBP5xVvfmNxsEP0uJB5tyaGBztSryRr4HqMStr9R06PisQE7m9zDTXKu6g==}
@@ -91,8 +91,8 @@ packages:
       valibot:
         optional: true
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -106,7 +106,7 @@ snapshots:
 
   '@types/aws-lambda@8.10.146': {}
 
-  '@types/node@20.17.10':
+  '@types/node@20.17.12':
     dependencies:
       undici-types: 6.19.8
 
@@ -158,7 +158,7 @@ snapshots:
       sst-linux-x64: 3.4.30
       sst-linux-x86: 3.4.30
 
-  typescript@5.7.2: {}
+  typescript@5.7.3: {}
 
   undici-types@6.19.8: {}
 
