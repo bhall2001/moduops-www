@@ -1,15 +1,29 @@
-import { SSTConfig } from 'sst';
-import { MyStack } from './stacks/MyStack';
+/// <reference path="./.sst/platform/config.d.ts" />
 
-export default {
-  config(_input) {
+export default $config({
+  app(input) {
     return {
       name: 'moduops-www',
+      removal: input?.stage === 'production' ? 'retain' : 'remove',
+      protect: ['production'].includes(input?.stage),
+      home: 'aws',
       region: 'us-east-2',
     };
   },
-  stacks(app) {
-    app.stack(MyStack);
-    app.setDefaultRemovalPolicy('retain');
+  async run() {
+    new sst.aws.StaticSite('moduops-www', {
+      domain: {
+        name:
+          $app.stage === 'production'
+            ? 'moduops.com'
+            : $app.stage + '.moduops.com',
+        redirects: $app.stage === 'production' ? ['www.moduops.com'] : [],
+      },
+      path: 'frontend',
+      build: {
+        command: 'npm run build',
+        output: 'build',
+      },
+    });
   },
-} satisfies SSTConfig;
+});

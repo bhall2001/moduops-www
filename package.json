@@ -3,26 +3,21 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "sst dev",
     "build": "sst build",
+    "console": "sst console",
     "deploy": "sst deploy --stage=dev",
     "deploy:prod": "sst deploy --stage=prod",
+    "dev": "dev",
     "remove": "sst remove --stage=dev",
     "remove:prod": "sst remove --stage=prod",
-    "console": "sst console",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@tsconfig/node18": "^18.2.4",
-    "aws-cdk-lib": "^2.157.0",
-    "constructs": "^10.3.0",
-    "sst": "^2.43.4",
-    "typescript": "^5.6.2"
+    "@types/aws-lambda": "8.10.146",
+    "@types/node": "^20",
+    "typescript": "^5"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "dependencies": {
-    "aws-sdk": "^2.1691.0"
+    "sst": "3.4.30"
   }
 }
