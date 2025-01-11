@@ -13,11 +13,11 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.146",
-    "@types/node": "^20",
-    "typescript": "^5"
+    "@types/aws-lambda": "^8.10.147",
+    "@types/node": "^20.17.12",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "sst": "3.4.30"
+    "sst": "^3.5.5"
   }
 }
