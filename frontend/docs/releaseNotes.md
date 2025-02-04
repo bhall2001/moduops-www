@@ -7,11 +7,13 @@ title: Release Notes
 
 All notable changes to ModuOps
 
-## ModuOps 5.7.0 (coming soon)
+## ModuOps 5.7.0
 
 - adds ability to require a consignee on train route
 - return ability to create trains wih no route, yes this is a thing
 - performance improvements
+- tweaks to user experience
+- bug fixes
 - built with Livecode v10.0.0
 
 ## ModuOps 5.6.0
