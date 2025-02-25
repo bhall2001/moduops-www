@@ -6,18 +6,18 @@
     "build": "sst build",
     "console": "sst console",
     "deploy": "sst deploy --stage=dev",
-    "deploy:prod": "sst deploy --stage=prod",
+    "deploy:prod": "sst deploy --stage=production",
     "dev": "dev",
     "remove": "sst remove --stage=dev",
-    "remove:prod": "sst remove --stage=prod",
+    "remove:prod": "sst remove --stage=production",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.146",
-    "@types/node": "^20",
-    "typescript": "^5"
+    "@types/aws-lambda": "^8.10.147",
+    "@types/node": "^20.17.19",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
-    "sst": "3.4.30"
+    "sst": "^3.9.10"
   }
 }

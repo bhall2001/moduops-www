@@ -7,11 +7,20 @@ title: Release Notes
 
 All notable changes to ModuOps
 
-## ModuOps 5.7.0 (coming soon)
+## ModuOps 5.7.1
+
+- fix issue where navigation was disabled after printing
+- fix yard screen does not fail when required consignee on manifest
+- added error message to yard screen when there is a failure
+- fix formatting issue on yard screen with % slider
+
+## ModuOps 5.7.0
 
 - adds ability to require a consignee on train route
 - return ability to create trains wih no route, yes this is a thing
 - performance improvements
+- tweaks to user experience
+- bug fixes
 - built with Livecode v10.0.0
 
 ## ModuOps 5.6.0
