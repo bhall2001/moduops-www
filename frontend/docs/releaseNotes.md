@@ -7,7 +7,7 @@ title: Release Notes
 
 All notable changes to ModuOps
 
-## 5.7.1
+## ModuOps 5.7.1
 
 - fix issue where navigation was disabled after printing
 - fix yard screen does not fail when required consignee on manifest
