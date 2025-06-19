@@ -11,9 +11,9 @@ On the Drop Zone edit screen, we need to provide two essential pieces of informa
 - name of the drop zone
 - length of the drop zone
 
-In many cases, the name the drop zone will be the same name as a Consignee. ModuOps offers the flexibility to either type in a name or select a Consignee from a menu of all Consignees defined for the module. In ths tutorial, we will select our consignee from the menu.
+In many cases, the name the drop zone will be the same name as a Consignee. ModuOps offers the flexibility to either type in a name or select a Consignee from a menu of all Consignees defined for the module. In this tutorial, we will select our consignee from the menu.
 
-1. Select `Warehouse` from the `Use Consignee Name` popup menu. This automatically assigns the name of the Consignee as the name of the drop zone.
+1. Select `Warehouse` from the `Use Consignee Name` pop up menu. This automatically assigns the name of the Consignee as the name of the drop zone.
 
 2. Enter `100` in the drop zone `Length` field. This indicates that the drop zone's length is set to 100 feet.
 

@@ -1,0 +1,7 @@
+packages:
+  - moduops
+
+onlyBuiltDependencies:
+  - aws-sdk
+  - core-js
+  - core-js-pure

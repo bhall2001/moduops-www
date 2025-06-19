@@ -19,9 +19,9 @@ export default $config({
             : $app.stage + '.moduops.com',
         redirects: $app.stage === 'production' ? ['www.moduops.com'] : [],
       },
-      path: 'frontend',
+      path: 'moduops',
       build: {
-        command: 'npm run build',
+        command: 'pnpm run build',
         output: 'build',
       },
     });
