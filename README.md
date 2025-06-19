@@ -27,12 +27,13 @@ The blog is located at `frontend/blog` directory. Blog post files are labeled wi
 - Project uses `pnpm` for dependency management
 - project is setup as a pnpm monorepo
 - run the main app locally by pnpm start:moduops in the root of the project
+- install all dependencies throughout the monorepo by pnpm i at the root.
 - source code is managed with `git` and checked into GitHub.
 
 ## Deploying app
 
 There is nothing fancy about the deploy process. I have elected to NOT use any CI/CD service for this project. Deployments happen from the command line. You will need to have your AWS cli setup for deploys to work.
 
-`npm run deploy` - deploys to dev.moduops.com
+`pnpm run deploy` - deploys to dev.moduops.com
 
-`npm run deploy:prod` - deploys to moduops.com
+`pnpm run deploy:prod` - deploys to moduops.com
