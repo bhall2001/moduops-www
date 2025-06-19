@@ -10,14 +10,16 @@
     "dev": "dev",
     "remove": "sst remove --stage=dev",
     "remove:prod": "sst remove --stage=production",
+    "start:moduops": "pnpm --filter moduops start",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.147",
-    "@types/node": "^20.17.19",
-    "typescript": "^5.7.3"
+    "@types/aws-lambda": "^8.10.150",
+    "@types/node": "^20.19.1",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "sst": "^3.9.10"
+    "moduops": "workspace:*",
+    "sst": "^3.17.6"
   }
 }

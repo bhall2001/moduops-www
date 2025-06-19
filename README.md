@@ -6,7 +6,7 @@ All the techy dirt you need to know for moduops web site.
 
 The project uses the [SST framework](https://sst.dev/). So we have a serverless hosted application that lives on AWS. SST is overkill for what we have going here but it makes dealing with AWS just about as easy as I've seen.
 
-SST sets up as a mono repo. There are the backend services/stacks and the frontend projects. The backend sets up the "stack" with cdk to create all the required support services on AWS.
+SST sets up as a monorepo. There are the backend services/stacks and the frontend projects. The backend sets up the "stack" with cdk to create all the required support services on AWS.
 
 ## Frontend
 
@@ -24,12 +24,14 @@ The blog is located at `frontend/blog` directory. Blog post files are labeled wi
 
 ## Logistics
 
-- Project uses `npm` for dependency management
-- source code is managed with `git` and checked into Github.
+- Project uses `pnpm` for dependency management
+- project is setup as a pnpm monorepo
+- run the main app locally by pnpm start:moduops in the root of the project
+- source code is managed with `git` and checked into GitHub.
 
 ## Deploying app
 
-There is nothing fancy about the deploy process. I have elected to NOT use any CI/CD service for this project. Deployments happen from the command line. You will need to have you AWS cli setup for deploys to work.
+There is nothing fancy about the deploy process. I have elected to NOT use any CI/CD service for this project. Deployments happen from the command line. You will need to have your AWS cli setup for deploys to work.
 
 `npm run deploy` - deploys to dev.moduops.com
 

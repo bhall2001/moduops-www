@@ -6,7 +6,7 @@ When getting started with ModuOps, the initial step is to create equipment capab
 
 1. Navigate to the `Equipment Register` in the left sidebar menu.
 2. Click on the `New` button to create a new piece of equipment.
-3. In the `Classification` popup menu, select `X - Box`.
+3. In the `Classification` pop up menu, select `X - Box`.
 4. Provide the following details:
 
    - `Car Description:` Enter `Boxcar`.
