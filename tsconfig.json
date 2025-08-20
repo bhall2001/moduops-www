@@ -1,9 +1,13 @@
 {
-  "extends": "@tsconfig/node18/tsconfig.json",
-  "exclude": ["packages"],
+  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
     "module": "esnext",
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "exclude": ["packages", "node_modules"]
 }
