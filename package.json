@@ -14,12 +14,13 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.150",
-    "@types/node": "^20.19.1",
-    "typescript": "^5.8.3"
+    "@tsconfig/node22": "^22.0.2",
+    "@types/aws-lambda": "^8.10.152",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "moduops": "workspace:*",
-    "sst": "^3.17.6"
+    "sst": "^3.17.10"
   }
 }
