@@ -115,8 +115,23 @@ rather than a migration edge case. It also serves as a free toolchain rehearsal.
 4. Set `sst` to that version in root `package.json` (pin exactly, no `^`, so the
    migration runs against a known binary).
 5. `pnpm i` from the repository root (never inside `moduops/`, per CLAUDE.md).
-6. `pnpm typecheck` — must pass.
-7. Commit the bump and lockfile.
+6. `sst install` to generate `.sst/platform/` types; confirm
+   `.sst/provider-lock.json` reports `@pulumi/aws` at 7.x.
+7. `pnpm typecheck` — **`sst.config.ts` must be error-free.** The wider
+   repository typecheck does not gate this migration; see below.
+8. Commit the bump and lockfile.
+
+#### Note on the typecheck gate
+
+`main` does not typecheck independently of this migration. It carries 26
+pre-existing errors: `moduops/` has no `tsconfig.json`, the root tsconfig is
+mis-scoped, React 19 removed the global `JSX` namespace, and `vitest.config.ts`
+references a dependency `main` never declared. Commit `66d4589` on
+`feat/api-xchange` already fixes all of them.
+
+These are unrelated to SST and are being fixed separately. The gate for this
+migration is narrowed to `sst.config.ts` alone, which typechecks clean under v4
+once `sst install` has generated the platform types.
 
 ### Step 2 — Migrate `dev`
 
