@@ -39,16 +39,26 @@ These were confirmed against the repository, not assumed:
 
 ### Stages
 
-State bucket: `sst-state-udtbxswzbwwo`
+State bucket: `sst-state-udtbxswzbwwo`. AWS account `309743830326`,
+region `us-east-2`. Route53 zone `Z207BR6SP5DWDX`.
 
-| Stage | Domain | `protect` | `removal` | Disposition |
+| Stage | State size | Domain | Distribution | Disposition |
 |---|---|---|---|---|
-| `production` | `moduops.com` (+ `www` redirect) | `true` | `retain` | Migrate |
-| `dev` | `dev.moduops.com` | `false` | `remove` | Migrate (rehearsal) |
-| `apiUser` | none | `false` | `remove` | **Remove before migrating** |
+| `production` | 487 KB | `moduops.com`, `www.moduops.com` | `E1D6NNIZKCM0L7`, `E3AH7VJOZ5D1FM` | Migrate |
+| `dev` | 390 KB | `dev.moduops.com` | `E3KZAMA4APQJCV` | Migrate (rehearsal) |
+| `test` | 366 KB | `test.moduops.com` | `E26KHMI96ULBWN` | **Undecided** — see below |
+| `apiUser` | 622 B | none | none | Empty; delete state file |
+| `prod` | 619 B | none | none | Empty; delete state file |
 
-`apiUser` is a stray stage from a 2026-07-15 experiment; the final log line for
-that run records `resources=0`. It is being torn down rather than migrated.
+`apiUser` was **not** a deliberate stage. It is the IAM username
+(`arn:aws:iam::309743830326:user/apiUser`); SST defaults the stage name to the
+local user when `--stage` is omitted, so a command run without the flag created
+it. Its state file contains **zero resources** (verified by reading the
+checkpoint, not inferred from logs). `prod.json` is a similar 619-byte remnant.
+
+`test` is a real stage from 2024-12-27 owning a live `test.moduops.com`
+distribution. It was not known when this spec was first written. Migrating it is
+optional; leaving it on v3 state is harmless as long as nobody deploys it.
 
 ## Scope
 
@@ -94,14 +104,60 @@ check must therefore happen *before* the irreversible step, per stage.
 Steps are strictly ordered. Do not begin a step before the prior step's
 verification passes.
 
-### Step 0 — Remove the `apiUser` stage
+### Step 0 — Legacy cleanup (deferred; NOT a migration prerequisite)
 
-Performed on SST v3, before any version change, so it is a plain v3 teardown
-rather than a migration edge case. It also serves as a free toolchain rehearsal.
+Investigation showed the original Step 0 was based on a false premise and, as
+written, was unsafe. It is removed from the migration's critical path. The v4
+migration does **not** depend on any of the cleanup below.
 
-1. Confirm the stage holds nothing of value (do not rely on the July log line).
-2. `pnpm sst remove --stage=apiUser`
-3. Confirm the stage's state is gone from the state bucket.
+#### Finding: four SST v2 (CloudFormation) stacks still exist
+
+These predate v3 and are invisible to the `sst` CLI, which reads only the S3
+state bucket:
+
+| Stack | Created | Notable resources |
+|---|---|---|
+| `prod-moduops-www-MyStack` | 2022-08-05 | **`AWS::Route53::RecordSet moduops.com`** |
+| `sst2-moduops-www-MyStack` | 2023-11-05 | `RecordSet sst2.moduops.com`, CloudFront function |
+| `apiUser-moduops-www-MyStack` | 2023-07-18 | SSM parameter, Lambda |
+| `apiUser-moduops-www-debug-stack` | 2023-03-07 | ApiGatewayV2, S3 bucket, Lambda |
+
+:::danger
+**Do not delete `prod-moduops-www-MyStack` casually.** CloudFormation believes it
+owns the `moduops.com` A record. That record has since been overwritten by the
+v3 `production` stage and now points at distribution `E1D6NNIZKCM0L7`. Deleting
+the stack would make CloudFormation attempt to delete the record currently
+serving live production traffic.
+
+The safe procedure is to first remove the `RecordSet` resources from the stack's
+control — via a `DeletionPolicy: Retain` update, or `--retain-resources` on
+delete — and only then delete the stack. Verify with `dig` afterward.
+:::
+
+#### Verified: live traffic is served by v3, not the legacy stacks
+
+Authoritative Route53 records in zone `Z207BR6SP5DWDX`:
+
+| Name | Alias target | Distribution | Owner |
+|---|---|---|---|
+| `moduops.com` | `d2139vxgj5iuh0.cloudfront.net` | `E1D6NNIZKCM0L7` | v3 `production` |
+| `www.moduops.com` | `d25j4rhssmr77b.cloudfront.net` | `E3AH7VJOZ5D1FM` | v3 `production` |
+| `dev.moduops.com` | `d27jcxr9joi18e.cloudfront.net` | `E3KZAMA4APQJCV` | v3 `dev` |
+
+The legacy stacks therefore serve no live traffic and can be left in place
+indefinitely without risk. Cleaning them up is housekeeping, to be scheduled as
+separate work with its own plan.
+
+#### Optional, safe now
+
+Deleting the two empty state files is harmless — both contain zero resources:
+
+```bash
+aws s3 rm s3://sst-state-udtbxswzbwwo/app/moduops-www/apiUser.json
+aws s3 rm s3://sst-state-udtbxswzbwwo/app/moduops-www/prod.json
+```
+
+This is cosmetic and may be skipped.
 
 ### Step 1 — Branch and bump
 
@@ -199,5 +255,8 @@ low-cost, high-fidelity rehearsal of the identical config.
 
 ## Open Questions
 
-None. Sequencing (upgrade on `main` first) and `apiUser` disposition (remove)
-were both settled during design.
+1. **Migrate the `test` stage?** It owns a live `test.moduops.com` distribution
+   and was unknown at design time. Leaving it on v3 state is harmless unless
+   someone deploys it. Deciding this is not a blocker for `dev` or `production`.
+2. **When to clean up the four legacy v2 CloudFormation stacks?** Separate work,
+   needs its own plan given the Route53 hazard documented in Step 0.
