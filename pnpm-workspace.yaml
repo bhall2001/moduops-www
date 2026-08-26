@@ -1,7 +1,12 @@
 packages:
   - moduops
 
-onlyBuiltDependencies:
-  - aws-sdk
-  - core-js
-  - core-js-pure
+# minutes; 7d cooldown on newly published versions
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude: []
+
+# pnpm 11 requires build scripts to be opted in
+allowBuilds:
+  aws-sdk: true
+  core-js: true
+  core-js-pure: true
