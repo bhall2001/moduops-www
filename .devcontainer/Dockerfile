@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       unzip \
       jq \
       sudo \
+      zsh \
     && rm -rf /var/lib/apt/lists/* \
     && echo "node ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/node \
     && chmod 0440 /etc/sudoers.d/node
@@ -51,6 +52,12 @@ RUN printf '%s\n' \
 RUN npm config set allow-scripts=@anthropic-ai/claude-code --location=global
 
 USER node
+
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended >/dev/null
+COPY --chown=node:node ys-custom.zsh-theme /home/node/.oh-my-zsh/custom/themes/ys-custom.zsh-theme
+COPY --chown=node:node zshrc /home/node/.zshrc
+RUN git config --global --add safe.directory /workspace
+
 ENV PNPM_HOME=/home/node/.local/share/pnpm
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=/home/node/.npm-global/bin:$PNPM_HOME:$PATH
