@@ -31,3 +31,15 @@ yarn-error.log*
 
 # created by container runs that share the repo as a bind mount
 .pnpm-store
+
+# nested clone of bhall2001/moduops-xchange, not a submodule
+moduops/.xchange-data/
+
+# live git worktrees
+.worktrees/
+
+# claude code: allowlist what's shared
+.claude/*
+!.claude/set/
+.claude/settings.local.json
+.claude/.cc-writes/
