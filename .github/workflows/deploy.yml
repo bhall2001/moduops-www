@@ -1,0 +1,64 @@
+name: Deploy
+
+# Manual only. Deploys stay opt-in until the pipeline is proven.
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: 'SST stage to deploy (e.g. v3probe, dev, production)'
+        required: true
+        type: string
+      action:
+        description: 'deploy or remove'
+        required: true
+        default: deploy
+        type: choice
+        options:
+          - deploy
+          - remove
+
+concurrency:
+  # One run per stage; never let two runs mutate the same SST state.
+  group: sst-${{ inputs.stage }}
+  cancel-in-progress: false
+
+permissions:
+  id-token: write # required to request the OIDC token
+  contents: read
+
+jobs:
+  deploy:
+    name: ${{ inputs.action }} ${{ inputs.stage }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.24.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::309743830326:role/GitHubActionsModuOpsWww
+          aws-region: us-east-2
+
+      # The ubuntu runner image ships its own Pulumi in /usr/local/bin, which
+      # wins on PATH and is too old for the flags sst passes it
+      # ("flag provided but not defined: -root"). Remove it so sst uses the
+      # Pulumi it manages itself under ~/.config/sst/bin.
+      - name: Remove preinstalled Pulumi
+        run: |
+          sudo rm -f /usr/local/bin/pulumi*
+          echo "remaining: $(command -v pulumi || echo none)"
+
+      # --stage is always explicit: a bare sst command defaults the stage to
+      # the runner's username, which is how the stray `bobhall` stage appeared.
+      - name: sst ${{ inputs.action }}
+        run: pnpm exec sst ${{ inputs.action }} --stage=${{ inputs.stage }}
