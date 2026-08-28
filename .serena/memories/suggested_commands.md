@@ -1,80 +1,62 @@
 # Suggested Commands
 
+Work happens in the **devcontainer** (Debian bookworm, user `node`, workspace
+`/workspace`), not the macOS host. Commands below assume the container.
+
 ## Installation
 ```bash
-# Install all dependencies (run from root)
-pnpm i
+pnpm i                  # from repo root
 ```
 
 ## Development
 ```bash
-# Start local development server (opens browser at localhost:3000)
-pnpm start:moduops
-
-# Clear Docusaurus cache (useful if seeing stale content)
-pnpm --filter moduops clear
+pnpm start:moduops                # docusaurus start --host 0.0.0.0, port 3000
+pnpm --filter moduops clear       # clear Docusaurus cache if content is stale
 ```
+`--host 0.0.0.0` is required — bound to loopback the server is unreachable
+through the container's port forwarding. `forwardPorts: [3000]`.
+
+Bob runs dev servers himself; don't launch or background them.
+
+## Clean Reinstall
+```bash
+pnpm clean        # rm every node_modules (excl. .git/.sst/.worktrees) + pnpm-lock.yaml
+pnpm reinstall    # clean, then pnpm install
+```
+`.npmrc` sets `verify-deps-before-run=false`; without it pnpm 11 reinstalls
+dependencies before every script, which silently undoes `clean`.
 
 ## Type Checking
 ```bash
-# Run TypeScript type checking
-pnpm typecheck
-
-# Type check only the moduops package
+pnpm typecheck                      # currently FAILS, pre-existing
 pnpm --filter moduops typecheck
 ```
 
 ## Build
 ```bash
-# Build for production (via SST)
-pnpm build
-
-# Build only Docusaurus site
-pnpm --filter moduops build
-
-# Serve built site locally
-pnpm --filter moduops serve
+pnpm build                     # via SST
+pnpm --filter moduops build    # Docusaurus only
+pnpm --filter moduops serve    # serve built site
 ```
 
 ## Deployment
 ```bash
-# Deploy to dev.moduops.com
-pnpm run deploy
-
-# Deploy to production (moduops.com)
-pnpm run deploy:prod
-
-# Remove dev deployment
-pnpm remove
-
-# Remove production deployment (use with caution)
-pnpm remove:prod
+pnpm run deploy         # dev.moduops.com
+pnpm run deploy:prod    # moduops.com  (protected stage)
+pnpm remove             # remove dev deployment
+pnpm remove:prod        # remove production (use with caution)
+pnpm console            # SST console
 ```
+Deploy from the container or CI — **not** from macOS (StaticSite upload bug).
+CI: `.github/workflows/deploy.yml`, manual `workflow_dispatch` taking `stage`
+and `action` inputs, OIDC into AWS. Always pass an explicit `--stage`; a bare
+`sst` command defaults the stage to the runner's username.
 
-## SST Console
-```bash
-# Open SST console for debugging
-pnpm console
-```
+## Git
+Standard commands. Use the **GitHub CLI** (`gh`) for GitHub operations.
+Branch prefixes: `fix/`, `refactor/`, `feat/`, `chore/`.
 
-## Git Commands (macOS/Darwin)
-```bash
-# Standard git commands work as expected
-git status
-git add .
-git commit -m "message"
-git push
-git pull
-```
-
-## File System Commands (macOS/Darwin)
-```bash
-# List files
-ls -la
-
-# Find files
-find . -name "*.md"
-
-# Search in files
-grep -r "pattern" .
-```
+## Shell Note
+The container shell is **zsh**. An unmatched glob aborts the whole command
+line (`no matches found`) rather than passing through as in bash — use `find`
+for bulk deletes.

@@ -3,10 +3,10 @@
 ## Code Style
 
 ### TypeScript/JavaScript
-- Use TypeScript for React components (`.tsx` files)
-- JSDoc type annotations used in `.js` config files (e.g., `@ts-check`)
+- TypeScript for React components (`.tsx`)
+- JSDoc type annotations in `.js` config files (e.g., `@ts-check`)
 - Functional React components (no class components)
-- Named exports preferred for components
+- Named exports preferred
 - Index files (`index.ts`) for clean exports from component directories
 
 ### Component Structure
@@ -18,9 +18,9 @@ ComponentName/
 ```
 
 ### CSS
-- CSS Modules for component-specific styles (`.module.css`)
+- CSS Modules for component styles (`.module.css`)
 - Global custom CSS in `src/css/custom.css`
-- Use `clsx` for conditional class names
+- `clsx` for conditional class names
 
 ### Naming Conventions
 - **Components**: PascalCase (e.g., `HomepageHeader`)
@@ -28,12 +28,23 @@ ComponentName/
 - **CSS Modules**: camelCase for class names
 - **Markdown files**: kebab-case (e.g., `equipment-requests.md`)
 
+## Code Comments
+**No prose in comments.** Terse one-line fragments or nothing. No paragraphs,
+no justifying choices, no explaining what was done. Rationale belongs in the
+commit message, not the source.
+
+```
+GOOD:  # minutes; 7d cooldown on newly published versions
+BAD:   # Supply-chain: refuse to resolve any version published less than 7
+       # days ago, giving the community time to catch compromised releases.
+```
+
 ## Documentation Style
 
 ### Markdown Files
 - Documentation in `moduops/docs/`
-- Blog posts in `moduops/blog/` with format `YYYY-MM-DD-name.md`
-- Use frontmatter for metadata
+- Blog posts in `moduops/blog/` as `YYYY-MM-DD-name.md`
+- Frontmatter for metadata
 
 ### Blog Post Format
 ```markdown
@@ -48,5 +59,6 @@ Blog content here...
 
 ## Git Conventions
 - Main branch: `main`
-- Feature branches for development
-- Descriptive commit messages
+- Branch prefixes: `fix/`, `refactor/`, `feat/`, `chore/`
+- Concise commit messages; sacrifice grammar for concision
+- GitHub CLI (`gh`) is the primary way to interact with GitHub

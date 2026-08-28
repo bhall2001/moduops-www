@@ -6,42 +6,51 @@
 ```bash
 pnpm typecheck
 ```
-Ensure there are no TypeScript errors.
+NOTE: this currently fails for pre-existing reasons (vitest config + root
+tsconfig JSX types). Confirm you haven't added *new* errors rather than
+expecting a clean run. `pnpm --filter moduops typecheck` is the useful signal
+for site changes.
 
 ### 2. Local Testing
 ```bash
 pnpm start:moduops
 ```
-- Verify changes work correctly in the browser
+Bob runs the dev server himself — ask him to check rather than starting it.
+- Verify changes in the browser
 - Check for console errors
-- Test on different viewport sizes if UI changes were made
+- Test viewport sizes if UI changed
 
 ### 3. Build Verification
 ```bash
 pnpm --filter moduops build
 ```
-Ensure the site builds successfully without errors.
+Must build without errors.
 
 ## For Documentation Changes
-- Verify links are not broken (Docusaurus will warn about broken markdown links)
+- Verify links aren't broken (Docusaurus warns on broken markdown links)
 - Check sidebar navigation if adding new docs
-- Ensure proper frontmatter is present
+- Ensure proper frontmatter
 
 ## For Blog Posts
-- Use correct date format: `YYYY-MM-DD-name.md`
-- Include required frontmatter (title, authors, tags)
-- Verify images are in `static/img/blog/` if used
+- Date format: `YYYY-MM-DD-name.md`
+- Required frontmatter (title, authors, tags)
+- Images in `static/img/blog/`
 
 ## For Component Changes
-- Ensure CSS Module classes are properly imported
-- Check component renders correctly
-- Verify mobile responsiveness
+- CSS Module classes properly imported
+- Component renders correctly
+- Mobile responsiveness
+
+## Before Committing
+- Never `git add` `moduops/.xchange-data/` (separate repo) or `.worktrees/`.
+  Both are gitignored; confirm `git status` is clean of them.
+- Verify claims about state by running the command — don't infer.
 
 ## Deployment
-- Dev deployment: `pnpm run deploy` (deploys to dev.moduops.com)
-- Only deploy to production after thorough testing: `pnpm run deploy:prod`
+- Dev: `pnpm run deploy` → dev.moduops.com
+- Production only after testing: `pnpm run deploy:prod`
+- Deploy from the devcontainer or CI, never from macOS.
 
 ## Notes
-- The site uses SST v3 for deployment to AWS
-- Production has `protect: true` - be cautious with production deployments
+- SST v3; production has `protect: true` — be cautious
 - Always test on dev stage before production
