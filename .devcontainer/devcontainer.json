@@ -1,0 +1,48 @@
+{
+  "name": "moduops-www",
+  "build": { "dockerfile": "Dockerfile" },
+
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+
+  "mounts": [
+    // read-only
+    "source=${localEnv:HOME}/.aws,target=/home/node/.aws,type=bind,readonly",
+    "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.config/gh,target=/home/node/.config/gh,type=bind,consistency=cached",
+    // container-local
+    "source=moduops-sst,target=/workspace/.sst,type=volume",
+    "source=moduops-pnpm-store,target=/home/node/.local/share/pnpm/store,type=volume",
+    // persisted so claude self-updates survive rebuilds
+    "source=moduops-npm-global,target=/home/node/.npm-global,type=volume"
+  ],
+
+  "remoteUser": "node",
+  "containerUser": "node",
+
+  "remoteEnv": {
+    "AWS_REGION": "us-east-2",
+    "SST_STAGE": ""
+  },
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "docusaurus", "onAutoForward": "notify" }
+  },
+
+  "postCreateCommand": ".devcontainer/post-create.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "unifiedjs.vscode-mdx"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.profiles.linux": { "zsh": { "path": "/usr/bin/zsh" } }
+      }
+    }
+  }
+}
