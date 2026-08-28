@@ -10,3 +10,7 @@ allowBuilds:
   aws-sdk: true
   core-js: true
   core-js-pure: true
+
+# transitive via copy-webpack-plugin; RCE + DoS advisories
+overrides:
+  serialize-javascript: ">=7.0.5"

@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "build": "sst build",
+    "clean": "find . -name node_modules -type d -prune -not -path './.git/*' -not -path './.sst/*' -not -path './.worktrees/*' -exec rm -rf {} + && rm -f pnpm-lock.yaml",
     "console": "sst console",
     "deploy": "sst deploy --stage=dev",
     "deploy:prod": "sst deploy --stage=production",
     "dev": "dev",
+    "reinstall": "pnpm run clean && pnpm install",
     "remove": "sst remove --stage=dev",
     "remove:prod": "sst remove --stage=production",
     "start:moduops": "pnpm --filter moduops start",

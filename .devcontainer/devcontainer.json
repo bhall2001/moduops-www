@@ -10,9 +10,7 @@
     "source=${localEnv:HOME}/.aws,target=/home/node/.aws,type=bind,readonly",
     "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
     "source=${localEnv:HOME}/.config/gh,target=/home/node/.config/gh,type=bind,consistency=cached",
-    // container-local: host's are arm64-darwin
-    "source=moduops-node-modules,target=/workspace/node_modules,type=volume",
-    "source=moduops-moduops-node-modules,target=/workspace/moduops/node_modules,type=volume",
+    // container-local
     "source=moduops-sst,target=/workspace/.sst,type=volume",
     "source=moduops-pnpm-store,target=/home/node/.local/share/pnpm/store,type=volume",
     // persisted so claude self-updates survive rebuilds
