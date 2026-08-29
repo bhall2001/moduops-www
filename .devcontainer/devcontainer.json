@@ -22,13 +22,19 @@
 
   "remoteEnv": {
     "AWS_REGION": "us-east-2",
-    "SST_STAGE": ""
+    "SST_STAGE": "",
+    // MCP server auth; empty unless the devcontainer is launched from a shell
+    "GITHUB_PERSONAL_ACCESS_TOKEN": "${localEnv:GITHUB_PERSONAL_ACCESS_TOKEN}",
+    "CONTEXT7_API_KEY": "${localEnv:CONTEXT7_API_KEY}"
   },
 
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": { "label": "docusaurus", "onAutoForward": "notify" }
   },
+
+  // snapshot the host config into the mounted dir (single-file mounts break on atomic rewrite)
+  "initializeCommand": "cp ${localEnv:HOME}/.claude.json ${localEnv:HOME}/.claude/.claude.json.host || true",
 
   "postCreateCommand": ".devcontainer/post-create.sh",
 
