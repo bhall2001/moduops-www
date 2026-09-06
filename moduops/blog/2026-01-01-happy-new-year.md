@@ -3,6 +3,7 @@ slug: happy-new-year-2026
 title: Happy New Year 2026
 authors: [bhall]
 tags: [ModuOps, Announcement]
+date: 2026-01-01T12:00
 ---
 
 Happy New Year! 2026 is shaping up to be a year of significant change for ModuOps, and I'm excited to share what's ahead.
