@@ -10,7 +10,7 @@ date: 2026-09-06T13:00
 
 I've spent many sleepless nights trying to move ModuOps beyond drops-only with a "pick up all." That's our history -- Mad River and Big Timber never tracked condition, and ModuOps hasn't either, until now.
 
-ModuOps is also a car-type-based pseudo-random select engine (for the most part), which made this an interesting design challenge. I wanted a scheduling engine that still handles drops as we know them, but also tracks what's been sent to each drop zone and schedules those cars to be pulled later.
+ModuOps is a car-type-based pseudo-random select engine (for the most part), which makes this an interesting design challenge. I wanted a scheduling engine that still handles drops as we know them, but also tracks what's been sent to each drop zone and schedules those cars to be pulled later.
 
 What I came up with is the new "Pull & Drop Ops" scheduling engine -- with a twist...
 
@@ -24,7 +24,7 @@ Second: ModuOps started life at model train shows, where operators put on a show
 
 That's ok -- ModuOps is **self-correcting**. The next crew is instructed to **PICKUP ALL** when dropping, and the mistake gets carted away.
 
-A new engine that tracks condition had to preserve both of these.
+A new engine that tracks what types of cars are where on the layout had to preserve both of these.
 
 ## New scheduler in a nutshell
 
@@ -36,21 +36,21 @@ When building a manifest, the engine now also checks drop zone condition to deci
 
 ## How do you fix mistakes though?
 
-Not perfect, but it works. Remember that pellet hopper mistakenly dropped at the bakery? A future crew's manifest will call for a covered hopper -- the correct car for flour. Finding no flour hopper there, they'll (hopefully) leave the pellet hopper alone and move on.
+Not perfect, but it works. Remember that pellet hopper mistakenly dropped at the bakery? A future crew's manifest will call for a covered hopper -- the correct car for flour. Finding no flour hopper there, the crew will (hopefully) leave the pellet hopper alone and move on.
 
-You can also configure the engine so every "X" services of a drop zone, the crew is told to "PICKUP ALL" regardless of what's there -- guaranteed correction. I've been testing X values of 3-5, which work well so far.
+You can also configure the engine so every so many services of a drop zone, the crew is told to "PICKUP ALL" regardless of what's there -- guaranteed correction. This is a configurable number that you can play with to see what works for you.
 
 ## And now for something completely different...
 
-I've long been obsessed with implementing a **car card system using car types** -- now it's in ModuOps. Consignee requests can be marked as a **producer** or a **consumer**. Here's an example:
+I've long been obsessed with implementing a **car card system using car types** in ModuOps. I'm happy to announce that the Pull and Drop Ops engine adds car card functionality to the App. Here is how it works.
 
-A lumber mill is a **producer** -- it needs an **empty** center beam flat car to load. The engine schedules one delivered from the yard, then later pulls the now **loaded** car back to the yard.
+First, consignee requests can be marked as a **producer** or a **consumer**. Let's say we have a lumber mill that is a **producer** of lumber -- it needs an **empty** center beam flat car to load milled lumber. The engine schedules a center beam flat to be delivered from the yard. At some point in the future, the engine schedules a pick up of the now **loaded** car to return back to the yard.
 
-Meanwhile, a lumber yard selling to happy customers is a **consumer**, consumers always request **loaded** cars from their source yard. The scheduler sees the loaded car sitting in the yard and puts it on a train to the lumber yard. Once unloaded, the now **empty** car eventually gets pulled back to the yard -- and the cycle repeats.
+Meanwhile, a lumber yard selling lumber is a **consumer**, consumers always request **loaded** cars from their source yard. The scheduler sees the loaded car sitting in the yard and puts it on a train to the lumber yard. Once unloaded, the now **empty** car eventually gets pulled back to the yard -- and the cycle repeats.
 
 Sound familiar? It's a basic car card system -- using car types instead of reporting marks, with no cards to manage, and still self-correcting and prep-free like the rest of ModuOps.
 
-It's working, and fun to watch in motion. You'll now see an indication on train lists and switchlists for whether a car is loaded or empty. Cool!
+It's working, and fun to watch in motion. You'll now see an indication on train lists and switchlists on whether a car is loaded or empty when you have producers and consumers in the layout. Cool!
 
 **Example of Trainlist**
 
@@ -58,14 +58,14 @@ It's working, and fun to watch in motion. You'll now see an indication on train 
 
 ## Yard to yard transfers
 
-What if a producer and consumer aren't served by the same yard? In real life, the car hops yard to yard until it reaches one that services the consumer, then gets scheduled out, unloaded, and sent back the same way. The Pull & Drop Ops engine handles this too -- routing a car through any number of yards to reach the one that needs it. More on this in a future post.
+What if a producer and consumer aren't served by the same yard? In real life, cars hop from yard to yard until it reaches one that services the requesting producer or consumer. The Pull & Drop Ops engine handles this too -- routing a car through any number of yards to reach the one that needs it. More on this in a future post.
 
 ## More overhead = more prototypical
 
-This adds a bit of overhead to an ops session -- since the scheduler tracks drop zone condition, train lists and switchlists are now numbered and need to be run in sequence to keep that condition in sync. It's defined at trainlist generation time though, so you can sprinkle it in and let the existing schedulers handle the bulk of your work.
+The Pull and Drop Ops engine adds overhead to an ops session for sure -- since the scheduler tracks drop zone condition, train lists and switchlists are now numbered and need to be run in sequence and can not be skipped or the apps status of where cars are on the layout will be off.
 
 ## When can I get my hands on this?
 
-This is new ground, and a little weird at first if you've done traditional car card ops before -- but it's an interesting idea, and I hope you give it a try.
+This is new ground, and a little weird at first if you've done traditional car card ops before -- but it's an interesting idea, and I hope you give it a try. The work on this engine is on going but has reached a state where I am comfortable adding the new engine to the app at this point.
 
 The Pull & Drop Ops engine is coming as part of the completely rewritten ModuOps. Developer preview releases are coming soon -- stay tuned!
