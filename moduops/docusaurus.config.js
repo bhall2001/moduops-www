@@ -33,12 +33,12 @@ const config = {
           lastVersion: '5',
           versions: {
             current: {
-              label: '6 (preview)',
+              label: 'Version 6 (preview)',
               path: 'next',
               banner: 'unreleased',
             },
             5: {
-              label: '5',
+              label: 'Version 5',
             },
           },
           // Please change this to your repo.
@@ -69,6 +69,10 @@ const config = {
         },
         items: [
           {
+            type: 'docsVersionDropdown',
+            position: 'left',
+          },
+          {
             type: 'docSidebar',
             sidebarId: 'docsSidebar',
             position: 'left',
@@ -89,10 +93,6 @@ const config = {
           //   label: 'Tutorial',
           //   to: '/docs/tutorial',
           // },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-          },
           {
             href: 'https://github.com/bhall2001/moduops-www',
             label: 'GitHub',
