@@ -1,41 +1,34 @@
-# Website
+# moduops (site)
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The Docusaurus 3 site for [moduops.com](https://moduops.com). For setup, deploys, and infra, see the [root README](../README.md).
 
-### Installation
+## Commands
 
-```
-$ yarn
-```
+Run these from the repo root:
 
-### Local Development
-
-```
-$ yarn start
+```sh
+pnpm i                  # install
+pnpm start:moduops      # dev server at http://localhost:4000, live reload
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Or from this directory:
 
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+```sh
+pnpm build              # static build into build/
+pnpm serve              # serve build/ locally
+pnpm typecheck
 ```
 
-Not using SSH:
+Don't use `pnpm run deploy` here. That script is Docusaurus's GitHub Pages deploy, which this project doesn't use. The site is hosted with SST, so deploy from the root.
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## Where things live
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+| Path | What |
+| --- | --- |
+| `docs/` | App docs; `docs/tutorial/` is the tutorial. Navigation lives in `sidebars.js` |
+| `blog/` | Posts named `YYYY-MM-DD-slug.md`; authors in `blog/authors.yml` |
+| `src/pages/` | Custom pages; `index.tsx` is the homepage |
+| `src/components/` | Homepage sections and other React components |
+| `src/css/custom.css` | Theme overrides |
+| `static/` | Assets served as-is from `/` |
+| `docusaurus.config.js` | Site config: navbar, footer, presets |
