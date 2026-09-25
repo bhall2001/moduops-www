@@ -9,3 +9,6 @@ export PATH=/home/node/.npm-global/bin:$PNPM_HOME:$PATH
 
 # no TTY for pnpm's purge / supply-chain prompts
 export CI=true
+
+# CI=true makes node report color depth 1; restore truecolor
+export FORCE_COLOR=3

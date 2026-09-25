@@ -51,6 +51,9 @@ RUN printf '%s\n' \
 
 RUN npm config set allow-scripts=@anthropic-ai/claude-code --location=global
 
+# uv/uvx: serena MCP server runs via uvx
+RUN curl -fsSL https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh
+
 USER node
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended >/dev/null

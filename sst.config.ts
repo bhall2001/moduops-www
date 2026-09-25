@@ -5,7 +5,7 @@ export default $config({
     return {
       name: 'moduops-www',
       removal: input?.stage === 'production' ? 'retain' : 'remove',
-      protect: ['production'].includes(input?.stage),
+      // protect: ['production'].includes(input?.stage),
       home: 'aws',
       region: 'us-east-2',
     };

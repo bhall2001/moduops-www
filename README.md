@@ -1,39 +1,59 @@
 # ModuOps web site
 
-All the techy dirt you need to know for moduops web site.
+Source for [moduops.com](https://moduops.com): the ModuOps docs, tutorial, and blog.
 
-## SST Framework
+## Stack
 
-The project uses the [SST framework](https://sst.dev/). So we have a serverless hosted application that lives on AWS. SST is overkill for what we have going here but it makes dealing with AWS just about as easy as I've seen.
+- **[Docusaurus 3](https://docusaurus.io/)** builds a static site from Markdown and React. It lives in `moduops/`.
+- **[SST v4](https://sst.dev/)** hosts it on AWS as an `sst.aws.StaticSite` (S3 + CloudFront). `sst.config.ts` is the entire infrastructure definition.
+- **pnpm workspace**: the root holds SST, and `moduops/` is the only package.
 
-SST sets up as a monorepo. There are the backend services/stacks and the frontend projects. The backend sets up the "stack" with cdk to create all the required support services on AWS.
+## Layout
 
-## Frontend
+| Path | What |
+| --- | --- |
+| `moduops/docs/` | ModuOps app docs; `tutorial/` holds the tutorial |
+| `moduops/blog/` | Blog posts named `YYYY-MM-DD-slug.md`; authors in `authors.yml` |
+| `moduops/src/`, `moduops/static/` | Custom pages, components, and static assets |
+| `moduops/docusaurus.config.js`, `sidebars.js` | Site config and docs navigation |
+| `sst.config.ts` | AWS infra: stages, domains, build |
+| `.devcontainer/` | Dev container setup |
+| `.github/workflows/deploy.yml` | Manual deploy workflow |
 
-The frontend for this project is [Docusaurus](https://docusaurus.io/). Docusaurus is super easy to figure out and I think the websites created look great. Docusaurus creates a static web site from md and React files.
+## Local development
 
-When doing development, navigate to the frontend directory where you can do the usual `npm install` and `npm run start` for local dev.
+Requires Node 24 (see `.nvmrc`) and pnpm.
 
-## Docs
+```sh
+pnpm i                  # install everything, from the repo root
+pnpm start:moduops      # dev server at http://localhost:4000
+```
 
-ModuOps docs are located in `frontend/docs` directory. These are markdown files for various topics within the App. You will also find the ModuOps tutorial in the docs directory.
+In the dev container, `pnpm i` runs automatically after the container is created, and port 4000 is auto-forwarded.
 
-## Blog
+Other commands, run from the repo root:
 
-The blog is located at `frontend/blog` directory. Blog post files are labeled with a date and name in the format of `YYYY-MM-DD-blog_name.md`.
+- `pnpm typecheck` checks types.
+- `pnpm reinstall` wipes every `node_modules` folder plus the lockfile, then installs again.
 
-## Logistics
+## Deploying
 
-- Project uses `pnpm` for dependency management
-- project is setup as a pnpm monorepo
-- run the main app locally by pnpm start:moduops in the root of the project
-- install all dependencies throughout the monorepo by pnpm i at the root.
-- source code is managed with `git` and checked into GitHub.
+The SST stage name decides the domain. `production` deploys to `moduops.com`, with a redirect from `www.moduops.com`. Any other stage deploys to `<stage>.moduops.com`. State lives in AWS `us-east-2`.
 
-## Deploying app
+You need AWS credentials set up locally.
 
-There is nothing fancy about the deploy process. I have elected to NOT use any CI/CD service for this project. Deployments happen from the command line. You will need to have your AWS cli setup for deploys to work.
+```sh
+pnpm run deploy         # dev stage     -> dev.moduops.com
+pnpm run deploy:prod    # production    -> moduops.com
+pnpm run remove         # tear down dev
+```
 
-`pnpm run deploy` - deploys to dev.moduops.com
+Use `pnpm run deploy`, not `pnpm deploy`, which is a pnpm built-in. When running SST directly, always pass `--stage`. Without it, the stage defaults to your username.
 
-`pnpm run deploy:prod` - deploys to moduops.com
+```sh
+pnpm exec sst diff --stage=dev     # preview changes
+```
+
+### GitHub Actions
+
+`Deploy` (`.github/workflows/deploy.yml`) runs only when triggered manually. Start it from the Actions tab with a stage name and `deploy` or `remove`. It signs in to AWS through OIDC, so the repo stores no AWS secrets.

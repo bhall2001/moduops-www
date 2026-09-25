@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "moduops": "workspace:*",
-    "sst": "3.19.3"
+    "sst": "4.17.1"
   }
 }
