@@ -49,7 +49,7 @@ pnpm install --frozen-lockfile --config.confirmModulesPurge=false
 
 echo
 echo "Ready. Notes:"
-echo "  dev server : pnpm start:moduops   (port 3000, auto-forwarded)"
+echo "  dev server : pnpm start:moduops   (port 4000, auto-forwarded)"
 echo "  deploy     : pnpm exec sst deploy --stage=<name>   # always pass --stage"
 echo "  aws        : credentials are mounted READ-ONLY from the host"
 echo "  claude     : run 'claude' in an attached iTerm2 shell"

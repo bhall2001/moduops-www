@@ -28,9 +28,9 @@
     "CONTEXT7_API_KEY": "${localEnv:CONTEXT7_API_KEY}"
   },
 
-  "forwardPorts": [3000],
+  "forwardPorts": [4000],
   "portsAttributes": {
-    "3000": { "label": "docusaurus", "onAutoForward": "notify" }
+    "4000": { "label": "docusaurus", "onAutoForward": "notify" }
   },
 
   // snapshot the host config into the mounted dir (single-file mounts break on atomic rewrite)
