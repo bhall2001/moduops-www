@@ -39,7 +39,7 @@ The random and weighted selection engines are Stateless. That means that the sys
 
 Version 6 introduces the Pull & Drop Ops engine. For the first time, ModuOps is no longer Stateless. The engine remembers what car types have been dropped at each drop zone and schedules those cars to be picked up on a later train. Consignees can be marked as a producer or a consumer, so the engine also tracks loads and empties. Think of it as a car card system using car types, with no cards to manage.
 
-Pull & Drop Ops still does not need the layout to be setup in any particular manner. The first time a drop zone is worked, the crew is instructed to "PICKUP ALL" which puts the drop zone in a known state. Mistakes still fix themselves as operations progress.
+Pull & Drop Ops still does not need the layout to be setup in any particular manner. The first time a drop zone is worked, the crew is instructed to "PICKUP ALL" which puts the drop zone in a known state. It repeats every few visits, so mistakes don't build up. Mistakes still fix themselves as operations progress.
 
 The trade off is a bit more overhead. Trainlists are numbered and need to be run in sequence. See [Trainlists](trainlists.md#pull--drop-ops) for the details.
 
