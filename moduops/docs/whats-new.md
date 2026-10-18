@@ -15,7 +15,7 @@ ModuOps version 6 is a complete rewrite. It's now an Electron desktop app writte
 - A new [Origins](origins.md) screen that works out how many of each car type to put in a yard or other train origin.
 - A switch to print PICKUP ALL WHEN DROPPING on trainlists, and a refreshed printed SwitchList.
 - Cars/Week is now called Demand.
-- Yards are now `Train Origin/Terminus` drop zones, set on the drop zone, not the module/town. Any start or end point qualifies, such as a mine track for a coal unit train. See [Drop Zones](drop-zones.md#origin-and-terminus-tracks).
+- Yards are now `Train Origin/Terminus` drop zones, set on the drop zone, not the module/town. Now covers yards, interchange tracks or unit train origins. See [Drop Zones](drop-zones.md#origin-and-terminus-tracks).
 - A new layout file format (`.mop3`). Version 5 `.mop2` files are automatically migrated the first time you open them, and your original file is left untouched. See [Upgrading from v5](upgrading.md).
 - Lengths can use any unit and any scale, standard or custom, and can easily be converted between them. A real-world measurement converter turns a tape measure reading into your layout's scale.
 - A much better trainlist preview. What you see is the actual printed page.
