@@ -30,6 +30,17 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           sidebarCollapsed: true,
+          lastVersion: '5',
+          versions: {
+            current: {
+              label: 'Version 6 (preview)',
+              path: 'next',
+              banner: 'unreleased',
+            },
+            5: {
+              label: 'Version 5',
+            },
+          },
           // Please change this to your repo.
           editUrl:
             'https://github.com/bhall2001/moduops-www/tree/main/packages/create-docusaurus/templates/shared/',
@@ -58,8 +69,12 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'history',
+            type: 'docsVersionDropdown',
+            position: 'left',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
           },

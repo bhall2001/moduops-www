@@ -7,21 +7,19 @@ slug: /faq
 
 # FAQ
 
-## Why do yards not show any cars when I select it on the Yard screen?
+## Why do origins not show any cars when I select one on the Origins screen?
 
-This can happen when the yard is not included as an origination point for any train in the current layout file. Once the yard is added as an origin for a train, car types should be displayed.
+The Origins screen only lists drop zones marked `Train Origin/Terminus` that a train departs from. If the list is empty, set a train's `Departure` to one of those drop zones. If an origin is listed but has no cars, the trains leaving it have no equipment requests with Demand on their routes. See [Origins](origins.md).
 
 ## I've heard that ModuOps helps correct mistakes. How exactly does it accomplish that?
 
 Mistakes are inevitable, especially when you're busy engaging with attendees at a show and promoting the hobby. While ModuOps doesn't directly fix errors, there's a straightforward procedure that, when included in all your Trainlists, effectively addresses mistakes.
 
-The recommended approach is to add the following comment to the Crew Instructions, accessible on the train edit screen:
+With the Random (MRBT) and Weighted Selection engines, turn on `Print Pickup All note` on the Trainlists screen. It's on by default and prints this on every trainlist:
 
-`<b>PICK UP ALL WHEN DROPPING</b>`
+**PICKUP ALL WHEN DROPPING**
 
-:::tip
-You can use basic html syntax when creating comments. the `<b></b>` in the example above will make the text appear bold.
-:::
+You can also type it into the Crew Instructions on the train's `Details` tab, using the `Bold` button so it stands out. See [Trainlists](trainlists.md#pickup-all-note). The Pull & Drop Ops engine schedules its own pickups and doesn't need it.
 
 This instructs the crew that, before dropping a set of cars, they should pick up all the cars in the drop zone. An added benefit of this practice is that any equipment placed in the drop zone by mistake will be collected and returned to the yard.
 
@@ -49,11 +47,7 @@ This ensures an organized and efficient process for managing off spot tracks in 
 
 ## Why are train lengths shorter then the length I set for the minimum length?
 
-The minimum length you set represents the maximum allowable length for a train without surpassing the defined minimum. Consequently, train lengths can be shorter than the specified minimum length.
-
-For instance, if you set the minimum length at 150 feet, the system aims to create a train up to, but not exceeding, 150 feet. If the accumulated length of the train is 135 feet, only an additional piece of equipment measuring 15 feet can be added to meet the minimum requirement.
-
-It's unlikely you will have a 15-foot-long piece of equipment, therefore the final train length will be 135 feet—the maximum length without going above the 150 foot minimum.
+With a `Min Length` set, each time you generate ModuOps picks a target somewhere between the minimum and the maximum and fills the train up to that target, never past it. The target is a goal, not a promise. If the train is at 135 feet with a 150 foot target, only a car of 15 feet or less can still go on. It's unlikely you have one, so the train comes out at 135 feet. The same thing happens when the route simply runs out of work or drop zone room.
 
 ## Does train length include locomotive and caboose lengths?
 

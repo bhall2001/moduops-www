@@ -29,15 +29,21 @@ The strict rules associated with reporting marks adds significant effort to an O
 
 ModuOps requires a sourcing yard sending cars to Consignees. Large layouts can be split into Districts with regional yards acting as the source of cars for an area of the Layout. It is even possible to simulate transfers between yards by making the yard itself a Consignee.
 
-ModuOps is Stateless. That means that the system does not store any information about the past, present or future state of the layout. Another advantage in a layout where "Free-running" occurs between formal operations sessions. ModuOps does not need the layout to be setup in any particular manner prior to an operating session beginning.
+ModuOps currently offers 3 scheduling engines, the original MRBT random engine (each request has a 1/n chance of selection), a weighted selection engine and the new Pull & Drop Ops engine.
 
-ModuOps does not have the ability to schedule a "Pick Up". This is the direct result of the software being Stateless. Future stateful scheduling engines are planned and will be included in the future.
+The weighted selection uses a demand number given to requests. In addition to the weighted selection, it is possible to skew selections to facilitate car blocking.
 
-ModuOps currently offers 2 scheduling engines, the original MRBT random engine (each request has a 1/n chance of selection) and a weighted selection engine.
+The random and weighted selection engines are Stateless. That means that the system does not store any information about the past, present or future state of the layout. These engines are based on MRBT's original flow where all traffic originates at a yard and travels to a consignee. It is important to remember this sequence when creating operating plans.
 
-The weighted selection uses a cars per week number given to requests. In addition to the weighted selection, it is possible to skews selections to facilitate car blocking.
+## Pull & Drop Ops
 
-The Application as it stands today is based on MRBT's original flow. That means that all traffic originates at a yard and travels to a consignee. It is important to remember this sequence when creating operating plans.
+Version 6 introduces the Pull & Drop Ops engine. For the first time, ModuOps is no longer Stateless. The engine remembers what car types have been dropped at each drop zone and schedules those cars to be picked up on a later train. Consignees can be marked as a producer or a consumer, so the engine also tracks loads and empties. Think of it as a car card system using car types, with no cards to manage.
+
+Pull & Drop Ops still does not need the layout to be setup in any particular manner. The first time a drop zone is worked, the crew is instructed to "PICKUP ALL" which puts the drop zone in a known state. It repeats every few visits, so mistakes don't build up. Mistakes still fix themselves as operations progress.
+
+Trains leave the yard at their target length. When the usual pickups wouldn't leave room for enough set-outs, the engine adds pickups, oldest car first, until the train is full. A whole day of runs can be generated and printed in one batch. See [Trainlists](trainlists.md#pull--drop-ops).
+
+The trade off is a bit more overhead. Trainlists are numbered and need to be run in sequence. See [Trainlists](trainlists.md#pull--drop-ops) for the details.
 
 ## Home Layouts
 

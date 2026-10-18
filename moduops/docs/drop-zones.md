@@ -1,61 +1,138 @@
-# Drop zones
+---
+id: drop-zones
+title: Drop Zones
+sidebar_label: Drop Zones
+---
 
-Drop zones in ModuOps are defined as sections of track where equipment can be set out. A drop zone could be the entire length of a siding or there can be multiple drop zones per track. It is even possible to define a drop zone to be longer then the length of a siding.
+# Drop Zones
 
-Drop zones are defined as part of a module/town. Select a module/town and then click the `Drop Zones` tab to display the list of drop zones for the selected module/town.
+A drop zone is a section of track where equipment can be set out. A drop zone could be the whole length of a siding, or a siding can have several drop zones. You can even make a drop zone longer than the siding it sits on.
 
-## Create a new drop zone
+Drop zones belong to a module/town. To see them, click `Modules/Towns` in the sidebar menu, select a module/town, then click the `Drop Zones` tab.
+
+## Create a drop zone
 
 1. Click `Modules/Towns` in the sidebar menu.
 2. Select a module/town.
-3. Click the `Drop Zones` tab on the right of the Modules/Towns screen.
-4. Click the `New` button below the drop zone list.
+3. Click the `Drop Zones` tab.
+4. Click `New`.
+5. Fill in the fields. `Drop Zone Name` and `Length` are required.
+6. Click `Save`.
 
-A new drop zone is created and you are navigated to the drop zone edit screen.
+You return to the Drop Zones tab with the module/town still selected.
 
 ## Edit a drop zone
 
-1. Click `Modules/Towns` in the sidebar menu.
-2. Select a module/town.
-3. Click the `Drop Zones` tab on the right of the Modules/Towns screen.
-4. Click the `Edit` button below the drop zone list.
+1. Select the drop zone in the Drop Zones tab.
+2. Click `Edit`.
+3. Make your changes and click `Save`. Click `Cancel` to leave without saving.
 
 :::tip
-You can double click a drop zone to open the edit screen.
+Double-click a drop zone to open it for editing.
+:::
+
+:::info[Screenshot needed]
+Drop zone edit screen with Train Origin/Terminus checked and the ruler button next to Length.
 :::
 
 ## Drop zone fields
 
-On the drop zone edit screen there are numerous fields and flags that can be set.
+`Drop Zone Name` and `Length` are required and are marked with an asterisk on the form. ModuOps shows "Drop Zone Name is required" if the name is blank. The other fields are optional, and `Direction` and `Active` start with sensible defaults.
 
-**Zone Ref** - abbreviated text string to reference the drop zone by. Maximum 10 characters, all caps. This field is required when using switch lists.
+| Field | Description |
+| --- | --- |
+| `Drop Zone Name` (required) | The name of the drop zone. |
+| `Length` (required) | How much track the drop zone has. The label shows your layout's unit, for example `Length (ft)`. ModuOps will not put more equipment in a drop zone than fits in this length. |
+| `Zone Reference` (optional) | A short code for the track, up to 10 characters. Letters are made upper case as you type. See [Zone Reference](#zone-reference). |
+| `Direction` (optional) | Which direction trains can serve this drop zone from: `A Only`, `B Only` or `A and B`. New drop zones start as `A Only`. See [Direction](#direction). |
+| `Active` (optional) | Checked means the drop zone can get work. Uncheck it to take the drop zone out of use. See [Active](#active). |
+| `Train Origin/Terminus` (optional) | Check this if trains start or end here: a yard, staging or interchange track. See [Origin and terminus tracks](#origin-and-terminus-tracks). |
 
-**Name (required)** - The name of the drop zone
+### Length and the Real-World Measurement converter
 
-**Use Consignee Name** - a menu listing the names of consignees on the module. It is common that a drop zone name will be the same as a consignee name. This menu allows you to easily select a consignee as the drop zone name.
+Lengths use the unit set for your layout (see [Layout](layout.md)). If your layout uses feet and HO scale, enter the drop zone length in scale feet.
 
-**Length (required)** - The length of the drop zone. While the field is labeled as feet, the length can be any unit of measure. The only requirement is that the unit is consistent with all other lengths in the layout.
+Don't want to do the math? Click the ruler button next to `Length` (tooltip "Enter real-world measurement"):
 
-**Faces** - an indication of the direction the drop zone faces relative to the module. This is used to indicate drop zones that are trailing leads to the scheduling engine. All drop zones that are trailing leads in the same direction on a module/town should have the same value selected in this menu. Valid options are `A` and `B`.
+1. Enter the `Measurement` from your tape measure (required, and greater than 0; `Apply` stays greyed out until you do).
+2. Pick the `Unit`: Inches, Feet, Millimeters, Centimeters or Meters.
+3. The "Converts to" box shows the length in your layout's scale and unit, and how it was worked out.
+4. Click `Apply` to put the result in the `Length` field.
 
-**Yard/Interchange/Staging** - a flag indicating that this drop zone is a yard, interchange or staging. All trains must depart from a yard, interchange or staging drop zone. Each layout is required to have at least one drop zone designated as a yard, exchange or staging zone.
+ModuOps remembers the unit you used last time. The result is rounded to a whole number.
 
-**Active** - This flag indicates whether a drop zone is active or inactive. It is useful if a drop zone included in an operations plan is found to have an issue once the layout is set up and can not be used in the operations plan. Rather than updating all train routes that use this drop zone, simply unchecking this flag and the scheduling engine will not select this drop zone when building trainlists.
+:::note
+The ruler button is hidden when your layout's unit is set to Units (no real-world scale).
+:::
+
+### Zone Reference
+
+The Zone Reference is a short name for the track the drop zone is on, such as `TEAM` or `HOUSE1`. Switch lists print it as the track for each car, falling back to the first 10 characters of the drop zone name when it's blank, and trainlist entries are sorted by it.
+
+It also tells the `Car Distribution` setting which drop zones are on the same track. A warehouse with three doors on one siding should have three drop zones that all share a Zone Reference, so the engine knows bunching cars there means one stop for the crew. Leave it blank and the drop zone is treated as a track of its own. See [Trains](train.md#car-distribution).
+
+### Direction
+
+Direction tells ModuOps which way a train must be moving to work the drop zone. It's there for trailing-point spurs: a drop zone set to `A Only` is worked by trains coming through the module/town from the A direction, `B Only` from the B direction, and `A and B` from either.
+
+On a train's route, a stop can be set to `A Only` or `B Only`. The train then only gets work at drop zones with a matching direction, or at `A and B` drop zones. A stop set to `All Consignees` ignores direction. See [Train Route](train-route.md).
+
+:::tip
+All drop zones that face the same way on a module/town should have the same Direction.
+:::
+
+### Active
+
+If a drop zone can't be used during a session, for example a turnout is broken, uncheck `Active`. ModuOps will not schedule any work to it when building trainlists. You don't need to change any train routes. Check it again when the track is back in service.
+
+### Origin and terminus tracks
+
+Check `Train Origin/Terminus` on any drop zone where a train starts or ends its run. Only these drop zones show up in a train's `Departure` and `Terminates` lists, so your layout needs at least one before you can create a train. See [Trains](train.md).
+
+A yard is the usual case, but it isn't the only one:
+
+| Kind of track | Example |
+| --- | --- |
+| Yard or staging | A classification yard or hidden staging where most trains are made up and tied down. |
+| Interchange | A track where a connecting railroad hands cars over. A transfer run can start or end there. |
+| Unit train origin | A coal mine's loading track. A coal unit train departs from the mine and terminates at the power plant, so both of those drop zones get the check. |
+
+The departure and terminus don't have to be the same kind of track. A local might leave the yard and tie down on an interchange track, and a unit train can run from one industry to another without going near a yard.
+
+Origin and terminus drop zones aren't offered when creating equipment requests, since consignees request equipment at regular drop zones. If the power plant also takes the odd boxcar of parts, give it a second, regular drop zone for those requests and keep the unloading track as the unit train's terminus.
+
+With the Pull & Drop Ops engine, the origin is where cars come from and where they go home to. The [Origins](origins.md) screen uses the drop zone's `Length` to plan what to stock there, so set `Length` to the room the cars really have. For a yard that's the total length of all the tracks that make up the yard. For a mine it's the length of the loading track.
+
+The flag is on the drop zone only. A module/town itself no longer has a yard setting.
 
 ## Clone a drop zone
 
-Any drop zone can be copied to a new drop zone.
+Cloning is a quick way to make a drop zone that's like one you already have.
 
-1. Select the drop zone in the drop zone list
-2. Click the `Clone` button to copy the drop zone to a new drop zone
+1. Select the drop zone in the Drop Zones tab.
+2. Click `Clone`.
+3. The edit screen opens with a copy of every field. " (Copy)" is added to the end of the name.
+4. Change the name and anything else, then click `Save`.
 
-The drop zone edit screen will open with an exact duplicate of the drop zone. Be sure to update the name of the drop zone so you know which is the new copy.
+Equipment requests are not copied to the new drop zone.
 
 ## Delete a drop zone
 
-If a drop zone is no longer needed, you can delete it from the layout.
+1. Select the drop zone in the Drop Zones tab.
+2. Click `Delete`.
+3. Click `Delete` in the confirmation box.
 
-1. Select the drop zone in the drop zone list
-2. Click the `Delete` button to delete the drop zone
+:::warning
+Deleting a drop zone also deletes every equipment request for it, from any consignee on the module/town. Any trainlist lines for those requests are removed too. This cannot be undone.
+:::
 
-You will have one last chance to change your mind. Once a drop zone is deleted it can not be recovered.
+## Changes from version 5
+
+- `Name` is now `Drop Zone Name`.
+- `Zone Ref` is now `Zone Reference`. It is optional; switch lists fall back to the drop zone name.
+- `Faces` is now `Direction`, with a new `A and B` choice. New drop zones default to `A Only`.
+- `Yard/Interchange/Staging` is now `Train Origin/Terminus`. Version 5's "Yard Sequence" field for transfers isn't shown, because transfers aren't part of version 6 yet.
+- The `Use Consignee Name` menu is gone. Type the name instead.
+- New ruler button converts a tape-measure length to your layout's scale.
+- The `Length` label now shows your layout's unit.
+- Cloning adds " (Copy)" to the new drop zone's name.

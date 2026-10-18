@@ -1,130 +1,197 @@
+---
+id: train
+title: Trains
+sidebar_label: Trains
+---
+
 # Trains
 
-The train screen is where you handle all aspects related to trains on your layout. A train comprises equipment that is randomly chosen from the equipment requests made by consignees on the train's route.
+The Trains screen is where you create and manage the trains that run on your layout. Each train has details (symbol, yards, length, crew instructions) and a route that tells ModuOps which modules/towns and consignees the train works. When you generate a trainlist, ModuOps picks equipment requests from the consignees on the train's route and builds a trainlist for the crew.
 
-## Editing Train Information
+To open the screen, click `Trains` in the sidebar.
 
-Trains contain various details regarding their characteristics, such as symbols, names, departure, and terminating points.
+## The Trains list
 
-To create a new train, simply click the New button on the train management screen.
+The list shows every train in the layout file, sorted by symbol. The columns are `Symbol`, `Name`, `Departure`, `Terminates`, `Length` and `Type`.
 
-To edit an existing train, follow these steps:
+Click a train to select it. Double-click a train to open it for editing.
 
-1. Select the desired train from the train list.
-2. Click the `Edit` button on the train management screen.
+The buttons above the list are:
 
-## Train fields
+| Button | What it does |
+|---|---|
+| `New` | Opens a blank train form so you can create a new train. |
+| `Edit` | Opens the selected train for editing. |
+| `Clone` | Opens a new train form filled in with a copy of the selected train. |
+| `Delete` | Deletes the selected train after you confirm. |
 
-**Symbol (required)** - the identifier of the train.
+`Edit`, `Clone` and `Delete` are available once you select a train.
 
-**Type** - a menu offering various classifications of the train. Currently there is no use for types in the application. The option is provided as a means for documentation only.
+:::info[Screenshot needed]
+The Trains list with one train selected and the New / Edit / Clone / Delete buttons visible.
+:::
 
-**Departure (required)** - the yard the train will depart from.
+## Create a train
 
-**Terminates (required)** - the yard the train will terminate at.
+1. Click `New` on the Trains list.
+2. Enter a `Symbol`.
+3. Choose the `Departure` and `Terminates` drop zones.
+4. Enter a `Max Length`.
+5. Fill in any other fields you want (see the field reference below). Those four are the only required fields.
+6. Click `Save`.
 
-**Length (required)** - the length of the train intended to be in feet. This value is the maximum length a train could potentially be. The ModuOps scheduler will create a train up to this length but not longer.
+After the first save, the train opens in edit mode and two tabs appear at the top of the form: `Details` and `Route`. You build the train's route on the [Route tab](train-route.md). A new train must be saved before you can add a route.
 
 :::tip
-The length of a train is for equipment only. The length of power and vans should not be included in this value.
+The `Departure` and `Terminates` lists only show drop zones that have `Train Origin/Terminus` checked. If the lists are empty, mark at least one drop zone that way first. See [Drop Zones](drop-zones.md).
+:::
+
+## Edit a train
+
+1. Select the train on the Trains list and click `Edit`, or double-click the train.
+2. Make your changes on the `Details` tab.
+3. Click `Save`. You stay on the form so you can keep working.
+
+Click `Cancel` to go back to the Trains list without saving. If you try to leave the page with unsaved changes on the `Details` tab, ModuOps asks whether you want to `Stay on Page` or `Leave Page`.
+
+ModuOps remembers whether you last used the `Details` or `Route` tab and opens that tab the next time you edit a train.
+
+## Details tab
+
+The `Details` tab holds everything about the train except its route.
+
+:::info[Screenshot needed]
+The Details tab of a train form showing Symbol, Name, Departure, Terminates, the length fields and the Car Distribution slider.
+:::
+
+### Train fields
+
+`Symbol`, `Departure`, `Terminates` and `Max Length` are required. Everything else is optional. If one is missing ModuOps won't save the train and shows a message under the field: "Symbol is required", "Departure is required", "Terminates is required", or "Length is required and must be greater than 0".
+
+| Field | Description |
+|---|---|
+| `Symbol` (required) | The train's identifier, up to 11 characters. A counter shows how many characters you have used. Each train needs its own unique symbol. The symbol prints at the top of the trainlist. |
+| `Name` (optional) | A descriptive name, such as "Harris Yard Turn". It prints next to the symbol at the top of the trainlist. |
+| `Departure` (required) | The origin the train starts from, shown as "Train origin" under the field. It prints as `Departs:` on the trainlist. |
+| `Terminates` (required) | The terminus the train ends at, shown as "Train terminus" under the field. It prints as `Terminate:` on the trainlist. |
+| `Max Length` (required) | The longest the train can be. ModuOps adds cars to the train up to this length but never past it. Must be a whole number greater than 0. |
+| `Min Length` | An optional minimum length. When set, each time you generate a trainlist ModuOps picks a random target length between the minimum and maximum (inclusive). |
+| `Type` | A classification for the train: Extra, Intermodal, Local, Mixed, Passenger, Special, Transfer, Turn or Unit. It is shown on the Trainlists screen and does not change how cars are chosen. |
+| `Remarks` | Your own notes about the train. |
+| `Limit Modules` | The most modules/towns the train can work on one trainlist. Leave it blank for no limit. See [How Limit Modules works](#how-limit-modules-works) below. |
+| `Car Distribution` | A slider from `Distribute` through `Balanced` to `Concentrate`. See [Car Distribution](#car-distribution) below. |
+| `Show on String Diagram` | Checked by default. Uncheck it to hide the train from the timetable string diagram, for example for yard crews or free-running trains. See [Timetable](timetable.md). |
+
+### Length units
+
+The length fields show your layout's length unit, for example `Max Length (ft)`. The unit comes from the layout settings (see [Layout](layout.md)). If you change the layout's unit or scale later, ModuOps converts every train's lengths for you.
+
+Next to each length field is a ruler button (`Enter real-world measurement`). Click it to enter a measurement straight from your tape measure, in inches, feet, millimeters, centimeters or meters. ModuOps shows what it converts to in your layout's scale and unit. Click `Apply` to use it. The ruler button is hidden if your layout uses plain "units".
+
+:::tip
+Train length is for equipment only. Don't include the length of locomotives or cabooses.
 :::
 
 :::info
-The unit of measure is arbitrary and technically this value can represent any unit needed. However you must be sure that the unit is consistent with the length of equipment and drop zones.
+Min Length is a target, not a promise. ModuOps stops adding cars when nothing else fits or there is no more work available, so some trainlists can come out shorter than the minimum.
 :::
 
-**Minimum length** - the minimum length a train can be. When there is a value in this field, the ModuOps scheduler will select a random number between and including the minimum length and the maximum length.
+### How Limit Modules works
 
-:::info
-ModuOps algorithms build trains up to but not exceeding the minimum length. Consequently, you will see train lengths that are less then the minimum.
-:::
+`Limit Modules` keeps a train from working every module/town on its route. Use it when a route passes through many modules/towns but you only want the crew switching a few of them. For example, a local with 8 modules/towns on its route and `Limit Modules` set to 3 works at most 3 of them, and a different 3 each time you generate.
 
-**Name** - the name of the train
+When you click `Generate`, ModuOps picks work at random, one car at a time. The first time it picks work at a module/town, that module/town is locked in. Once the number of locked-in modules/towns reaches the limit, work picked anywhere else is thrown out, and the rest of the train is filled from the locked-in modules/towns only.
 
-**Remark** - additional comment about the train. Currently the remark is provided as a means for documentation only and is not used anywhere in the application.
+A module/town counts once no matter how many rows it has on the route. Which ones get locked in is luck of the draw, with a tilt: under `Weighted Selection` the modules/towns with more `Demand` tend to get picked early, and under `Random (MRBT)` the ones on more route rows do.
 
-**Limit modules** - the maximum number of modules/towns a train can service in 1 trip. This is useful in situations where a train's route may take it across several modules/towns but is desired to limit the work done to a subset of all the modules/towns. The modules/towns are randomly selected from the modules/towns on equipment orders based on the scheduling engine being used.
+The slot is used up the moment a module/town is picked, before ModuOps checks whether the car fits. If the drop zone turns out to be full, or the car won't fit on the train, that module/town still holds its slot, so a trainlist can end up working fewer modules/towns than the limit. `Random (MRBT)` can burn a slot on a route row that has no work at all, such as a `Must Service` or `No Service` row (which it doesn't use) or a drop zone facing the wrong way. With `Weighted Selection`, `Must Service` consignees are picked first, so their modules/towns lock in first and count toward the limit; if there are more `Must Service` modules/towns than the limit, the extras get nothing.
 
-## Additional instruction fields
+Once the slots are full, only the locked-in modules/towns can get cars. If they run out of work or room, the train comes out short, even below `Min Length`.
 
-### Job Overview
+`Limit Modules` is used by all three scheduling engines. See [Trainlists](trainlists.md) for more about the engines.
 
-A field for describing the job the crew of this train will perform. Currently this field is provided for documentation only and is not used anywhere in the application.
+### Car Distribution
 
-### Crew Instructions
+`Car Distribution` is the probability that the next equipment request selected is at the same drop zone as the last one.
 
-A field describing specific instructions to the crew operating this train. Crew instructions are printed at the top of trainlists after the details of the train. Crew instructions are a way to give overall instructions to the crew for operating this train.
+After ModuOps places a car, it checks the slider to decide whether the next car goes to the same drop zone again. Set it low and cars spread out along the route. Set it high and cars bunch up at fewer drop zones.
 
-:::tip
-Most fields in ModuOps allow for basic html formatting. As an example, enclosing text between `<b></b>` causes the text to be formatted as bold text.
+| Setting | Chance the same drop zone is selected again |
+|---|---|
+| `Distribute` (1) | 0%. This is the default. |
+| 2 | 25% |
+| `Balanced` (3) | 50% |
+| 4 | 75% |
+| `Concentrate` (5) | 100% |
 
-`<b>PICKUP ALL WHEN DROPPING</b>` is a common instruction to add to the crew instructions. This will be rendered as **PICKUP ALL WHEN DROPPING** on trainlists.
-:::
+Once the drop zone is full, or there's no more work there that fits the train, the next car can go to any drop zone.
 
-### Termination instructions
+Car Distribution is used by the `Weighted Selection` and `Pull & Drop Ops` scheduling engines. `Must Service` requests are not affected.
 
-A field typically containing instructions for the crew of a train on procedures for terminating the train. This can include instructions for returning motive power to a certain track or perhaps even a shutdown procedure for the locomotive.
+With `Pull & Drop Ops` the slider does double duty. It also sets the odds that a car already sitting at a drop zone gets picked up on this visit, from one in four at `Distribute` up to every car at `Concentrate`. The odds never reach zero, so no car is left stranded forever.
 
-This field is added to all trainlists generated for this train after all work instructions but before the train termination location line.
+## Instructions and train orders
 
-**Example termination instructions**
+Below the train fields are four larger text fields. All four are optional:
+
+| Field | Description |
+|---|---|
+| `Job Overview` | A description of the job this train's crew performs. |
+| `Crew Instructions` | Overall instructions for the crew. They print near the top of every trainlist for this train, under the heading "CREW INSTRUCTIONS". |
+| `Termination Instructions` | Instructions for ending the run, such as where to put the power or a shutdown procedure. They print after all the work and just before the `Terminate:` line. |
+| `Train Orders` | One-line instructions you can place anywhere in the train's route. Each line becomes a separate train order. See [Train Orders](train-orders.md). |
+
+Example termination instructions:
 
 ```
-<b>Scheduled Work Harris Yard</b>
+Scheduled Work Harris Yard
 [ ] Terminate Track 1 Harris Yard
 ```
 
-### Train Orders
+### The text editor
 
-The train orders field is available for additional information or instructions that can be added to a train's route. Each line within this field can be added to a train route. For instance, with a train order, you can direct a crew where they should turn, such as <b>TURN at St. Cloud</b>.
+These fields use a simple editor with a toolbar:
 
-Train orders seamlessly integrate with the train's route instructions. While mastering this technique may require some practice, it's not overly complex. By employing basic HTML, including `<b></b>` to make text bold, indenting and simple formatting of orders, it's possible to blend train orders with other route instructions.
+- **Bold** and **Italic** buttons (or Ctrl+B / Ctrl+I, Cmd+B / Cmd+I on a Mac).
+- `Insert checklist item` adds `[ ] ` so the crew has a box to tick.
+- `Insert indent` adds a four-space indent, handy for lining text up under a checklist item.
+- `Insert underline input` adds a blank line (`________________`) for the crew to write on.
+- `½ Page` switches between half-page width (44 characters) and full width. The fields start in half-page width so you can see how the text will wrap on a half-page trainlist.
 
-**Train order example**
+Press Enter to start a new line. Only bold, italic and line breaks are kept. Other formatting is removed, including formatting in text you paste in.
 
-We will create a series of train orders for the crew to set out a cut of cars on the outbound journey and pick up a transfer cut on the return, set out by a branch crew.
-
-The initial step is to create a train order that designates the start of this work at a specific module or town location.
-
-`<b>Scheduled Transfer at Woodstown Junction</b>`
-
-When the above is rendered the text will be bold just as other module headings appear on a printed trainlist.
-
-:::tip
-Basic html formatting can be used on train orders. This allows you to match the formatting of a trainlist so the train order blends in with other route instructions.
-
-`<b></b>` any text between these tags will be bold
-
-`<i></i>` any text between these tags will be italic
+:::info[Screenshot needed]
+The Crew Instructions editor with its toolbar (Bold, Italic, checklist, indent, underline, ½ Page).
 :::
 
-Next we need 2 orders to set out and pick up the transfer cut of cars. Our crew in this example is working a turn. On the way out the crew will set out a cut of cars at the transfer location. On the return of the turn, the crew will pick up a cut of cars left at the transfer location by a local branch crew.
+## Clone a train
 
-```
-[ ] Set out Lackawanna Local transfer cut
-[ ] Pick up all
-```
+Cloning is a quick way to create a train that is similar to one you already have.
 
-The instructions above provide a space for the crew to add a checkmark when the task is completed just like other tasks would have on the trainlist.
+1. Select a train on the Trains list.
+2. Click `Clone`.
+3. A `Clone Train` form opens with every field and the route copied. The symbol has `-COPY` added to the end.
+4. Change the `Symbol` and anything else you need.
+5. Click `Save`.
 
-Finally we need to add additional details on where the transfer cut is to be set out and picked up.
+The new train opens in edit mode with its own copy of the route. Generated trainlists and timetable entries are not copied.
 
-```
-    to Transfer Track 1
-    from Transfer Track 1
-```
+## Delete a train
 
-It is a little difficult to see but these lines are indented the same spacing as the 2nd line of a trainlist would be. This allows the train order text to blend in with other text on the trainlist.
+1. Select the train on the Trains list.
+2. Click `Delete`.
+3. Click `Delete` in the confirmation box.
 
-The finale train order field for our example looks like:
+:::warning
+Deleting a train can't be undone. It also deletes the train's generated trainlists, and removes every appearance of the train from the timetables of all your operating sessions (along with its stop times).
+:::
 
-```
-<b>TURN at St. Cloud</b>
-<b>Scheduled Transfer at Woodstown Junction</b>
-[ ] Set out Lackawanna Local transfer cut
-[ ] Pick up all
-    to Transfer Track 1
-    from Transfer Track 1
-```
+## Changes from version 5
 
-Each of these lines is available on the train route screen to be added to the train's route. Details on how to do this are in the section below for describing the features related to train routes.
+- The route is now a `Route` tab on the train form instead of a separate screen. Double-clicking a train opens the train form.
+- `Length`, `Minimum length`, `Remark` and `Limit modules` are now `Max Length`, `Min Length`, `Remarks` and `Limit Modules`. Length fields show the layout's unit and have a real-world measurement converter.
+- New fields: `Car Distribution` (replaces the Drop Zone Favoring slider that was on the version 5 Trainlist screen) and `Show on String Diagram`.
+- The `Symbol` is limited to 11 characters.
+- Text fields use a toolbar editor. Typing HTML tags such as `<b></b>` no longer formats text; use the `Bold` and `Italic` buttons instead. Formatting in text from version 5 still displays.
+- New `Clone` button.
+- Deleting a train also removes it from operating session timetables.

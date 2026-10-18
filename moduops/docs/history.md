@@ -17,4 +17,4 @@ ModuOps preserves the core functionalities of MRBT while introducing significant
 
 ModuOps isn't limited to Free-mo layouts; it's utilized by various modular clubs, static club layouts, and home setups alike. With its versatility, ModuOps offers a convenient solution to introduce operational dynamics to any model railroad layout effortlessly!
 
-For those interested, ModuOps is developed using [Livecode](https://livecode.com), a cross platform, rapid development tool. ModuOps is compatible with both Windows and Macintosh systems, ensuring accessibility for a wide range of users.
+For those interested, ModuOps version 6 is a complete rewrite. It is an [Electron](https://www.electronjs.org) desktop application written in [React](https://react.dev) with [TypeScript](https://www.typescriptlang.org). Earlier versions were built with [LiveCode](https://livecode.com). ModuOps is built for Macintosh, Linux (in progress) and Windows. Macintosh ships first, Linux is next and Windows is last.

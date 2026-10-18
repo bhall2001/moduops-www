@@ -1,66 +1,115 @@
-# Route train orders
+---
+id: train-orders
+title: Train Orders
+sidebar_label: Train Orders
+---
 
-Train orders are 1 line comments that can be added to a train's route. Train orders are setup on the train edit screen. A train order can be used to provide instructions to a crew. Train orders are output on all trainlists generated for the train.
+# Train Orders
 
-## Add train order to train route
+Train orders are one-line instructions you place in a train's route. They print on every trainlist generated for the train, at their spot in the route, so the crew sees them at the right point in their work. Use them for things like where to turn, or a transfer cut to set out.
 
-To add a train order to the route, follow these steps:
+You can also add a **timetable instruction** to the route. It prints like a train order and also counts as a stop in the timetable.
 
-1. Go to the train route screen and select the `Train Orders` tab located next to `Modules/Towns`. This will display a list of all train orders.
-2. Click once on the line corresponding to the train order you wish to add.
-3. Click on the line above where you want to insert the train order into the route.
-4. Click the right arrow located in the center of the train route screen.
+## Write train orders
 
-This action will insert the train order into the train's route below the selected line. Each trainlist generated will now include the train order in the specified sequence on the route.
+Train orders start in the `Train Orders` field on the train's `Details` tab. See [Trains](train.md).
 
-## Train orders will not update once added to route
+1. Open the train and go to the `Details` tab.
+2. In `Train Orders`, type each order on its own line.
+3. Click `Save`.
 
-The format and content of a train order are established when adding the order to the train route. Any subsequent changes made to the order on the train edit screen will not automatically update the route.
+Each line that isn't blank becomes a separate train order. Use the editor toolbar to make the orders look like the rest of the trainlist:
 
-To update the modified train order in the route, you must first remove the order from the route. Then, you can add the modified order in the same line previously occupied by the removed train order.
+- **Bold** for headings, so they match module/town headings.
+- `Insert checklist item` for a `[ ] ` box the crew can tick.
+- `Insert indent` to line text up under a checklist item.
 
-## Train order example - indicating where to turn
+:::tip
+Click `Save` on the `Details` tab before switching to the `Route` tab. The `Train Orders` tab on the route only lists orders that have been saved.
+:::
 
-If a train is a turn with the intention that a turn take place at a specific location, a train order can be added to a train's route to notify the crew where the turn should take place.
+## Add a train order to the route
 
-By adding `<b>TURN at Eugene</b>` to a train order, this line can be added to the train's route at the position in the sequence where the turn should take place.
+1. Go to the train's `Route` tab.
+2. On the left, click the `Train Orders` tab (next to `Modules/Towns`). Each saved order is listed on its own row.
+3. Click the order you want to add (required; the right arrow stays greyed out until an order is selected).
+4. In the route on the right, click the row the order should come after. If no row is selected, the order is added at the end.
+5. Click the right arrow in the center.
 
-![route-train-order](/img/route-train-order.png)
+The order appears in the route with `[[Train Order]]` in the `Module/Town` column and the order's text in the `Consignees to Service` column. Like every route change, it is saved right away.
 
-This train route is rendered on the trainlist as follows:
+To move or remove an order, drag it or select it and click the left arrow, just like any other stop. See [Train Route](train-route.md).
 
-![turn-example](/img/turn-example.png)
+:::info[Screenshot needed]
+The Route tab with the Train Orders tab open on the left and a [[Train Order]] row in the route on the right.
+:::
 
-The trainlist will display the train order text each time a trainlist is generated.
+### Orders don't update once they're in the route
 
-## Train order example - special instructions
+The text of a train order is copied into the route when you add it. If you later change the order in the `Train Orders` field, the route keeps the old text.
 
-Train orders can communicate special instructions to a crew at a specific point in the route sequence. As an example the crew could be informed of a set out of a transfer cut of cars that will be worked by a different crew. Train orders could be created as follows:
+To update it:
+
+1. Save the changed order on the `Details` tab.
+2. On the `Route` tab, select the old order in the route and click the left arrow to remove it.
+3. Select the row above where it was, pick the updated order on the `Train Orders` tab and click the right arrow.
+
+## Example: where to turn
+
+If a train is a turn, add a train order that tells the crew where to turn around. Enter this in `Train Orders` (in bold):
+
+**TURN at Eugene**
+
+Then add it to the route after the last stop worked on the way out. On the trainlist, "**TURN at Eugene**" prints between the outbound work and the return work.
+
+:::tip
+If you want the turn to show on the timetable as a stop, use a [timetable instruction](#timetable-instructions) instead.
+:::
+
+## Example: a transfer cut
+
+Train orders can also describe work that isn't an equipment request. Here the crew sets out a transfer cut on the way out and picks up a cut left by a branch crew on the way back.
+
+Enter these lines in `Train Orders`, using bold for the first line, the checklist button for the next two and the indent button for the last two:
 
 ```
-<b>Scheduled Transfer at Woodstown Junction</b>
+Scheduled Transfer at Woodstown Junction
 [ ] Set out Lackawanna Local transfer cut
 [ ] Pick up all
     to Transfer Track 1
     from Transfer Track 1
 ```
 
-These instructions can be added to a train route at the point in the sequence where the transfer would take place. The text is formatted in a manner that it will blend in with other instructions on the trainlist. The order of the instructions does not matter as each individual line can be added to the route in any sequence. It is also possible to adjust the train order sequence using the up and down arrows if needed.
+Each line is a separate order, so you can put them in the route in any order. For the outbound move, add the heading, then `[ ] Set out Lackawanna Local transfer cut`, then `    to Transfer Track 1`. Later in the route, add `[ ] Pick up all` followed by `    from Transfer Track 1`.
 
-The above train orders on a train's route may look like this:
-
-![transfer train order](/img/transfer-train-order.png)
-
-When a trainlist is generated, the trains route will appear as follows:
-
-![transfer trainlist example](/img/transfer-trainlist.png)
-
-Notice how the train order lines instructing to "Set out Lackawanna Local transfer cut to Transfer Track 1" are formatted similarly to other instructions on the trainlist. This formatting consistency occurs because when the train orders were entered on the train edit screen, they were formatted to match the output of a ModuOps trainlist.
-
-These train orders are listed sequentially after the United Steel Corporation instructions and before the Woodstown Junction B Only instructions matching the sequence found on the train's route.
+Because the lines use the same bold heading, checkboxes and indenting as the rest of the trainlist, they blend in with the regular work.
 
 :::info
-Under ModuOps random selection scheduling, there's a chance that modules, towns, or consignees on the train route might not be chosen. Consequently, if United Steel isn't selected, the crew would first work the transfer.
-
-Similarly, if no Woodstown Junction B Only consignees are selected, the train's next stop would be something other than Woodstown Junction.
+Train orders always print, but regular work is picked at random. If nothing is picked for the stop before a train order, the crew simply reaches the train order sooner.
 :::
+
+## Timetable instructions
+
+A timetable instruction is a note tied to a module/town. It prints on the trainlist like a train order, and it also makes the train stop at that module/town in the timetable and on the string diagram. Use it for turns, meets or crew changes you want to show on the timetable. See [Timetable](timetable.md).
+
+1. Go to the train's `Route` tab and make sure `Modules/Towns` is showing.
+2. Click the module/town.
+3. Under `Stop Options`, check `Add timetable instruction`.
+4. Type the text in the `Instruction` field (required). It is one line, and you can use bold and italic. The right arrow stays greyed out until there's text.
+5. In the route, click the row it should come after (or leave nothing selected to add it at the end).
+6. Click the right arrow.
+
+The row appears with `[[Timetable]]` in the `Module/Town` column and your text in the `Consignees to Service` column. The checkbox and text clear afterwards so you can carry on adding stops.
+
+On the trainlist it prints as a bold "Train order at" heading with the module/town name (for example "**Train order at Eugene**"), followed by your instruction text. No cars are ever scheduled for a timetable instruction.
+
+:::info[Screenshot needed]
+The Modules/Towns tab with "Add timetable instruction" checked and text in the Instruction field.
+:::
+
+## Changes from version 5
+
+- Train orders are written with the editor toolbar (bold, italic, checklist, indent) instead of typing HTML tags like `<b></b>`.
+- Route rows are reordered by dragging instead of with the up and down buttons.
+- New timetable instructions (`Add timetable instruction`), which print as "Train order at" a module/town and add a timetable stop.
+- Train orders from version 5 that read "TURN AT" and a module/town name are recognized on the string diagram as a stop at that module/town.
