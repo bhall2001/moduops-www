@@ -87,9 +87,23 @@ If a drop zone can't be used during a session, for example a turnout is broken, 
 
 ### Origin and terminus tracks
 
-Check `Train Origin/Terminus` for yards, staging and interchange tracks, or any drop zone where a train starts or ends. These are what show up in the `Departure` and `Terminates` lists for trains, so your layout needs at least one before you can create a train. See [Trains](train.md). They're not offered when creating equipment requests, since consignees request equipment at regular drop zones, not yards. With the Pull & Drop Ops engine, the origin is where cars come from and where they go home to. The [Origins](origins.md) screen uses the drop zone's `Length` to plan what to stock there.
+Check `Train Origin/Terminus` on any drop zone where a train starts or ends its run. Only these drop zones show up in a train's `Departure` and `Terminates` lists, so your layout needs at least one before you can create a train. See [Trains](train.md).
 
-The flag is on the drop zone only. A module/town itself no longer has a yard setting. For a yard, set `Length` to the total length of all the tracks that make up the yard.
+A yard is the usual case, but it isn't the only one:
+
+| Kind of track | Example |
+| --- | --- |
+| Yard or staging | A classification yard or hidden staging where most trains are made up and tied down. |
+| Interchange | A track where a connecting railroad hands cars over. A transfer run can start or end there. |
+| Unit train origin | A coal mine's loading track. A coal unit train departs from the mine and terminates at the power plant, so both of those drop zones get the check. |
+
+The departure and terminus don't have to be the same kind of track. A local might leave the yard and tie down on an interchange track, and a unit train can run from one industry to another without going near a yard.
+
+Origin and terminus drop zones aren't offered when creating equipment requests, since consignees request equipment at regular drop zones. If the power plant also takes the odd boxcar of parts, give it a second, regular drop zone for those requests and keep the unloading track as the unit train's terminus.
+
+With the Pull & Drop Ops engine, the origin is where cars come from and where they go home to. The [Origins](origins.md) screen uses the drop zone's `Length` to plan what to stock there, so set `Length` to the room the cars really have. For a yard that's the total length of all the tracks that make up the yard. For a mine it's the length of the loading track.
+
+The flag is on the drop zone only. A module/town itself no longer has a yard setting.
 
 ## Clone a drop zone
 
