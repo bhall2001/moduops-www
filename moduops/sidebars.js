@@ -35,6 +35,7 @@ const sidebars = {
           label: 'Timetable',
           items: ['timetable', 'station-order', 'timetable-reports'],
         },
+        'origins',
         'reports',
       ],
     },

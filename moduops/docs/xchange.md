@@ -81,9 +81,9 @@ A: Follow these steps to add a module to the ModuOps Xchange:
 
 1. Open a layout file in the ModuOps Application.
 2. Navigate to the Modules/Towns screen.
-3. Select the desired module for addition to the ModuOps Xchange.
-4. Click `Save`.
-5. Choose a location on your local file system and click `Save`.
+3. Select the desired module for addition to the ModuOps Xchange. Save any changes on its `Info` tab first.
+4. Click `Export`.
+5. Choose a location on your local file system and click `Save`. See [Export a module/town](module.md#export-a-moduletown).
 
 Once you have saved all the modules you wish to add to the ModuOps Xchange, you have two options:
 

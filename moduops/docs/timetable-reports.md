@@ -47,17 +47,17 @@ Timetable Report tab with the filters, several train columns and an out-and-back
 
 ### Filters
 
-- `Origin Yard` - show only trains that depart from one yard. Choose `All Yards` to show every train.
+- `Origin` - show only trains that depart from one origin drop zone. Choose `All Origins` to show every train.
 - `Train` - show only the runs of one train symbol. Choose `All Trains` to show every train.
 
-If no trains match the filters, the report shows "No trains originate from this yard."
+If no trains match the filters, the report shows "No trains originate here."
 
 ### Printing and exporting
 
 - `Print Timetable` opens a print-ready copy of the timetable and shows your system print dialog.
 - `Export CSV` saves the timetable as a CSV file that opens in any spreadsheet program. ModuOps asks where to save the file. Out-and-back trains get two columns, marked "(Out)" and "(Return)".
 
-Both print and export use the current `Origin Yard` and `Train` filters. For example, filter by origin yard to print a timetable for each yard's crews.
+Both print and export use the current `Origin` and `Train` filters. For example, filter by origin to print a timetable for each yard's crews.
 
 ## Crew Schedule
 

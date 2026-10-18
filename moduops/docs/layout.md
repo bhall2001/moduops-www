@@ -16,7 +16,7 @@ The Layout screen showing all four cards.
 
 ## Layout Information
 
-These fields describe and document the layout.
+These fields describe and document the layout. None of the fields on the Layout screen are required.
 
 | Field | Description |
 |---|---|
@@ -99,7 +99,7 @@ The button is hidden when the layout unit is `Units (dimensionless)`.
 **To use it:**
 
 1. Click the ruler button next to the length field.
-2. In the `Real-World Measurement` dialog, type the `Measurement` you took. Decimals are fine.
+2. In the `Real-World Measurement` dialog, type the `Measurement` you took (required, and greater than 0). Decimals are fine. `Apply` stays greyed out until you do.
 3. Choose its `Unit`: `Inches`, `Feet`, `Millimeters`, `Centimeters`, or `Meters`.
 4. Check the `Converts to` box. It shows the result in your layout's unit and the scale being used, plus how it was worked out, for example `5.5 in → 13.97 cm real-world → 40 ft at 1:87.1`.
 5. Click `Apply` to put the result into the length field.

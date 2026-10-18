@@ -73,20 +73,20 @@ See [Equipment Register](equipment.md) for details.
 
 ### 3. Add a yard
 
-Every train starts and ends at a yard, so you need at least one.
+Every train starts and ends at a drop zone marked as a train origin/terminus, usually a yard, so you need at least one.
 
 1. Click `Modules/Towns` in the sidebar.
 2. Click `New` above the module list. Enter a `Name` and `Short Name` for your yard (for example "Staging" and "STG") and click `Save`.
 3. Select the yard in the list, open the `Drop Zones` tab, and click `New`.
 4. Enter a `Drop Zone Name` and a `Length` (the total storage capacity of the yard's tracks).
-5. Check `Is Yard Track` and click `Save`.
+5. Check `Train Origin/Terminus` and click `Save`.
 
 See [Modules/Towns](module.md) and [Drop Zones](drop-zones.md) for details.
 
 ### 4. Add a module with work to do
 
 1. On the `Modules/Towns` screen, click `New` above the module list. Enter a `Name` and `Short Name` for a module or town on your layout and click `Save`.
-2. Select the new module, open the `Drop Zones` tab, and click `New`. Enter a `Drop Zone Name` and the `Length` of track where cars are set out. Leave `Is Yard Track` unchecked and click `Save`.
+2. Select the new module, open the `Drop Zones` tab, and click `New`. Enter a `Drop Zone Name` and the `Length` of track where cars are set out. Leave `Train Origin/Terminus` unchecked and click `Save`.
 3. Open the `Consignees` tab and click `New`. Enter the consignee's `Name` and click `Save`.
 4. Double-click the consignee you just created to open it again.
 5. Click `New Request` to add an **Equipment Request**.

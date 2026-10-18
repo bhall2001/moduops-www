@@ -7,17 +7,19 @@ slug: /faq
 
 # FAQ
 
-## Why do yards not show any cars when I select it on the Yard screen?
+## Why do origins not show any cars when I select one on the Origins screen?
 
-This can happen when the yard is not included as an origination point for any train in the current layout file. Once the yard is added as an origin for a train, car types should be displayed.
+The Origins screen only lists drop zones marked `Train Origin/Terminus` that a train departs from. If the list is empty, set a train's `Departure` to one of those drop zones. If an origin is listed but has no cars, the trains leaving it have no equipment requests with Demand on their routes. See [Origins](origins.md).
 
 ## I've heard that ModuOps helps correct mistakes. How exactly does it accomplish that?
 
 Mistakes are inevitable, especially when you're busy engaging with attendees at a show and promoting the hobby. While ModuOps doesn't directly fix errors, there's a straightforward procedure that, when included in all your Trainlists, effectively addresses mistakes.
 
-The recommended approach is to add the following to the Crew Instructions on the train's `Details` tab, using the `Bold` button so it stands out:
+With the Random (MRBT) and Weighted Selection engines, turn on `Print Pickup All note` on the Trainlists screen. It's on by default and prints this on every trainlist:
 
-**PICK UP ALL WHEN DROPPING**
+**PICKUP ALL WHEN DROPPING**
+
+You can also type it into the Crew Instructions on the train's `Details` tab, using the `Bold` button so it stands out. See [Trainlists](trainlists.md#pickup-all-note). The Pull & Drop Ops engine schedules its own pickups and doesn't need it.
 
 This instructs the crew that, before dropping a set of cars, they should pick up all the cars in the drop zone. An added benefit of this practice is that any equipment placed in the drop zone by mistake will be collected and returned to the yard.
 

@@ -40,22 +40,22 @@ Timetable screen listing a few ops sessions with the toolbar buttons.
 ## Creating a session
 
 1. Click `New Session`.
-2. Enter a `Session Name`. This is required.
-3. Choose a `Date`. It defaults to today.
+2. Enter a `Session Name` (required).
+3. Choose a `Date` (optional). It defaults to today.
 4. Optionally add `Notes` about the session.
-5. Click `Create`.
+5. Click `Create`. The button stays greyed out until the session has a name.
 
 New sessions start with a status of `draft`. You change the status from inside the session (see [Session status](#session-status)).
 
-To change the name, date or notes later, select the session and click `Edit`, make your changes and click `Save`.
+To change the name, date or notes later, select the session and click `Edit`, make your changes and click `Save`. The `Session Name` can't be left blank.
 
 ### Cloning a session
 
 Cloning is the quickest way to set up your next operating session when it runs much like the last one.
 
 1. Select a session and click `Clone`.
-2. Enter a `New Session Name`. It defaults to "Copy of" followed by the original name.
-3. Click `Clone`.
+2. Enter a `New Session Name` (required). It defaults to "Copy of" followed by the original name.
+3. Click `Clone`. The button is greyed out if the name is blank.
 
 The copy has the same date, notes, train instances, and travel and dwell times as the original. Its status is reset to draft.
 
@@ -91,9 +91,9 @@ Use the `Sort By` dropdown to list train instances by `Departure Time` or by `Tr
 ### Adding a train
 
 1. Click `Add Train`.
-2. Choose the `Train` from the list. Every train on the Trains screen is listed.
-3. Enter the `Departure Time`, the time the train leaves its departure yard, for example 8:00 AM.
-4. Click `Add`.
+2. Choose the `Train` from the list (required). Every train on the Trains screen is listed.
+3. Enter the `Departure Time` (optional), the time the train leaves its departure yard, for example 8:00 AM. You can add it later.
+4. Click `Add`. The button stays greyed out until you choose a train.
 
 The new train instance opens so you can enter its travel and dwell times right away.
 

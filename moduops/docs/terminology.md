@@ -16,7 +16,7 @@ sidebar_label: Terminology
 
 **Drop Zone** - a section of track where equipment can be dropped. A drop zone can be any length. It may be the full length of a siding or a siding can have multiple drop zones.
 
-**Yard** - a drop zone marked `Is Yard Track`. Trains depart from and terminate at yards, so at least 1 yard drop zone is needed before a train can be created. The length of a yard drop zone should be the total yard length of all tracks that make up the yard.
+**Train Origin/Terminus** - a drop zone marked `Train Origin/Terminus`, usually a yard, staging or interchange track. Trains depart from and terminate at these drop zones, so at least 1 is needed before a train can be created. The length of a yard drop zone should be the total length of all tracks that make up the yard.
 
 **Equipment Request** - a unit of work where a specific equipment type is requested to be dropped to a specific drop zone.
 

@@ -50,7 +50,7 @@ Every time you add, remove or reorder a stop, the route is saved right away. The
 4. Check the `Will add:` preview in the center.
 5. Click the right arrow.
 
-The new row is added to the route and saved.
+The new row is added to the route and saved. A module/town is required: the right arrow stays greyed out until you click one. `Direction` and `Consignee Filter` are optional.
 
 ### Where new rows go
 

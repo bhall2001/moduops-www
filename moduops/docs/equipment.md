@@ -43,7 +43,7 @@ The number of car types in your layout file is also shown on the [Dashboard](das
 
 You are returned to the Equipment Register list, and your new car type appears in it.
 
-If you leave out a required field, ModuOps shows a red message under that field when you click `Save` (for example "Description is required"). Fix the field and click `Save` again.
+If you leave out a required field, ModuOps shows a red message under that field when you click `Save`: "Description is required", "Short description is required" or "Length is required". Fix the field and click `Save` again.
 
 :::info[Screenshot needed]
 Car type form showing all fields, the character counters on Code and Short Description, and the ruler button next to Length.
@@ -82,13 +82,13 @@ The confirmation box warns: "This will also delete all workorders that use this 
 
 | Field | Description |
 |---|---|
-| `Class` | The kind of car, picked from a list. Optional. |
-| `Era` | The era the car belongs to, picked from a list. Optional. |
-| `Code` | A short car code, such as an AAR code. Optional, up to 4 characters. |
-| `Description` | The full name of the car type, for example "40' Box Car". Required. |
-| `Short Description` | A short name used where space is tight, such as on trainlists. Required, up to 12 characters. |
-| `Length` | The car's length, as a whole number, in your layout's length unit. Required. |
-| `Remarks` | Notes for the crews handling this car. Optional. |
+| `Class` (optional) | The kind of car, picked from a list. |
+| `Era` (optional) | The era the car belongs to, picked from a list. |
+| `Code` (optional) | A short car code, such as an AAR code, up to 4 characters. |
+| `Description` (required) | The full name of the car type, for example "40' Box Car". |
+| `Short Description` (required) | A short name used where space is tight, such as on trainlists, up to 12 characters. |
+| `Length` (required) | The car's length, as a whole number, in your layout's length unit. |
+| `Remarks` (optional) | Notes for the crews handling this car. |
 
 ### Class
 
@@ -147,7 +147,7 @@ The Remarks box has a small toolbar:
 Don't know the car's scale length? Measure the model with a tape measure or ruler and let ModuOps do the math.
 
 1. On the car type form, click the ruler button next to `Length` (tooltip: "Enter real-world measurement").
-2. In the **Real-World Measurement** box, type the `Measurement` you took (decimals are fine).
+2. In the **Real-World Measurement** box, type the `Measurement` you took (required, and greater than 0; decimals are fine). `Apply` stays greyed out until you do.
 3. Pick the `Unit` you measured in: `Inches`, `Feet`, `Millimeters`, `Centimeters`, or `Meters`.
 4. The `Converts to` box shows the result in your layout's scale and unit.
 5. Click `Apply` to put the result in the `Length` field, or `Cancel` to close without changing anything.

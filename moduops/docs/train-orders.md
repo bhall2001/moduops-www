@@ -32,7 +32,7 @@ Click `Save` on the `Details` tab before switching to the `Route` tab. The `Trai
 
 1. Go to the train's `Route` tab.
 2. On the left, click the `Train Orders` tab (next to `Modules/Towns`). Each saved order is listed on its own row.
-3. Click the order you want to add.
+3. Click the order you want to add (required; the right arrow stays greyed out until an order is selected).
 4. In the route on the right, click the row the order should come after. If no row is selected, the order is added at the end.
 5. Click the right arrow in the center.
 
@@ -95,7 +95,7 @@ A timetable instruction is a note tied to a module/town. It prints on the trainl
 1. Go to the train's `Route` tab and make sure `Modules/Towns` is showing.
 2. Click the module/town.
 3. Under `Stop Options`, check `Add timetable instruction`.
-4. Type the text in the `Instruction` field. It is one line, and you can use bold and italic.
+4. Type the text in the `Instruction` field (required). It is one line, and you can use bold and italic. The right arrow stays greyed out until there's text.
 5. In the route, click the row it should come after (or leave nothing selected to add it at the end).
 6. Click the right arrow.
 

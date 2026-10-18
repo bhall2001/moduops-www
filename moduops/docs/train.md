@@ -35,15 +35,15 @@ The Trains list with one train selected and the New / Edit / Clone / Delete butt
 
 1. Click `New` on the Trains list.
 2. Enter a `Symbol`.
-3. Choose the `Departure` and `Terminates` yards.
+3. Choose the `Departure` and `Terminates` drop zones.
 4. Enter a `Max Length`.
-5. Fill in any other fields you want (see the field reference below).
+5. Fill in any other fields you want (see the field reference below). Those four are the only required fields.
 6. Click `Save`.
 
 After the first save, the train opens in edit mode and two tabs appear at the top of the form: `Details` and `Route`. You build the train's route on the [Route tab](train-route.md). A new train must be saved before you can add a route.
 
 :::tip
-The `Departure` and `Terminates` lists only show drop zones that have `Is Yard Track` checked. If the lists are empty, mark at least one drop zone as a yard track first. See [Drop Zones](drop-zones.md).
+The `Departure` and `Terminates` lists only show drop zones that have `Train Origin/Terminus` checked. If the lists are empty, mark at least one drop zone that way first. See [Drop Zones](drop-zones.md).
 :::
 
 ## Edit a train
@@ -66,12 +66,14 @@ The Details tab of a train form showing Symbol, Name, Departure, Terminates, the
 
 ### Train fields
 
+`Symbol`, `Departure`, `Terminates` and `Max Length` are required. Everything else is optional. If one is missing ModuOps won't save the train and shows a message under the field: "Symbol is required", "Departure is required", "Terminates is required", or "Length is required and must be greater than 0".
+
 | Field | Description |
 |---|---|
 | `Symbol` (required) | The train's identifier, up to 11 characters. A counter shows how many characters you have used. Each train needs its own unique symbol. The symbol prints at the top of the trainlist. |
-| `Name` | An optional descriptive name, such as "Harris Yard Turn". It prints next to the symbol at the top of the trainlist. |
-| `Departure` (required) | The yard the train starts from. It prints as `Departs:` on the trainlist. |
-| `Terminates` (required) | The yard the train ends at. It prints as `Terminate:` on the trainlist. |
+| `Name` (optional) | A descriptive name, such as "Harris Yard Turn". It prints next to the symbol at the top of the trainlist. |
+| `Departure` (required) | The origin the train starts from, shown as "Train origin" under the field. It prints as `Departs:` on the trainlist. |
+| `Terminates` (required) | The terminus the train ends at, shown as "Train terminus" under the field. It prints as `Terminate:` on the trainlist. |
 | `Max Length` (required) | The longest the train can be. ModuOps adds cars to the train up to this length but never past it. Must be a whole number greater than 0. |
 | `Min Length` | An optional minimum length. When set, each time you generate a trainlist ModuOps picks a random target length between the minimum and maximum (inclusive). |
 | `Type` | A classification for the train: Extra, Intermodal, Local, Mixed, Passenger, Special, Transfer, Turn or Unit. It is shown on the Trainlists screen and does not change how cars are chosen. |
@@ -130,7 +132,7 @@ With `Pull & Drop Ops` the slider does double duty. It also sets the odds that a
 
 ## Instructions and train orders
 
-Below the train fields are four larger text fields:
+Below the train fields are four larger text fields. All four are optional:
 
 | Field | Description |
 |---|---|

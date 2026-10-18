@@ -18,7 +18,7 @@ Consignees belong to a module/town. To see them, click `Modules/Towns` in the si
 2. Select a module/town.
 3. Click the `Consignees` tab.
 4. Click `New`.
-5. Enter a `Name` and any `Remarks`.
+5. Enter a `Name` (required) and any `Remarks` (optional).
 6. Click `Save`.
 
 You return to the Consignees tab with the module/town still selected.
@@ -41,10 +41,12 @@ If you try to leave the screen with unsaved changes, ModuOps asks if you are sur
 
 ## Consignee fields
 
+Only `Name` is required. ModuOps shows "Name is required" under the field if you try to save without one.
+
 | Field | Description |
 | --- | --- |
 | `Name` (required) | The name of the consignee. |
-| `Remarks` | Notes a crew may need when working this consignee, such as how to switch it or how to work a tricky turnout. Remarks are printed on the trainlist when this consignee gets work. |
+| `Remarks` (optional) | Notes a crew may need when working this consignee, such as how to switch it or how to work a tricky turnout. Remarks are printed on the trainlist when this consignee gets work. |
 
 The `Remarks` box has the same formatting toolbar as module/town remarks: bold, italic, checklist item, indent, underline blank and a `½ Page` width preview. See [Modules/Towns](module.md#formatting-remarks).
 

@@ -89,15 +89,16 @@ See [Equipment Register](equipment.md).
 
 - "Remove" module is now `Delete`, with a warning that lists everything that will be deleted along with it.
 - "Depicted city" is now `City`; "Short name" is now `Short Name`.
-- On drop zones: "Name" is now `Drop Zone Name`, "Zone Ref" is now `Zone Reference` (now optional), "Faces" is now `Direction` with a new `A and B` choice, and "Yard/Interchange/Staging" is now `Is Yard Track`.
+- On drop zones: "Name" is now `Drop Zone Name`, "Zone Ref" is now `Zone Reference` (now optional), "Faces" is now `Direction` with a new `A and B` choice, and "Yard/Interchange/Staging" is now `Train Origin/Terminus`.
 - **Cars/Week** is now called **Demand**.
 - The request buttons are now `New Request`, `Edit`, `Clone`, and `Delete`.
 - A new consignee must be saved before you can add Equipment Requests to it.
-- Yard drop zones no longer appear in the drop zone list on an Equipment Request.
+- Origin/terminus (yard) drop zones no longer appear in the drop zone list on an Equipment Request.
 - **New:** a `Flow Type` on each Equipment Request (Producer or Consumer), used by the new Pull & Drop Ops engine.
 - **New:** an `Equipment` tab on the Modules/Towns screen showing the equipment each module requests, and request counts in the `Consignees` tab.
 - **New:** `Add` can import several module files at once and skips modules that already exist.
-- **Gone:** saving (exporting) a module to a JSON file. Modules can still be imported.
+- Saving a module to a file is now `Export` above the module list.
+- **New:** an `Info` tab, the first tab on the Modules/Towns screen, where you edit the module's details in place. The separate module edit screen and the `Edit` button are gone. A `Jump to module...` box filters the list.
 - **Gone:** the "Use Consignee Name" menu on the drop zone form.
 
 See [Modules/Towns](module.md), [Drop Zones](drop-zones.md), [Consignees](consignees.md), and [Equipment Requests](equipment-requests.md).

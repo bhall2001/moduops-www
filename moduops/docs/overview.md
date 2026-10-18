@@ -41,6 +41,8 @@ Version 6 introduces the Pull & Drop Ops engine. For the first time, ModuOps is 
 
 Pull & Drop Ops still does not need the layout to be setup in any particular manner. The first time a drop zone is worked, the crew is instructed to "PICKUP ALL" which puts the drop zone in a known state. It repeats every few visits, so mistakes don't build up. Mistakes still fix themselves as operations progress.
 
+Trains leave the yard at their target length. When the usual pickups wouldn't leave room for enough set-outs, the engine adds pickups, oldest car first, until the train is full. A whole day of runs can be generated and printed in one batch. See [Trainlists](trainlists.md#pull--drop-ops).
+
 The trade off is a bit more overhead. Trainlists are numbered and need to be run in sequence. See [Trainlists](trainlists.md#pull--drop-ops) for the details.
 
 ## Home Layouts

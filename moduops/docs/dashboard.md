@@ -14,7 +14,9 @@ The Dashboard with a layout open, showing the layout banner and the six Layout S
 
 ## Layout banner
 
-The colored banner at the top shows the layout that's open, with the full path to the layout file underneath.
+The colored banner at the top is labelled `Current Layout`. It shows the name of the layout that's open, with the full path to the layout file underneath. There's no separate "Dashboard" heading above it.
+
+Opening or creating a layout from the `File` menu, or from the banner buttons, always takes you to the Dashboard, wherever you were in ModuOps.
 
 ModuOps doesn't reopen your last layout when it starts. When no layout is open, the banner reads `No layout loaded` and has two buttons:
 
@@ -31,7 +33,7 @@ Below the banner, the `Layout Statistics` section shows six counts for the open 
 |---|---|
 | `Modules/Towns` | Modules and towns in the layout |
 | `Consignees` | Consignees across all modules |
-| `Drop Zones` | Drop zones across all modules, including yard drop zones |
+| `Drop Zones` | Drop zones across all modules, including origin/terminus drop zones |
 | `Equipment Requests` | Equipment Requests made by all consignees |
 | `Trains` | Trains |
 | `Equipment Types` | Entries in the Equipment Register |
@@ -51,6 +53,7 @@ The sidebar on the left side of the window appears on every screen. Click an ite
 | `Trains` | Trains and their routes. See [Trains](train.md) |
 | `Trainlists` | Generate and print trainlists. See [Trainlists](trainlists.md) |
 | `Timetable` | Ops sessions, string diagrams, and timetables. See [Timetable](timetable.md) |
+| `Origins` | How many of each car type to put in a yard or other train origin. See [Origins](origins.md) |
 
 Under **Reports**:
 
@@ -94,5 +97,5 @@ To see which version of ModuOps you have, or to check for updates, choose `About
 
 - The groups of menus below the counts are gone. All navigation is in the sidebar.
 - The count cards are renamed: "Rolling stock" is now `Equipment Types`, and "Car Requests" is now `Equipment Requests`.
-- `Timetable` and the three Reports items are new in the sidebar, and `Preferences` has moved into the sidebar.
+- `Timetable`, `Origins` and the three Reports items are in the sidebar, and `Preferences` has moved into the sidebar.
 - The layout name is no longer shown at the top of every screen. The Dashboard banner shows the open layout, and the window title shows the layout file's name.
