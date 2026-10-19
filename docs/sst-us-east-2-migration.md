@@ -37,6 +37,10 @@ Stray stages: us-east-1 `bobhall`, `apiUser`, `prod`, `test`; us-east-2 `node`, 
 - "Stage not found" on remove = state file missing but resources live; delete by hand (disable+wait+delete distribution, then bucket, cert, CF function, then KV store).
 - `production` has `removal: 'retain'`: keeps only S3 buckets (`.sst/platform/src/auto/run.ts`), and not StaticSite's assets bucket (`static-site.ts` forces `retainOnDelete: false`). `sst remove` DELETES distributions, certs, CF functions, KV, Route 53 records. Not a "forget".
 - Both production states list the same live Route 53 records (A/AAAA + cert-validation CNAMEs). Removing either stage deletes live DNS.
+<<<<<<< Updated upstream
+=======
+- Shell `aws` deletes and `sst remove` are blocked by Claude auto mode; Bob runs them.
+>>>>>>> Stashed changes
 - Get Bob's approval before every delete and before each production step.
 - Bob runs dev servers himself; don't start/background them.
 
@@ -62,6 +66,10 @@ New dist `E40IQZYJ62FK`, bucket `...assetsbucket-smkrmzex` (us-east-2), state in
 
 New dists `E3GEGOMZNEBGSH` / `EEDKVOE8OY1JN`, buckets `...assetsbucket-rrcxnuko`, `...cdnredirectbucketbucket-vkrtcomc` (us-east-2), state in `sst-state-hwbducnfxexk`. Second diff clean. Step 2 also deleted assets bucket `...dxktskdz`; only empty `...mckhhaam` left for step 6.
 
+<<<<<<< Updated upstream
+=======
+Backups of both `production.json` files in the session scratchpad (`state/backup-use{1,2}-production.json`).
+>>>>>>> Stashed changes
 
 1. us-east-2 stale state, by hand (NOT `sst remove`, it would delete live DNS). Dists `E2RKJ3WN2LOEMY` / `E2QIK0AHBG786U` already gone. Delete buckets `...assetsbucket-ruansdff`, `...cdnredirectbucketbucket-mkebtxak`; certs `e855987d` (moduops.com), `d1d9e1aa` (www), both unused; functions `...dsfomrno`, `...bvutkdau` (unassociated); KV `...KvStore-fnzwersr`. Then delete `app/moduops-www/production.json` from `sst-state-hwbducnfxexk`. No DNS touched, no outage.
 2. Outage start: old config, `AWS_REGION=us-east-1 pnpm exec sst remove --stage=production`. Deletes `E2NCOTZH5J9JB2` / `E26WK5I6A4J552`, certs `62162eb0` / `3b312ff8`, functions, KV, DNS; retains buckets `...assetsbucket-dxktskdz`, `...cdnredirectbucketbucket-mckhhaam`.
