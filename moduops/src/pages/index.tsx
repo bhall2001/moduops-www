@@ -17,9 +17,9 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <HomepageHilites />
         <HomepageDownload />
         <HomepageBetaDownload />
-        <HomepageHilites />
       </main>
     </Layout>
   );
