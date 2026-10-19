@@ -64,11 +64,7 @@ Port 4000 is forwarded, so open http://localhost:4000 on the Mac.
 
 ## Deploying
 
-<<<<<<< Updated upstream
-The SST stage name decides the domain. `production` deploys to `moduops.com`, with a redirect from `www.moduops.com`. Any other stage deploys to `<stage>.moduops.com`. State and asset buckets live in AWS `us-east-2`, set by `providers.aws.region` in `sst.config.ts`, so deploys from any machine use the same state. CloudFront, its certificate and Route 53 are global.
-=======
-Hosted with SST (`sst.config.ts`) as an `sst.aws.StaticSite`, AWS region `us-east-2`. SST runs the Docusaurus build itself; no need to build first. The stage decides the domain:
->>>>>>> Stashed changes
+Hosted with SST (`sst.config.ts`) as an `sst.aws.StaticSite`. State and asset buckets live in AWS `us-east-2`, set by `providers.aws.region`, so deploys from any machine use the same state. CloudFront, its certificate and Route 53 are global. SST runs the Docusaurus build itself; no need to build first. The stage decides the domain:
 
 | Stage | URL |
 | --- | --- |
