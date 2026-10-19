@@ -17,7 +17,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/tutorial/intro"
           >
-            Moduops Tutorial - 15 min ⏱️
+            ModuOps Tutorial - 15 min ⏱️
           </Link>
         </div>
         <p>
