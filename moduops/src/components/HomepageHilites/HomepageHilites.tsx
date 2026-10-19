@@ -100,9 +100,9 @@ const HiliteList: HiliteItem[] = [
       'Train route definition allows for many unique options allowing for crews of all levels. Delivery can be made to all Consignees, specific consignees, or indicate to not send cars to a consignee. Easily label the work with optional "Direction" indicators.',
   },
   {
-    title: 'Trainlists',
+    title: 'Trainlists and Switchlists',
     description:
-      'The "script" used by the crew to do their work. Print out designed to be easy to read and carry around while crews do their work. Crew work can be scheduled randomly or using weighted random selection.',
+      'The "script" crews use to do their work. Flexible output formats, easy to read and carry around the layout, help crews work successfully. Work can be scheduled randomly or weighted, and can optionally include pickups.',
   },
   {
     title: 'Module export/import',
