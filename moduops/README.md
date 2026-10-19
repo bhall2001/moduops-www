@@ -4,16 +4,10 @@ The Docusaurus 3 site for [moduops.com](https://moduops.com). For setup, deploys
 
 ## Commands
 
-Run these from the repo root:
+Run these inside the dev container (see the root README); not on the Mac. Install from `/workspace` with `pnpm i`. Then, from this directory:
 
 ```sh
-pnpm i                  # install
-pnpm start:moduops      # dev server at http://localhost:4000, live reload
-```
-
-Or from this directory:
-
-```sh
+pnpm start              # dev server at http://localhost:4000, live reload
 pnpm build              # static build into build/
 pnpm serve              # serve build/ locally
 pnpm typecheck

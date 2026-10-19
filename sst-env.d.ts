@@ -6,10 +6,6 @@
 
 declare module "sst" {
   export interface Resource {
-    "moduops-www": {
-      "type": "sst.aws.StaticSite"
-      "url": string
-    }
   }
 }
 
