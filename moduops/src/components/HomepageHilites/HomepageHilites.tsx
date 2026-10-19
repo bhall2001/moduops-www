@@ -102,7 +102,7 @@ const HiliteList: HiliteItem[] = [
   {
     title: 'Trainlists and Switchlists',
     description:
-      'The "script" crews use to do their work. Flexible output formats, easy to read and carry around the layout, help crews work successfully. Work can be scheduled randomly or weighted, and can optionally include pickups.',
+      'The "script" crews use to do their work. Flexible output formats, easy to read and carry around the layout, help crews work successfully. Work can be scheduled randomly or weighted.',
   },
   {
     title: 'Module export/import',
