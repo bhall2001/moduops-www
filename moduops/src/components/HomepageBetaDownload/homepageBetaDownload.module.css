@@ -1,0 +1,27 @@
+.betaBanner {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 996px) {
+  .betaBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.notice {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.notice ul {
+  margin-bottom: 0;
+}
