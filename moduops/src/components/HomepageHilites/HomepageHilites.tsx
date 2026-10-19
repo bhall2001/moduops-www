@@ -5,9 +5,60 @@ import styles from './styles.module.css';
 type HiliteItem = {
   title: string;
   description: string;
+  badge?: string;
 };
 
+const V6 = 'Coming in v6';
+
 const HiliteList: HiliteItem[] = [
+  {
+    title: 'Pull & Drop Ops',
+    badge: V6,
+    description:
+      'A new scheduling engine with pickups, loads and empties. Trains leave the yard full, and a whole day of runs can be generated and printed in one batch.',
+  },
+  {
+    title: 'Timetables & string diagrams',
+    badge: V6,
+    description:
+      'Build a timetable for your session. Print string diagrams, timetable reports and a crew sign-up sheet.',
+  },
+  {
+    title: 'Any scale, any unit',
+    badge: V6,
+    description:
+      'Lengths in any unit and any scale, standard or custom, with easy conversion between them. A measurement converter turns a tape measure reading into your layout\'s scale.',
+  },
+  {
+    title: 'Yards, interchanges & unit trains',
+    badge: V6,
+    description:
+      'Any drop zone can be a train origin or terminus: a yard, an interchange track or a unit train origin.',
+  },
+  {
+    title: 'Modern interface',
+    badge: V6,
+    description:
+      'A rebuilt, responsive desktop app with light and dark themes and automatic updates.',
+  },
+  {
+    title: 'True print preview',
+    badge: V6,
+    description:
+      'The trainlist preview is the actual printed page. Pickup-all-when-dropping option and a refreshed SwitchList.',
+  },
+  {
+    title: 'More reports',
+    badge: V6,
+    description:
+      'New reports, including an Equipment Summary so members know what equipment to bring. All reports export to CSV for use in a spreadsheet.',
+  },
+  {
+    title: 'Easy upgrade from v5',
+    badge: V6,
+    description:
+      'Open a version 5 layout and it is copied to the new format automatically. Your original file is left untouched. A few terms were renamed based on user feedback, such as Cars/Week to Demand.',
+  },
   {
     title: 'Car types',
     description:
@@ -60,11 +111,14 @@ const HiliteList: HiliteItem[] = [
   },
 ];
 
-function Feature({ title, description }: HiliteItem) {
+function Feature({ title, description, badge }: HiliteItem) {
   return (
     <div className={clsx('col col--6')}>
       <div className="text--left padding-horiz--md padding-bottom--lg">
-        <h3>{title}</h3>
+        <h3>
+          {title}
+          {badge && <span className={clsx('badge badge--primary', styles.badge)}>{badge}</span>}
+        </h3>
         <p>{description}</p>
       </div>
     </div>

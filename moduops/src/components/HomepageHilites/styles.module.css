@@ -5,3 +5,9 @@
   width: 100%;
   background-color: rgb(244, 243, 240);
 }
+
+.badge {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  font-size: 0.7rem;
+}
