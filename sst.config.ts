@@ -7,7 +7,7 @@ export default $config({
       removal: input?.stage === 'production' ? 'retain' : 'remove',
       // protect: ['production'].includes(input?.stage),
       home: 'aws',
-      region: 'us-east-2',
+      providers: { aws: { region: 'us-east-2' } },
     };
   },
   async run() {
@@ -18,6 +18,7 @@ export default $config({
             ? 'moduops.com'
             : $app.stage + '.moduops.com',
         redirects: $app.stage === 'production' ? ['www.moduops.com'] : [],
+        dns: sst.aws.dns({ override: true }),
       },
       path: 'moduops',
       build: {
