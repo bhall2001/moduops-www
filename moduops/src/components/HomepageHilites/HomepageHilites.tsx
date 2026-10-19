@@ -39,7 +39,7 @@ const HiliteList: HiliteItem[] = [
     title: 'Modern interface',
     badge: V6,
     description:
-      'A rebuilt, responsive desktop app with light and dark themes and automatic updates.',
+      'A rebuilt, responsive desktop app with light and dark themes. Automatic updates on Mac and Windows.',
   },
   {
     title: 'True print preview',
