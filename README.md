@@ -38,7 +38,7 @@ Other commands, run from the repo root:
 
 ## Deploying
 
-The SST stage name decides the domain. `production` deploys to `moduops.com`, with a redirect from `www.moduops.com`. Any other stage deploys to `<stage>.moduops.com`. State lives in AWS `us-east-2`.
+The SST stage name decides the domain. `production` deploys to `moduops.com`, with a redirect from `www.moduops.com`. Any other stage deploys to `<stage>.moduops.com`. State and asset buckets live in AWS `us-east-2`, set by `providers.aws.region` in `sst.config.ts`, so deploys from any machine use the same state. CloudFront, its certificate and Route 53 are global.
 
 You need AWS credentials set up locally.
 
