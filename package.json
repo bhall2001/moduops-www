@@ -16,10 +16,10 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.2",
-    "@types/aws-lambda": "^8.10.152",
-    "@types/node": "^24.3.0",
-    "typescript": "^5.9.2"
+    "@tsconfig/node22": "^22.0.6",
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "moduops": "workspace:*",
