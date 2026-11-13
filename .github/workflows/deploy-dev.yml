@@ -1,0 +1,60 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write # OIDC
+  contents: read
+
+concurrency:
+  group: sst-dev
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.24.0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::309743830326:role/GitHubActionsModuOpsWww
+          aws-region: us-east-2
+          role-session-name: GitHubActions-Dev-${{ github.run_id }}
+
+      # runner's preinstalled pulumi is too old for sst; let sst use its own
+      - name: Remove preinstalled Pulumi
+        run: sudo rm -f /usr/local/bin/pulumi*
+
+      - name: Deploy to Dev
+        run: pnpm run deploy
+        env:
+          CI: true
+
+      - name: Verify deployment
+        run: |
+          sleep 30
+          curl -fsS https://dev.moduops.com/ > /dev/null
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Dev deploy: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Commit: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- URL: https://dev.moduops.com" >> $GITHUB_STEP_SUMMARY

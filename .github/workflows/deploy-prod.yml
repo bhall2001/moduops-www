@@ -1,0 +1,79 @@
+name: Deploy to Production
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  id-token: write # OIDC
+  contents: write # push release branch
+
+concurrency:
+  group: sst-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production # add required reviewers in repo settings for a manual gate
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Require tag on main
+        run: |
+          git merge-base --is-ancestor "${{ github.sha }}" origin/main \
+            || { echo "::error::tag ${GITHUB_REF_NAME} is not on main"; exit 1; }
+
+      - name: Update release branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin release > /dev/null; then
+            git checkout -B release origin/release
+            git merge "${{ github.sha }}" --no-ff -m "chore: merge ${GITHUB_REF_NAME} into release"
+          else
+            git checkout -b release "${{ github.sha }}"
+          fi
+          git push origin release
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.24.0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: arn:aws:iam::309743830326:role/GitHubActionsModuOpsWww
+          aws-region: us-east-2
+          role-session-name: GitHubActions-Prod-${{ github.run_id }}
+
+      - name: Remove preinstalled Pulumi
+        run: sudo rm -f /usr/local/bin/pulumi*
+
+      - name: Deploy to Production
+        run: pnpm run deploy:prod
+        env:
+          CI: true
+
+      - name: Verify deployment
+        run: |
+          sleep 45
+          curl -fsS https://moduops.com/ > /dev/null
+          curl -sI https://www.moduops.com | grep -qE "^HTTP/[0-9.]+ 30[12]"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Production deploy ${GITHUB_REF_NAME}: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Commit: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- URL: https://moduops.com" >> $GITHUB_STEP_SUMMARY
