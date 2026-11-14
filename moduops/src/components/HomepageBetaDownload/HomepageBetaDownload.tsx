@@ -6,7 +6,7 @@ import OsIcon from './OsIcon';
 import styles from './homepageBetaDownload.module.css';
 
 const BASE_URL = 'https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops';
-const VERSION = '6.0.1-beta.0';
+const VERSION = '6.0.1-beta.1';
 
 type Os = 'mac' | 'windows' | 'linux';
 type DownloadLink = { label: string; file: string };
