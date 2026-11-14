@@ -17,7 +17,7 @@ ModuOps keeps your layouts on your own computer. There are no accounts, and the 
 
 Your layouts, modules, trains and everything else you enter are saved in files on your own computer. I never receive them. If you share a layout file, for example by email or by putting it in a shared folder, that's your choice and outside the app.
 
-Each time the app launches, it records which operating system it's running on: macOS, Windows or Linux. That's all that's recorded. I don't store your IP address, your name, your layouts or anything else that could identify you. I use the counts to decide which platforms to support first.
+Each time the app launches, it records which operating system it's running on: macOS, Windows or Linux. That's all that's recorded. I don't store your IP address, your name, your layouts or anything else that could identify you.
 
 To keep itself up to date on macOS and Windows, the app contacts its update server shortly after it starts and every few hours after that. Like any web request, this lets the server see your IP address, the version of ModuOps you're running and your operating system. It's used to deliver the right update and isn't used to identify you. You can turn automatic checks off in Preferences.
 
