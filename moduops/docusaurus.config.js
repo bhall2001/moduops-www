@@ -107,6 +107,15 @@ const config = {
       },
       footer: {
         style: 'dark',
+        links: [
+          {
+            title: 'Legal',
+            items: [
+              { label: 'Privacy Policy', to: '/privacy' },
+              { label: 'Terms of Use', to: '/terms' },
+            ],
+          },
+        ],
         // links: [
         //   {
         //     title: 'Docs',
