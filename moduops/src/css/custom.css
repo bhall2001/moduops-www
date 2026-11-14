@@ -37,3 +37,30 @@
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* compact footer: copyright left, links right, one row */
+.footer {
+  padding: 1rem 0;
+}
+
+.footer > .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.footer__links,
+.footer__bottom {
+  margin: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .footer > .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    text-align: center;
+  }
+}
