@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Admonition from '@theme/Admonition';
+import OsIcon from './OsIcon';
 import styles from './homepageBetaDownload.module.css';
 
 const BASE_URL = 'https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops';
@@ -63,6 +64,7 @@ export default function HomepageBetaDownload() {
           {CARDS.map(({ os, title, primary, others }) => (
             <div key={os} className={clsx(styles.card, detected === os && styles.cardDetected)}>
               {detected === os && <span className={styles.badge}>Recommended for your system</span>}
+              <OsIcon os={os} />
               <h3>{title}</h3>
               {primary ? (
                 <a href={`${BASE_URL}/${primary.file}`} className="button button--primary button--lg">
