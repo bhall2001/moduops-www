@@ -37,3 +37,14 @@
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* copyright first, links below */
+.footer > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__bottom {
+  order: -1;
+  margin-bottom: 1.5rem;
+}
