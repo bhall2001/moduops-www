@@ -6,7 +6,7 @@ import OsIcon from './OsIcon';
 import styles from './homepageBetaDownload.module.css';
 
 const BASE_URL = 'https://s3.us-east-2.amazonaws.com/assets.bobhall.net/moduops';
-const VERSION = '6.0.1-beta.0';
+const VERSION = '6.0.1-beta.1';
 
 type Os = 'mac' | 'windows' | 'linux';
 type DownloadLink = { label: string; file: string };
@@ -23,9 +23,9 @@ const CARDS: OsCard[] = [
   {
     os: 'linux',
     title: 'Linux',
-    primary: { label: 'Download x64 AppImage', file: `ModuOps-${VERSION}-x86_64.AppImage` },
+    primary: { label: 'Download AppImage', file: `ModuOps-${VERSION}-x86_64.AppImage` },
     others: [
-      { label: 'x64 .deb', file: `ModuOps-${VERSION}-amd64.deb` },
+      { label: 'amd64 .deb', file: `ModuOps-${VERSION}-amd64.deb` },
       { label: 'ARM64 AppImage', file: `ModuOps-${VERSION}-arm64.AppImage` },
       { label: 'ARM64 .deb', file: `ModuOps-${VERSION}-arm64.deb` },
     ],
