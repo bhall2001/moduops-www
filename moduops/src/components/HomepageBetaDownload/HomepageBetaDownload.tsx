@@ -23,7 +23,7 @@ const CARDS: OsCard[] = [
   {
     os: 'linux',
     title: 'Linux',
-    primary: { label: 'Download amd64 AppImage', file: `ModuOps-${VERSION}-x86_64.AppImage` },
+    primary: { label: 'Download AppImage', file: `ModuOps-${VERSION}-x86_64.AppImage` },
     others: [
       { label: 'amd64 .deb', file: `ModuOps-${VERSION}-amd64.deb` },
       { label: 'ARM64 AppImage', file: `ModuOps-${VERSION}-arm64.AppImage` },
