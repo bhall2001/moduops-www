@@ -77,6 +77,10 @@
   text-align: left;
 }
 
+.overwrite {
+  margin-bottom: 1.5rem;
+}
+
 .notice ul {
   margin-bottom: 0;
 }

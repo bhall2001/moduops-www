@@ -66,6 +66,13 @@ export default function HomepageBetaDownload() {
           <Link to="/docs/next/whats-new">What's New</Link> and{' '}
           <Link to="/docs/next/upgrading">Upgrading from v5</Link>.
         </p>
+        <div className={clsx(styles.notice, styles.overwrite)}>
+          <Admonition type="caution" title="Overwrites existing install">
+            Installing the beta replaces your current version of ModuOps.
+            <br />
+            To go back, download the current release and reinstall.
+          </Admonition>
+        </div>
         <div className={styles.buttons}>
           {CARDS.map(({ os, title, primary, others, warning }) => (
             <div key={os} className={clsx(styles.card, detected === os && styles.cardDetected)}>
