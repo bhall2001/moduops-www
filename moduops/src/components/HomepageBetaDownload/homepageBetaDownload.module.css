@@ -80,3 +80,9 @@
 .notice ul {
   margin-bottom: 0;
 }
+
+.warning {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-warning-darkest);
+}
