@@ -80,3 +80,23 @@
 .notice ul {
   margin-bottom: 0;
 }
+
+.warning {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--ifm-color-warning-darkest);
+}
+
+.sample {
+  margin: 1.5rem 0;
+}
+
+.sample p {
+  margin-bottom: 0.25rem;
+}
+
+.sample ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
