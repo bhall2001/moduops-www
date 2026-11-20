@@ -10,7 +10,7 @@ const VERSION = '6.0.1-beta.1';
 
 type Os = 'mac' | 'windows' | 'linux';
 type DownloadLink = { label: string; file: string };
-type OsCard = { os: Os; title: string; primary?: DownloadLink; others: DownloadLink[] };
+type OsCard = { os: Os; title: string; primary?: DownloadLink; others: DownloadLink[]; warning?: string };
 
 const CARDS: OsCard[] = [
   {
@@ -19,7 +19,13 @@ const CARDS: OsCard[] = [
     primary: { label: 'Download', file: `ModuOps-${VERSION}-universal.dmg` },
     others: [],
   },
-  { os: 'windows', title: 'Windows', others: [] },
+  {
+    os: 'windows',
+    title: 'Windows',
+    primary: { label: 'Download', file: 'ModuOps%20windows-x64.zip' },
+    others: [],
+    warning: 'Unsigned app. Windows may block install or launch. No support for getting it running.',
+  },
   {
     os: 'linux',
     title: 'Linux',
@@ -61,7 +67,7 @@ export default function HomepageBetaDownload() {
           <Link to="/docs/next/upgrading">Upgrading from v5</Link>.
         </p>
         <div className={styles.buttons}>
-          {CARDS.map(({ os, title, primary, others }) => (
+          {CARDS.map(({ os, title, primary, others, warning }) => (
             <div key={os} className={clsx(styles.card, detected === os && styles.cardDetected)}>
               {detected === os && <span className={styles.badge}>Recommended for your system</span>}
               <OsIcon os={os} />
@@ -73,6 +79,7 @@ export default function HomepageBetaDownload() {
               ) : (
                 <span className={styles.soon}>Coming soon</span>
               )}
+              {warning && <p className={styles.warning}>{warning}</p>}
               {others.length > 0 && (
                 <ul className={styles.links}>
                   {others.map(({ label, file }) => (
@@ -85,6 +92,17 @@ export default function HomepageBetaDownload() {
             </div>
           ))}
         </div>
+        <div className={styles.sample}>
+          <p>Sample layouts (all platforms):</p>
+          <ul>
+            <li>
+              <a href={`${BASE_URL}/ner2026.mop3`}>2026 NMRA Northeast Region convention Free-mo</a> (mid-size)
+            </li>
+            <li>
+              <a href={`${BASE_URL}/ARS-2026-v2.mop3`}>2026 Amherst Railway Society Free-mo</a> (very large)
+            </li>
+          </ul>
+        </div>
         <div className={styles.notice}>
           <Admonition type="warning" title="Beta software">
             <ul>
@@ -92,7 +110,6 @@ export default function HomepageBetaDownload() {
               <li>Back up your layout files first. Don't rely on the beta for an operating session.</li>
               <li>v5 <code>.mop2</code> files are copied to the new <code>.mop3</code> format; originals are left untouched and still open in v5.</li>
               <li>Keep version 5 installed until v6 is final.</li>
-              <li>Windows is not yet available.</li>
               <li>
                 Found a bug or have feedback? Email{' '}
                 <a href={`mailto:${FEEDBACK_EMAIL}?subject=ModuOps%20v6%20beta`}>{FEEDBACK_EMAIL}</a>.
