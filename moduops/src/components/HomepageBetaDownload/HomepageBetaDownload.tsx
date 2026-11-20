@@ -92,6 +92,17 @@ export default function HomepageBetaDownload() {
             </div>
           ))}
         </div>
+        <div className={styles.sample}>
+          <p>Sample layouts (all platforms):</p>
+          <ul>
+            <li>
+              <a href={`${BASE_URL}/ner2026.mop3`}>2026 NMRA Northeast Region convention Free-mo</a> (mid-size)
+            </li>
+            <li>
+              <a href={`${BASE_URL}/ARS-2026-v2.mop3`}>2026 Amherst Railway Society Free-mo</a> (very large)
+            </li>
+          </ul>
+        </div>
         <div className={styles.notice}>
           <Admonition type="warning" title="Beta software">
             <ul>
